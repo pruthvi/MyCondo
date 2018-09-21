@@ -39,12 +39,14 @@
             <header id="topnav">
                 <nav class="navbar-custom">
                     <ul class="list-unstyled topbar-right-menu float-right mb-0">
-                        <li class="dropdown notification-list">
+                       <!-- Notification Bar Starts -->
+<%--                        <li class="dropdown notification-list">
                             <a class="nav-link dropdown-toggle arrow-none" data-toggle="dropdown" href="#" role="button"
                                 aria-haspopup="false" aria-expanded="false">
                                 <i class="dripicons-bell noti-icon"></i>
                                 <span class="badge badge-info noti-icon-badge">21</span>
                             </a>
+                           
                             <div class="dropdown-menu dropdown-menu-right dropdown-menu-animated dropdown-lg">
                                 <!-- item-->
                                 <div class="dropdown-item noti-title">
@@ -57,33 +59,7 @@
                                         <div class="notify-icon bg-warning"><i class="mdi mdi-comment-account-outline"></i></div>
                                         <p class="notify-details">Caleb Flakelar commented on Admin<small class="text-muted">1 min ago</small></p>
                                     </a>
-    
-                                    <!-- item-->
-                                    <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                        <div class="notify-icon bg-info"><i class="mdi mdi-account-plus"></i></div>
-                                        <p class="notify-details">New user registered.<small class="text-muted">5 hours ago</small></p>
-                                    </a>
-    
-                                    <!-- item-->
-                                    <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                        <div class="notify-icon"><img src="assets/images/users/avatar-2.jpg" class="img-fluid rounded-circle" alt="" /> </div>
-                                        <p class="notify-details">Cristina Pride</p>
-                                        <p class="text-muted font-13 mb-0 user-msg">Hi, How are you? What about our next meeting</p>
-                                    </a>
-    
-                                    <!-- item-->
-                                    <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                        <div class="notify-icon bg-danger"><i class="mdi mdi-comment-account-outline"></i></div>
-                                        <p class="notify-details">Caleb Flakelar commented on Admin<small class="text-muted">4 days ago</small></p>
-                                    </a>
-    
-                                    <!-- item-->
-                                    <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                        <div class="notify-icon"><img src="assets/images/users/avatar-4.jpg" class="img-fluid rounded-circle" alt="" /> </div>
-                                        <p class="notify-details">Karen Robinson</p>
-                                        <p class="text-muted font-13 mb-0 user-msg">Wow that's great</p>
-                                    </a>
-    
+   
                                     <!-- item-->
                                     <a href="javascript:void(0);" class="dropdown-item notify-item">
                                         <div class="notify-icon bg-primary"><i class="mdi mdi-heart"></i></div>
@@ -97,7 +73,11 @@
                                 </a>
     
                             </div>
-                        </li>
+
+                        </li>--%>
+                                               <!-- Notification Bar Ends -->
+
+
                         <li class="dropdown notification-list">
                             <a class="nav-link dropdown-toggle nav-user" data-toggle="dropdown" href="#" role="button"
                                 aria-haspopup="false" aria-expanded="false">
@@ -175,7 +155,7 @@
             </header>
             <!-- End Navigation Bar-->
 
-            <!-- ========== Left Sidebar Start ========== -->
+            <!-- ========== Side NAVIGATION Start ========== -->
             <div class="left-side-menu">
 
                 <div class="slimscroll-menu">
@@ -188,7 +168,7 @@
                             <li class="menu-title">Navigation</li>
 
                             <li>
-                                <a href="index.html">
+                                <a href="#">
                                     <i class="mdi mdi-view-dashboard"></i> <span> Home </span>
                                 </a>
                             </li>
@@ -196,93 +176,68 @@
                             <li>
                                 <a href="javascript: void(0);"><i class="mdi mdi-atom"></i> <span> Users </span> <span class="menu-arrow"></span></a>
                                 <ul class="nav-second-level" aria-expanded="false">
-                                    <li><a href="ui-buttons.html">Buttons</a></li>
-                                    <li><a href="ui-modals.html">Modals</a></li>
-                                    <li><a href="ui-tabs.html">Tabs & Accordions</a></li>
-             
-                                    <li><a href="ui-dripicons.html">Dripicons</a></li>    
+                                    <li><a href="#">Buttons</a></li> 
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="javascript: void(0);"><i class="mdi mdi-atom"></i> <span> Units </span> <span class="menu-arrow"></span></a>
+                                <ul class="nav-second-level" aria-expanded="false">
+                                    <li><a href="createUnit.aspx">Create Unit</a></li>
+                                    <li><a href="#">Modals</a></li>
+                                    <li><a href="#">Tabs & Accordions</a></li>
+   
                                 </ul>
                             </li>
 
                             <li>
-                                <a href="javascript: void(0);"><i class="mdi mdi-email-outline"></i><span> Email </span> <span class="menu-arrow"></span></a>
+                                <a href="javascript: void(0);"><i class="mdi mdi-email-outline"></i><span> Messages </span> <span class="menu-arrow"></span></a>
                                 <ul class="nav-second-level" aria-expanded="false">
-                                    <li><a href="email-inbox.html">Inbox</a></li>
-                                    <li><a href="email-read.html">Read Email</a></li>
-                                    <li><a href="email-compose.html">Compose Email</a></li>    
+                                    <li><a href="#">Inbox</a></li>
+                                    <li><a href="#">Read Email</a></li>
+                                    <li><a href="#">Compose Email</a></li>    
                                 </ul>
                             </li>
 
                             <li>
                                 <a href="calendar.html">
-                                    <i class="mdi mdi-calendar"></i> <span> Calendar </span>
+                                    <i class="mdi mdi-calendar"></i> <span> Complaints </span>
                                 </a>
                             </li>
 
+
                             <li>
-                                <a href="javascript: void(0);"><i class="mdi mdi-chart-donut-variant"></i><span> Charts </span> <span class="menu-arrow"></span></a>
+                                <a href="javascript: void(0);"><i class="mdi mdi-file-document-box"></i> <span> Requests </span></a>
                                 <ul class="nav-second-level" aria-expanded="false">
-                                    <li><a href="chart-flot.html">Flot Chart</a></li>
-                                    <li><a href="chart-chartist.html">Chartist Chart</a></li>
-                                    <li><a href="chart-chartjs.html">Chartjs Chart</a></li>
-                                    <li><a href="chart-knob.html">Jquery Knob</a></li>
-                                    <li><a href="chart-sparkline.html">Sparkline Chart</a></li>
+                                    <li><a href="#">Form Elements</a></li>
+                                    <li><a href="#">Form Advanced</a></li>
+   
                                 </ul>
                             </li>
 
                             <li>
-                                <a href="javascript: void(0);"><i class="mdi mdi-file-document-box"></i> <span> Forms </span></a>
+                                <a href="javascript: void(0);"><i class="mdi mdi-filter-variant"></i> <span> Guest Services </span> <span class="menu-arrow"></span></a>
                                 <ul class="nav-second-level" aria-expanded="false">
-                                    <li><a href="form-elements.html">Form Elements</a></li>
-                                    <li><a href="form-advanced.html">Form Advanced</a></li>
-                                    <li><a href="form-validation.html">Form Validation</a></li>
-                                    <li><a href="form-wizard.html">Form Wizard</a></li>
-                                    <li><a href="form-summernote.html">Summernote</a></li>
-                                    <li><a href="form-upload.html">Form Upload</a></li>
-                                </ul>
-                            </li>
-
-                            <li>
-                                <a href="javascript: void(0);"><i class="mdi mdi-filter-variant"></i> <span> Tables </span> <span class="menu-arrow"></span></a>
-                                <ul class="nav-second-level" aria-expanded="false">
-                                    <li><a href="tables-basic.html">Basic Tables</a></li>
-                                    <li><a href="tables-datatable.html">Data Tables</a></li>
-                                    <li><a href="tables-responsive.html">Responsive Tables</a></li>
+                                    <li><a href="#">Basic Tables</a></li>
+                                    <li><a href="#">Data Tables</a></li>
+                                    <li><a href="#">Responsive Tables</a></li>
                                 </ul>
                             </li>
 
                             <li class="menu-title">More</li>
 
                             <li>
-                                <a href="javascript: void(0);"><i class="mdi mdi-map"></i> <span> Maps </span> <span class="menu-arrow"></span></a>
+                                <a href="javascript: void(0);"><i class="mdi mdi-buffer"></i><span> Reports </span> <span class="menu-arrow"></span></a>
                                 <ul class="nav-second-level" aria-expanded="false">
-                                    <li><a href="maps-google.html">Google Maps</a></li>
-                                    <li><a href="maps-vector.html">Vector Maps</a></li>
+                                    <li><a href="#">Log In</a></li>
+                                    <li><a href="#">Register</a></li>
+                                    <li><a href="#">Recover Password</a></li>
+                                    <li><a href="#">Lock Screen</a></li>
+                                    <li><a href="#">Error 404</a></li>
+                                    <li><a href="#">Error 500</a></li>    
                                 </ul>
                             </li>
 
-                            <li>
-                                <a href="javascript: void(0);"><i class="mdi mdi-buffer"></i><span> Authentication </span> <span class="menu-arrow"></span></a>
-                                <ul class="nav-second-level" aria-expanded="false">
-                                    <li><a href="auth-login.html">Log In</a></li>
-                                    <li><a href="auth-register.html">Register</a></li>
-                                    <li><a href="auth-recoverpassword.html">Recover Password</a></li>
-                                    <li><a href="auth-lock-screen.html">Lock Screen</a></li>
-                                    <li><a href="auth-404.html">Error 404</a></li>
-                                    <li><a href="auth-500.html">Error 500</a></li>    
-                                </ul>
-                            </li>
 
-                            <li>
-                                <a href="javascript:void(0);"><i class="mdi mdi-google-pages"></i> <span> Pages </span> <span class="menu-arrow"></span></a>
-                                <ul class="nav-second-level" aria-expanded="false">
-                                    <li><a href="pages-invoice.html">Invoice</a></li>
-                                    <li><a href="pages-pricing.html">Pricing</a></li>
-                                    <li><a href="pages-starter.html">Starter</a></li>
-                                    <li><a href="pages-timeline.html">Timeline</a></li>
-                                    <li><a href="pages-faq.html">FAQs</a></li>    
-                                </ul>
-                            </li>
 
                             <!-- <li>
                                 <a href="javascript: void(0);"><i class="mdi mdi-multiplication"></i> <span> Multi Level </span> <span class="menu-arrow"></span></a>
@@ -315,9 +270,28 @@
             <div class="content-page">
                 <div class="content">
                     <div class="container-fluid">
+                                <!-- Page title box -->
+                        <div class="page-title-box">
+                            <h4 class="page-title">
+                                                        <asp:ContentPlaceHolder ID="PageTitle" runat="server">
+                
 
-                        
-                        <!-- end row -->        
+            </asp:ContentPlaceHolder>
+                                </h4>
+                        </div>
+                        <!-- End page title box -->
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card-box">
+                                    
+                        <asp:ContentPlaceHolder ID="PageContent" runat="server">
+
+            </asp:ContentPlaceHolder>
+        
+                                </div> <!-- end card-box -->
+                            </div> <!-- end col-->
+                        </div>
+                        <!-- end row --> 
 
 
                     </div> <!-- end container-fluid-->
@@ -467,14 +441,7 @@
 
 
 
-                        <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
-                Sidebar
 
-            </asp:ContentPlaceHolder>
-                        <asp:ContentPlaceHolder ID="ContentPlaceHolder3" runat="server">
-                Hello World
-
-            </asp:ContentPlaceHolder>
 
     </form>
 </body>
