@@ -125,7 +125,7 @@
     
                     <ul class="list-unstyled menu-left mb-0">
                         <li class="float-left">
-                            <a href="index.html" class="logo">
+                            <a href="index.aspx" class="logo">
                                 <span class="logo-lg">
                                     <img src="assets/images/logo.png" alt="" height="35">
                                 </span>
@@ -168,7 +168,7 @@
                             <li class="menu-title">Navigation</li>
 
                             <li>
-                                <a href="#">
+                                <a href="index.aspx">
                                     <i class="mdi mdi-view-dashboard"></i> <span> Home </span>
                                 </a>
                             </li>
@@ -176,13 +176,13 @@
                             <li>
                                 <a href="javascript: void(0);"><i class="mdi mdi-atom"></i> <span> Users </span> <span class="menu-arrow"></span></a>
                                 <ul class="nav-second-level" aria-expanded="false">
-                                    <li><a href="#">Buttons</a></li> 
+                                    <li><a href="CreateUser.aspx">Create Users</a></li> 
                                 </ul>
                             </li>
                             <li>
                                 <a href="javascript: void(0);"><i class="mdi mdi-atom"></i> <span> Units </span> <span class="menu-arrow"></span></a>
                                 <ul class="nav-second-level" aria-expanded="false">
-                                    <li><a href="createUnit.aspx">Create Unit</a></li>
+                                    <li><a href="CreateUnit.aspx">Create Unit</a></li>
                                     <li><a href="#">Modals</a></li>
                                     <li><a href="#">Tabs & Accordions</a></li>
    
