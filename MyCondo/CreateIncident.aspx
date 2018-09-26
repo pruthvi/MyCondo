@@ -6,7 +6,6 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="PageContent" runat="server">
     <div class="form-horizontal">
 
-
         <div class="form-group row">
             <asp:Label ID="lblDate" runat="server" Text="Date: " class="col-sm-2 col-form-label"></asp:Label>
             <div class="col-sm-10">
@@ -28,7 +27,7 @@
             </div>
         </div>
 
- <%--       <div class="form-group row">
+        <%--       <div class="form-group row">
             <asp:Label ID="lblDes" runat="server" Text="Description: " class="col-sm-2 col-form-label"></asp:Label>
             <div class="col-sm-10">
                 <asp:TextBox ID="txtDescription" runat="server" TextMode="MultiLine" class="form-control" Rows="5"></asp:TextBox>
@@ -37,9 +36,8 @@
 
         <div class="form-group row">
             <asp:Label ID="lblDescription" runat="server" Text="Description: " class="col-sm-2 col-form-label"></asp:Label>
-   <div id="summernote-editor">
-                                     
-                                    </div>
+            <div id="summernote-editor">
+            </div>
         </div>
 
 
@@ -51,10 +49,14 @@
             </div>
         </div>
 
-
-
+        <div class="form-group text-right m-b-0">
+            <asp:Button ID="btnSubmit" runat="server" Text="Submit" class="btn btn-primary" />
+        </div>
+ 
+        
     </div>
 
 
+   
 
 </asp:Content>
