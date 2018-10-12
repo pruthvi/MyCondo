@@ -40,7 +40,11 @@
                 <asp:TextBox ID="txtPnum" runat="server" class="form-control"></asp:TextBox>
             </div>
         </div>
-
+        <div class="form-group row">
+            <div class="col-sm-10">
+                <asp:Button ID="Button1" runat="server" Text="Button" />
+            </div>
+        </div>
     </div>
 
 </asp:Content>
