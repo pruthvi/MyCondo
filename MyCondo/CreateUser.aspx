@@ -42,7 +42,7 @@
         </div>
         <div class="form-group row">
             <div class="col-sm-10">
-                <asp:Button ID="Button1" runat="server" Text="Button" />
+                <asp:Button ID="btnSubmit" runat="server" Text="Submit" CssClass="btn btn-primary btn-rounded w-md" />
             </div>
         </div>
     </div>
