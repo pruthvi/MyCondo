@@ -69,6 +69,8 @@
     <Content Include="CreateIncident.aspx" />
     <Content Include="CreateUser.aspx" />
     <Content Include="CreateUnit.aspx" />
+    <Content Include="Database Scripts\Create Mycondo database.sql" />
+    <Content Include="Database Scripts\Create tables in Mycondo.sql" />
     <Content Include="login.aspx" />
     <Content Include="MasterPage.Master" />
     <None Include="packages.config" />
