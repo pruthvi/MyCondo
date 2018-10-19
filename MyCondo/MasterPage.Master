@@ -93,27 +93,12 @@
                                 </div>
     
                                 <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    <i class="dripicons-user"></i> <span>My Account</span>
-                                </a>
+                                <a href="ChangePassword.aspx" class="dropdown-item notify-item">
+                                    <i class="dripicons-user"></i> <span>Change Password</span>
+                                </a>                              
     
                                 <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    <i class="dripicons-gear"></i> <span>Settings</span>
-                                </a>
-    
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    <i class="dripicons-help"></i> <span>Support</span>
-                                </a>
-    
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    <i class="dripicons-lock"></i> <span>Lock Screen</span>
-                                </a>
-    
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <a href="login.aspx" class="dropdown-item notify-item">
                                     <i class="dripicons-power"></i> <span>Logout</span>
                                 </a>
     
@@ -175,69 +160,79 @@
                                     <i class="mdi mdi-view-dashboard"></i> <span> Home </span>
                                 </a>
                             </li>
-
                             <li>
-                                <a href="javascript: void(0);"><i class="mdi mdi-atom"></i> <span> Users </span> <span class="menu-arrow"></span></a>
+                                <a href="javascript: void(0);"><i class="mdi mdi-filter-variant"></i> <span> Booking </span> <span class="menu-arrow"></span></a>
                                 <ul class="nav-second-level" aria-expanded="false">
-                                    <li><a href="CreateUser.aspx">Create Users</a></li> 
+                                    <li><a href="CreateBooking.aspx">Make a Booking</a></li>
+                                    <li><a href="#">Modify Bookings</a></li>
+                                    <li><a href="#">View Bookings</a></li>
                                 </ul>
                             </li>
+                            
                             <li>
-                                <a href="javascript: void(0);"><i class="mdi mdi-atom"></i> <span> Units </span> <span class="menu-arrow"></span></a>
-                                <ul class="nav-second-level" aria-expanded="false">
-                                    <li><a href="CreateUnit.aspx">Create Unit</a></li>
-                                    <li><a href="#">Modals</a></li>
-                                    <li><a href="#">Tabs & Accordions</a></li>
-   
-                                </ul>
+                                <a href="GuestRegistration.aspx"><i class="mdi mdi-filter-variant"></i> <span> Guest Registration </span></a>
                             </li>
 
                             <li>
                                 <a href="javascript: void(0);"><i class="mdi mdi-email-outline"></i><span> Messages </span> <span class="menu-arrow"></span></a>
                                 <ul class="nav-second-level" aria-expanded="false">
                                     <li><a href="#">Inbox</a></li>
-                                    <li><a href="#">Read Email</a></li>
-                                    <li><a href="#">Compose Email</a></li>    
+                                    <li><a href="#">Sent Message</a></li>    
                                 </ul>
                             </li>
 
                             <li>
-                                <a href="calendar.html">
+                                <a href="CreateComplaint.aspx">
                                     <i class="mdi mdi-calendar"></i> <span> Complaints </span>
                                 </a>
                             </li>
 
 
                             <li>
-                                <a href="javascript: void(0);"><i class="mdi mdi-file-document-box"></i> <span> Requests </span></a>
-                                <ul class="nav-second-level" aria-expanded="false">
-                                    <li><a href="#">Form Elements</a></li>
-                                    <li><a href="#">Form Advanced</a></li>
-   
-                                </ul>
-                            </li>
+                                <a href="ServiceRequest.aspx"><i class="mdi mdi-file-document-box"></i> <span>Service Request </span></a>
 
+                            </li>
                             <li>
-                                <a href="javascript: void(0);"><i class="mdi mdi-filter-variant"></i> <span> Guest Services </span> <span class="menu-arrow"></span></a>
-                                <ul class="nav-second-level" aria-expanded="false">
-                                    <li><a href="#">Basic Tables</a></li>
-                                    <li><a href="#">Data Tables</a></li>
-                                    <li><a href="#">Responsive Tables</a></li>
-                                </ul>
+                                <a href="javascript: void(0);"><i class="mdi mdi-file-document-box"></i> <span>Payment </span></a>
+                            </li>
+                            <li>
+                                <a href="Feedback.aspx"><i class="mdi mdi-file-document-box"></i> <span>Feedback </span></a>
                             </li>
 
-                            <li class="menu-title">More</li>
 
+
+                            
+
+                            <li class="menu-title">Admin</li>
+                            <li>
+                                <a href="javascript: void(0);"><i class="mdi mdi-atom"></i> <span> Users </span> <span class="menu-arrow"></span></a>
+                                <ul class="nav-second-level" aria-expanded="false">
+                                    <li><a href="CreateUser.aspx">Create Users</a></li>
+                                    <li><a href="#">Modify Users</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="javascript: void(0);"><i class="mdi mdi-atom"></i> <span> Units </span> <span class="menu-arrow"></span></a>
+                                <ul class="nav-second-level" aria-expanded="false">
+                                    <li><a href="CreateUnit.aspx">Create Unit</a></li>
+                                    <li><a href="#">Modify Unit</a></li>
+                                </ul>
+                            </li>
                             <li>
                                 <a href="javascript: void(0);"><i class="mdi mdi-buffer"></i><span> Reports </span> <span class="menu-arrow"></span></a>
                                 <ul class="nav-second-level" aria-expanded="false">
-                                    <li><a href="#">Log In</a></li>
-                                    <li><a href="#">Register</a></li>
-                                    <li><a href="#">Recover Password</a></li>
-                                    <li><a href="#">Lock Screen</a></li>
-                                    <li><a href="#">Error 404</a></li>
-                                    <li><a href="#">Error 500</a></li>    
+                                    <li><a href="#">Booking Reports</a></li>
+                                    <li><a href="#">Complaint Reports</a></li>
+                                    <li><a href="#">Service Request Reports</a></li> 
+                                    <li><a href="#">Incident Reports</a></li> 
+
                                 </ul>
+                            </li>
+                            <li>
+                                <a href="CreateIncident.aspx"><i class="mdi mdi-filter-variant"></i> <span> Create Incident </span></a>
+                            </li>
+                            <li>
+                                <a href="CreateNewsfeed.aspx"><i class="mdi mdi-filter-variant"></i> <span> Newsfeed </span> </a>
                             </li>
 
 
@@ -282,7 +277,8 @@
             </asp:ContentPlaceHolder>
                                 </h4>
                         </div>
-                        <!-- End page title box -->
+                        <!-- End page title box -->
+
                         <div class="row">
                             <div class="col-12">
                                 <div class="card-box">
