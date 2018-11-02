@@ -73,13 +73,8 @@
     <Content Include="CreateNewsfeed.aspx" />
     <Content Include="CreateUser.aspx" />
     <Content Include="CreateUnit.aspx" />
-<<<<<<< HEAD
     <Content Include="Feedback.aspx" />
     <Content Include="GuestRegistration.aspx" />
-=======
-    <Content Include="Database Scripts\Create Mycondo database.sql" />
-    <Content Include="Database Scripts\Create tables in Mycondo.sql" />
->>>>>>> 04d93cadc6f1d6e532832e350025e8b6c3424edf
     <Content Include="login.aspx" />
     <Content Include="MasterPage.Master" />
     <None Include="packages.config" />
