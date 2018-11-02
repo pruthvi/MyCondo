@@ -282,7 +282,8 @@
             </asp:ContentPlaceHolder>
                                 </h4>
                         </div>
-                        <!-- End page title box -->
+                        <!-- End page title box -->
+
                         <div class="row">
                             <div class="col-12">
                                 <div class="card-box">
