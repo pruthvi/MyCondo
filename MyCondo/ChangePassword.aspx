@@ -15,14 +15,14 @@
 
 
         <div class="form-group row">
-            <asp:Label ID="lblNewPass" runat="server" Text="New Password :" class="col-sm-2 col-form-label"></asp:Label>
+            <asp:Label ID="lblNewPass" runat="server" Text="New Password: " class="col-sm-2 col-form-label"></asp:Label>
             <div class="col-sm-10">
                 <asp:TextBox ID="txtNewPass" runat="server" class="form-control" TextMode="Password"></asp:TextBox>
             </div>
         </div>
 
         <div class="form-group row">
-            <asp:Label ID="lblConfirm" runat="server" Text="Confirm New Password : " class="col-sm-2 col-form-label"></asp:Label>
+            <asp:Label ID="lblConfirm" runat="server" Text="Confirm New Password: " class="col-sm-2 col-form-label"></asp:Label>
             <div class="col-sm-10">
                 <asp:TextBox ID="txtConfirm" runat="server" class="form-control" TextMode="Password"></asp:TextBox>
             </div>

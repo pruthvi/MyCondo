@@ -5,7 +5,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="PageContent" runat="server">
            <div class="form-horizontal">
         <div class="form-group row">
-            <asp:Label ID="lblId" runat="server" Text="Id: " class="col-sm-2 col-form-label"></asp:Label>
+            <asp:Label ID="lblId" runat="server" Text="ID: " class="col-sm-2 col-form-label"></asp:Label>
             <div class="col-sm-10">
                 <asp:TextBox ID="txtId" runat="server" class="form-control"></asp:TextBox>
             </div>
