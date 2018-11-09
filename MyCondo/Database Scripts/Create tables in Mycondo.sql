@@ -1,97 +1,97 @@
 ﻿USE [Mycondo]
 GO
 
-DROP TABLE [dbo].[VehicleDetails];
-GO
+--DROP TABLE [dbo].[VehicleDetails];
+--GO
 
-DROP TABLE [dbo].[Feedback];
-GO
+--DROP TABLE [dbo].[Feedback];
+--GO
 
-DROP TABLE [dbo].[Complaint];
-GO
+--DROP TABLE [dbo].[Complaint];
+--GO
 
-DROP TABLE [dbo].[Units];
-GO
+--DROP TABLE [dbo].[Units];
+--GO
 
-DROP TABLE [dbo].[ServiceRequest];
-GO
+--DROP TABLE [dbo].[ServiceRequest];
+--GO
 
-DROP TABLE [dbo].[Payment];
-GO
+--DROP TABLE [dbo].[Payment];
+--GO
 
-DROP TABLE [dbo].[Messages];
-GO
+--DROP TABLE [dbo].[Messages];
+--GO
 
-DROP TABLE [dbo].[Login];
-GO
+--DROP TABLE [dbo].[Login];
+--GO
 
-DROP TABLE [dbo].[Guest];
-GO
+--DROP TABLE [dbo].[Guest];
+--GO
 
-DROP TABLE [dbo].[Booking];
-GO
+--DROP TABLE [dbo].[Booking];
+--GO
 
-DROP TABLE [dbo].[Users];
-GO
+--DROP TABLE [dbo].[Users];
+--GO
 
-DROP TABLE [dbo].[UserDetails];
-GO
+--DROP TABLE [dbo].[UserDetails];
+--GO
 
-DROP TABLE [dbo].[Newsfeed];
-GO
+--DROP TABLE [dbo].[Newsfeed];
+--GO
 
-DROP TABLE [dbo].[VisitorType];
-GO
-
-
-DROP TABLE [dbo].[VehicleMake];
-GO
-
-DROP TABLE [dbo].[vehicleColor];
-GO
-
-DROP TABLE [dbo].[Usergroup];
-GO
-
-DROP TABLE [dbo].[serviceType];
-GO
-
-DROP TABLE [dbo].[ServiceStatus];
-GO
-
-DROP TABLE [dbo].[Provinces];
-GO
-
-DROP TABLE [dbo].[Priority];
-GO
-
-DROP TABLE [dbo].[PaymentStatus];
-GO
-
-DROP TABLE [dbo].[parkingSpot];
-GO
-
-DROP TABLE [dbo].[ParkingPeriod];
-GO
-
-DROP TABLE [dbo].[occupancy];
-GO
-
-DROP TABLE [dbo].[EmergencyContacts];
-GO
-
-DROP TABLE [dbo].[BookingType];
-GO
-
-DROP TABLE [dbo].[BookingStatus];
-GO
-
-DROP TABLE [dbo].[Adress];
-GO
+--DROP TABLE [dbo].[VisitorType];
+--GO
 
 
-DROP TABLE [dbo].[AccountType];
-GO
+--DROP TABLE [dbo].[VehicleMake];
+--GO
+
+--DROP TABLE [dbo].[vehicleColor];
+--GO
+
+--DROP TABLE [dbo].[Usergroup];
+--GO
+
+--DROP TABLE [dbo].[serviceType];
+--GO
+
+--DROP TABLE [dbo].[ServiceStatus];
+--GO
+
+--DROP TABLE [dbo].[Provinces];
+--GO
+
+--DROP TABLE [dbo].[Priority];
+--GO
+
+--DROP TABLE [dbo].[PaymentStatus];
+--GO
+
+--DROP TABLE [dbo].[parkingSpot];
+--GO
+
+--DROP TABLE [dbo].[ParkingPeriod];
+--GO
+
+--DROP TABLE [dbo].[occupancy];
+--GO
+
+--DROP TABLE [dbo].[EmergencyContacts];
+--GO
+
+--DROP TABLE [dbo].[BookingType];
+--GO
+
+--DROP TABLE [dbo].[BookingStatus];
+--GO
+
+--DROP TABLE [dbo].[Adress];
+--GO
+
+
+--DROP TABLE [dbo].[AccountType];
+--GO
 
 
 -- ************************************** [dbo].[VisitorType]
