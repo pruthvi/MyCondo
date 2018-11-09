@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -11,45 +14,34 @@ namespace MyCondo
     {
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
-            if (txtUsername.Text == "admin" && txtPassword.Text == "admin")
+            bool found = false;
+            DataConnection myConnection = new DataConnection();
+            String script = "Select * from Login";
+            DataTable myTable = myConnection.ExecuteScript(script);
+            myConnection.conn.Close();
+            if (myTable.Rows.Count > 0)
             {
-                Response.Redirect("index.aspx");
-
-            }
-            else
-            {
-                lblValidation.Text = "Your username and password is incorrect";
-                lblValidation.ForeColor = System.Drawing.Color.Red;
-            }/*
-                        SqlConnection myConnection = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename="
-                                                           + @"C:\Users\koflax\Desktop\School\home Project\databases\logindata.mdf" +
-                                                           ";Integrated Security=True;Connect Timeout=30;");
-            SqlDataAdapter myData = new SqlDataAdapter("Select * from loginData where UPPER(Username)='"
-                                                        +usernameTxt.Text+"'and password='"+passwordTxt.Text+"'",
-                                                        myConnection);
-            DataTable myTable = new DataTable();
-            myData.Fill(myTable);
-            if(myTable.Rows.Count>0)
-            {
-                if (myTable.Rows[0][0].ToString() == usernameTxt.Text && myTable.Rows[0][1].ToString() == passwordTxt.Text)
+                for(int i=0;i< myTable.Rows.Count;i++)
                 {
-                    string result = myTable.Rows[0][0].ToString();
-                    MessageBox.Show(result);
-                    //MainPage myMainPage = new MainPage(this);
-                    //myConnection.Close();
-                    //this.Hide();
-                    //myMainPage.Show();
+                    if (myTable.Rows[i][0].ToString() == txtUsername.Text && myTable.Rows[i][1].ToString() == txtPassword.Text)
+                    {
+                        found = true;
+                        break;
+                    }     
+                }
+                if (found)
+                {
+                    Response.Redirect("index.aspx");
                 }
                 else
                 {
-                    MessageBox.Show("Incorrect Login Or Password, please try again");
+                    lblValidation.Text="Incorrect Login Or Password, please try again";
                 }
             }
             else
             {
-                MessageBox.Show("Incorrect Login Or Password, please try again");
+                lblValidation.Text = "Incorrect Login Or Password, please try again";
             }
-            */
         }
     }
 }
