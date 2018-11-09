@@ -73,6 +73,9 @@
     <Content Include="CreateNewsfeed.aspx" />
     <Content Include="CreateUser.aspx" />
     <Content Include="CreateUnit.aspx" />
+    <Content Include="Database Scripts\Create Mycondo database.sql" />
+    <Content Include="Database Scripts\Create tables in Mycondo.sql" />
+    <Content Include="Database Scripts\Populate Tables.sql" />
     <Content Include="Feedback.aspx" />
     <Content Include="GuestRegistration.aspx" />
     <Content Include="login.aspx" />
