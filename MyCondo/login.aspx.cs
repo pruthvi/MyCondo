@@ -20,7 +20,8 @@ namespace MyCondo
             {
                 lblValidation.Text = "Your username and password is incorrect";
                 lblValidation.ForeColor = System.Drawing.Color.Red;
-            }/*
+            }//test
+            /*
                         SqlConnection myConnection = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename="
                                                            + @"C:\Users\koflax\Desktop\School\home Project\databases\logindata.mdf" +
                                                            ";Integrated Security=True;Connect Timeout=30;");
