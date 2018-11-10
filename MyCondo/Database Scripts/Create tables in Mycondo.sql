@@ -99,7 +99,7 @@ GO
 CREATE TABLE [dbo].[VisitorType]
 (
  [Name]        nvarchar(50) NOT NULL ,
- [Description] nvarchar(50) NULL 
+ [Description] nvarchar(MAX) NULL 
 );
 GO
 
@@ -124,7 +124,7 @@ GO
 CREATE TABLE [dbo].[Usergroup]
 (
  [GroupName]   nvarchar(50) NOT NULL ,
- [Description] nvarchar(50) NOT NULL 
+ [Description] nvarchar(MAX) NOT NULL 
 );
 GO
 
@@ -141,7 +141,7 @@ GO
 CREATE TABLE [dbo].[ServiceStatus]
 (
  [Status]      nvarchar(50) NOT NULL ,
- [Description] nvarchar(50) NULL
+ [Description] nvarchar(MAX) NULL
 );
 GO
 
@@ -158,7 +158,7 @@ GO
 CREATE TABLE [dbo].[Priority]
 (
  [PriorityName] nvarchar(50) NOT NULL ,
- [Description]  nvarchar(50) NULL 
+ [Description]  nvarchar(MAX) NULL 
 );
 GO
 
@@ -167,7 +167,7 @@ GO
 CREATE TABLE [dbo].[PaymentStatus]
 (
  [Status]      nvarchar(50) NOT NULL ,
- [Description] nvarchar(50) NULL 
+ [Description] nvarchar(MAX) NULL 
 );
 GO
 
@@ -195,7 +195,7 @@ CREATE TABLE [dbo].[occupancy]
 (
  [Occupancy]   char(5) NOT NULL ,
  [Name]        nvarchar(50) NOT NULL ,
- [Description] nvarchar(50) NULL 
+ [Description] nvarchar(MAX) NULL 
 );
 GO
 
@@ -224,7 +224,7 @@ GO
 CREATE TABLE [dbo].[BookingStatus]
 (
  [Status]      nvarchar(50) NOT NULL ,
- [Description] nvarchar(50) NULL 
+ [Description] nvarchar(MAX) NULL 
 );
 GO
 
@@ -233,7 +233,7 @@ GO
 CREATE TABLE [dbo].[Adress]
 (
  [AdressId]    int IDENTITY (1, 1) NOT NULL ,
- [AdressLine1] nvarchar(50) NOT NULL ,
+ [AdressLine1] nvarchar(MAX) NOT NULL ,
  [AdressLine2] nvarchar(50) NULL ,
  [City]        nvarchar(50) NOT NULL ,
  [Province]    nvarchar(50) NULL ,
@@ -248,7 +248,7 @@ CREATE TABLE [dbo].[AccountType]
 (
  [AccountType] char(5) NOT NULL ,
  [Name]        nvarchar(50) NOT NULL ,
- [Description] nvarchar(50) NULL 
+ [Description] nvarchar(MAX) NULL 
 );
 GO
 
@@ -267,9 +267,9 @@ GO
 CREATE TABLE [dbo].[Newsfeed]
 (
  [FeedId]        int IDENTITY (1, 1) NOT NULL ,
- [Title]         varchar(50) NOT NULL ,
- [Description]   nvarchar(50) NOT NULL ,
- [Creationdatte] datetime NOT NULL ,
+ [Title]         nvarchar(50) NOT NULL ,
+ [Description]   nvarchar(MAX) NOT NULL ,
+ [Creationdatte] datetime NOT NULL DEFAULT GETDATE(),
  [ExpiryDate]    datetime NOT NULL ,
  [Priority]      nvarchar(50) NOT NULL ,
  [GroupName]     nvarchar(50) NOT NULL 
@@ -288,7 +288,7 @@ CREATE TABLE [dbo].[Users]
  [OffSiteAdressId] int NULL ,
  [DetailsId]       int NULL ,
  [CreationDate]    datetime NOT NULL DEFAULT GETDATE(),
- [Group]           nvarchar(50) NOT NULL  
+ [Group]           nvarchar(50) NOT NULL DEFAULT 'Residents'  
 );
 GO
 
@@ -297,9 +297,9 @@ GO
 CREATE TABLE [dbo].[Units]
 (
  [unitNumber]    int NOT NULL ,
- [Occupancy]     char(5) NOT NULL ,
+ [Occupancy]     char(5) NOT NULL DEFAULT 'EMP',
  [OwnerUserId]   int NULL ,
- [UnitAdressId]  int NOT NULL ,
+ [UnitAdressId]  int NULL ,
  [OwnerAdressId] int NULL ,
  [Occupancydate] date NULL
 );
@@ -309,11 +309,11 @@ GO
 
 CREATE TABLE [dbo].[ServiceRequest]
 (
- [RequestId]         int NOT NULL ,
+ [RequestId]         int IDENTITY (1, 1) NOT NULL ,
  [UserId]            int NOT NULL ,
  [Subject]           nvarchar(50) NOT NULL ,
- [Description]       nvarchar(50) NOT NULL ,
- [PermissionToEnter] bit NOT NULL ,
+ [Description]       nvarchar(Max) NOT NULL ,
+ [PermissionToEnter] bit NOT NULL DEFAULT 1,
  [Status]            nvarchar(50) NOT NULL 
 );
 GO
@@ -326,8 +326,8 @@ CREATE TABLE [dbo].[Payment]
  [Amount]        decimal(18,2) NOT NULL ,
  [PayerId]       int NOT NULL ,
  [ServiceName]   nvarchar(50) NOT NULL ,
- [Date]          datetime NOT NULL ,
- [PaymentStatus] nvarchar(50) NOT NULL ,
+ [Date]          datetime NOT NULL DEFAULT GETDATE(),
+ [PaymentStatus] nvarchar(50) NOT NULL DEFAULT 'Unpaid',
  [TransactionId] int NULL ,
  [PaymentDate]   datetime2(7) NULL 
 );
@@ -340,9 +340,9 @@ CREATE TABLE [dbo].[Messages]
  [MesssageId] int IDENTITY (1, 1) NOT NULL ,
  [SenderId]   int NOT NULL ,
  [ReceiverId] int NOT NULL ,
- [Message]    nvarchar(50) NOT NULL ,
- [date]       datetime NOT NULL ,
- [salonNmae]  nvarchar(50) NOT NULL 
+ [Message]    nvarchar(MAX) NOT NULL ,
+ [date]       datetime NOT NULL DEFAULT GETDATE(),
+ [salonName]  nvarchar(50) NOT NULL 
 );
 GO
 
@@ -352,8 +352,8 @@ CREATE TABLE [dbo].[Login]
 (
  [Username]    nvarchar(50) NOT NULL ,
  [Password]    nvarchar(50) NOT NULL ,
- [AccountType] char(5) NOT NULL ,
- [UserId]      int NOT NULL ,
+ [AccountType] char(5) NOT NULL DEFAULT 'NC',
+ [UserId]      int NOT NULL UNIQUE,
  [Image]       nvarchar(50) NULL 
 );
 GO
@@ -365,8 +365,8 @@ CREATE TABLE [dbo].[Guest]
  [GuestId]         int IDENTITY (1, 1) NOT NULL ,
  [Name]            nvarchar(50) NOT NULL ,
  [HostId]          int NOT NULL ,
- [VisitorType]     nvarchar(50) NOT NULL ,
- [ParkingRequired] bit NOT NULL 
+ [VisitorType]     nvarchar(50) NOT NULL DEFAULT 'Visitor',
+ [ParkingRequired] bit NOT NULL DEFAULT 0
 );
 GO
 
@@ -378,9 +378,9 @@ CREATE TABLE [dbo].[Booking]
  [BookingType]        nvarchar(50) NOT NULL ,
  [StartDate]          datetime NOT NULL ,
  [EndDate]            datetime NOT NULL ,
- [BookingDescription] nvarchar(50) NULL ,
+ [BookingDescription] nvarchar(MAX) NULL ,
  [UserId]             int NOT NULL ,
- [BookingStatus]      nvarchar(50) NOT NULL 
+ [BookingStatus]      nvarchar(50) NOT NULL DEFAULT 'Pending' 
 );
 GO
 
@@ -393,7 +393,7 @@ CREATE TABLE [dbo].[VehicleDetails]
  [ParkingSpot]  nvarchar(50) NOT NULL ,
  [Make]         nvarchar(50) NOT NULL ,
  [Color]        nvarchar(50) NOT NULL ,
- [State]        nvarchar(50) NOT NULL ,
+ [State]        nvarchar(50) NOT NULL DEFAULT 'ON',
  [ExpiryDate]   datetime NOT NULL 
 );
 GO
@@ -403,7 +403,7 @@ GO
 CREATE TABLE [dbo].[Feedback]
 (
  [FeedbackId] int IDENTITY (1, 1) NOT NULL ,
- [Message]    nvarchar(50) NOT NULL ,
+ [Message]    nvarchar(MAX) NOT NULL ,
  [RequestId]  int NOT NULL ,
  [UserId]     int NOT NULL 
 );
@@ -416,8 +416,8 @@ CREATE TABLE [dbo].[Complaint]
  [ComplaintId]       int IDENTITY (1, 1) NOT NULL ,
  [ReporterName]      nvarchar(50) NOT NULL ,
  [Title]             nvarchar(50) NOT NULL ,
- [Complaint Message] nvarchar(50) NOT NULL ,
- [Date]              datetime NOT NULL ,
+ [Complaint Message] nvarchar(MAX) NOT NULL ,
+ [Date]              datetime NOT NULL DEFAULT GETDATE(),
  [RelatedUser]       int NULL ,
  [RelatedUnit]       int NULL 
 );

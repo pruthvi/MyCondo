@@ -31,7 +31,7 @@ namespace MyCondo
                 }
                 if (found)
                 {
-                    Response.Redirect("index.aspx");
+                    Response.Redirect("Home.aspx");
                 }
                 else
                 {
