@@ -562,6 +562,8 @@ ALTER TABLE [dbo].[Login]
 ADD CONSTRAINT [FK_LoginAccType] FOREIGN KEY ([AccountType])  REFERENCES [dbo].[AccountType]([AccountType]);
 ALTER TABLE [dbo].[Login]
 ADD CONSTRAINT [FK_UserLogin] FOREIGN KEY ([UserId])  REFERENCES [dbo].[Users]([UserId]);
+ALTER TABLE [dbo].[Login]
+ADD UNIQUE NONCLUSTERED ([UserId] ASC);
 
 -- ************************************** [dbo].[Guest]
 ALTER TABLE [dbo].[Guest]
