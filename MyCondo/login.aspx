@@ -62,7 +62,7 @@
                                             </div>
 
                                             <div class="form-group mb-3">
-                                                <a href="forgotpassword.html" class="text-muted float-right"><small>Forgot your password?</small></a>
+                                                <a href="" class="text-muted float-right"><small>Forgot your password?</small></a>
                                                 <label for="password" class="font-weight-medium">Password</label>
                                                 <asp:TextBox class="form-control" ID="txtPassword" runat="server" placeholder="Enter your password" TextMode="Password"></asp:TextBox>
 

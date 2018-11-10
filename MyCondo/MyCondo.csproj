@@ -66,19 +66,10 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ChangePassword.aspx" />
-    <Content Include="CreateBooking.aspx" />
-    <Content Include="CreateComplaint.aspx" />
-    <Content Include="CreateIncident.aspx" />
-    <Content Include="CreateNewsfeed.aspx" />
-    <Content Include="CreateUser.aspx" />
-    <Content Include="CreateUnit.aspx" />
     <Content Include="Database Scripts\Create Mycondo database.sql" />
     <Content Include="Database Scripts\Create tables in Mycondo.sql" />
     <Content Include="Database Scripts\Populate Tables.sql" />
-    <Content Include="Feedback.aspx" />
     <Content Include="Global.asax" />
-    <Content Include="GuestRegistration.aspx" />
     <Content Include="login.aspx" />
     <Content Include="MasterPage.Master" />
     <None Include="packages.config" />
@@ -90,85 +81,12 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="index.aspx" />
-    <Content Include="ServiceRequest.aspx" />
-    <Content Include="Testing.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ChangePassword.aspx.cs">
-      <DependentUpon>ChangePassword.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ChangePassword.aspx.designer.cs">
-      <DependentUpon>ChangePassword.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="CreateBooking.aspx.cs">
-      <DependentUpon>CreateBooking.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="CreateBooking.aspx.designer.cs">
-      <DependentUpon>CreateBooking.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="CreateComplaint.aspx.cs">
-      <DependentUpon>CreateComplaint.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="CreateComplaint.aspx.designer.cs">
-      <DependentUpon>CreateComplaint.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="CreateIncident.aspx.cs">
-      <DependentUpon>CreateIncident.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="CreateIncident.aspx.designer.cs">
-      <DependentUpon>CreateIncident.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="CreateNewsfeed.aspx.cs">
-      <DependentUpon>CreateNewsfeed.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="CreateNewsfeed.aspx.designer.cs">
-      <DependentUpon>CreateNewsfeed.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="CreateUser.aspx.cs">
-      <DependentUpon>CreateUser.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="CreateUser.aspx.designer.cs">
-      <DependentUpon>CreateUser.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="CreateUnit.aspx.cs">
-      <DependentUpon>CreateUnit.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="CreateUnit.aspx.designer.cs">
-      <DependentUpon>CreateUnit.aspx</DependentUpon>
-    </Compile>
     <Compile Include="App_Code\DataConnection.cs" />
-    <Compile Include="Feedback.aspx.cs">
-      <DependentUpon>Feedback.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Feedback.aspx.designer.cs">
-      <DependentUpon>Feedback.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
-    </Compile>
-    <Compile Include="GuestRegistration.aspx.cs">
-      <DependentUpon>GuestRegistration.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="GuestRegistration.aspx.designer.cs">
-      <DependentUpon>GuestRegistration.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="index.aspx.cs">
-      <DependentUpon>index.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="index.aspx.designer.cs">
-      <DependentUpon>index.aspx</DependentUpon>
     </Compile>
     <Compile Include="login.aspx.cs">
       <DependentUpon>login.aspx</DependentUpon>
@@ -186,20 +104,6 @@
       <DependentUpon>MasterPage.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ServiceRequest.aspx.cs">
-      <DependentUpon>ServiceRequest.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ServiceRequest.aspx.designer.cs">
-      <DependentUpon>ServiceRequest.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Testing.aspx.cs">
-      <DependentUpon>Testing.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Testing.aspx.designer.cs">
-      <DependentUpon>Testing.aspx</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup />
   <PropertyGroup>
