@@ -14,8 +14,7 @@ namespace MyCondo
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Session["User"] = null;
-            Session["Login"] = null;
+            Session["Login"] = false;
         }
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
@@ -52,6 +51,7 @@ namespace MyCondo
                         aUser.CreationDate = myTable1.Rows[0][7].ToString();
                         aUser.Group = myTable1.Rows[0][8].ToString();
                         Session["User"] = aUser;
+                        Session["Login"] = true;
                         break;
                     }     
                 }
