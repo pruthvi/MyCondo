@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
+using System.Net.Mail;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -16,11 +18,10 @@ namespace MyCondo
 
         protected void btnSendPassword_Click(object sender, EventArgs e)
         {
-            bool found = false;
-            found = CheckEmail();
-            if(found && txtEmail.Text!="")
+            User ThisUser = CheckEmail(txtEmail.Text);
+            if (ThisUser.Fname!= null && txtEmail.Text != "")
             {
-                SendEmail();
+                SendEmail(ThisUser);
                 Response.Redirect("login.aspx");
             }
             else
@@ -30,14 +31,72 @@ namespace MyCondo
 
         }
 
-        private void SendEmail()
+        private void SendEmail(User ThisUser)
         {
-            throw new NotImplementedException();
+            DataConnection myConnection = new DataConnection();
+            String script = "Select * from Login where UserId=" + ThisUser.UserId;
+            DataTable myTable = myConnection.ExecuteScript(script);
+            myConnection.conn.Close();
+
+            Login Myinfo = new Login();
+            Myinfo.AccountType = myTable.Rows[0][2].ToString();
+            Myinfo.Image = myTable.Rows[0][4].ToString();
+            Myinfo.Password = myTable.Rows[0][1].ToString();
+            Myinfo.UserId = int.Parse(myTable.Rows[0][3].ToString());
+            Myinfo.Username = myTable.Rows[0][0].ToString();
+
+            SmtpClient smtpClient = new SmtpClient();
+            MailMessage message = new MailMessage();
+            try
+            {
+                MailAddress fromAddress = new MailAddress("mycondowebapp@gmail.com", "MyCondo");
+                MailAddress toAddress = new MailAddress(ThisUser.Email, ThisUser.Fname);
+                message.From = fromAddress;
+                message.To.Add(toAddress);
+                message.Subject = "Login Information";
+                message.Body = "Your username is : " + Myinfo.Username + "\nYour password is : " + Myinfo.Password;
+                smtpClient.Host = "smtp.gmail.com";
+                smtpClient.EnableSsl = true;
+                smtpClient.Port = 587;
+
+                smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
+                smtpClient.UseDefaultCredentials = false;
+
+                smtpClient.Credentials = new System.Net.NetworkCredential("mycondowebapp@gmail.com", "Qwerty@123");
+                smtpClient.Send(message);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
-        private bool CheckEmail()
+        private User CheckEmail(String email)
         {
-            return true;
+            User aUser = new User();
+            DataConnection myConnection = new DataConnection();
+            String script = "Select * from Users";
+            DataTable myTable = myConnection.ExecuteScript(script);
+            myConnection.conn.Close();
+            if (myTable.Rows.Count > 0)
+            {
+                for (int i = 0; i < myTable.Rows.Count; i++)
+                {
+                    if (myTable.Rows[i][3].ToString() == txtEmail.Text)
+                    {
+                        aUser.UserId = int.Parse(myTable.Rows[0][0].ToString());
+                        aUser.Fname = myTable.Rows[0][1].ToString();
+                        aUser.Lname = myTable.Rows[0][2].ToString();
+                        aUser.Email = myTable.Rows[0][3].ToString();
+                        aUser.CreationDate = myTable.Rows[0][7].ToString();
+                        aUser.Group = myTable.Rows[0][8].ToString();
+                        break;
+                    }
+                }
+                return aUser;
+            }
+            else
+                return null;
         }
     }
 }
