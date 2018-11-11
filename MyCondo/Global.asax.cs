@@ -9,7 +9,6 @@ namespace MyCondo
 {
     public class Global : System.Web.HttpApplication
     {
-        Login myloginDetails = new Login();
 
         protected void Application_Start(object sender, EventArgs e)
         {
