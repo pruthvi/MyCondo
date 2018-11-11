@@ -1,23 +1,16 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="login.aspx.cs" Inherits="MyCondo.login" %>
-
-
-
-
-  
-
-
 <!DOCTYPE html>
 <html lang="en"  xmlns="http://www.w3.org/1999/xhtml">
  <head runat="server">
 
         <meta charset="utf-8" />
         <title>MyCondo - Login</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
 
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
         <!-- App favicon -->
-        <link rel="shortcut icon" href="assets/images/favicon.ico">
+        <link rel="shortcut icon" href="assets/images/favicon.ico"/>
 
         <!-- Icons css -->
         <link href="assets/libs/@mdi/font/css/materialdesignicons.min.css" rel="stylesheet" type="text/css" />
@@ -47,13 +40,13 @@
                                     <div class="account-logo-box">
                                         <h2 class="text-uppercase text-center">
                                             <a href="index.html" class="text-success">
-                                                <span><img src="assets/images/logo.png" alt="" height="40"></span>
+                                                <span><img src="assets/images/logo.png" alt="" height="40"/></span>
                                             </a>
                                         </h2>
                                     </div>
                                     <div class="account-content">
                                         <form method="get" runat="server">
-                                                                                <asp:Label ID="lblValidation" runat="server" Text=""></asp:Label>
+                                                                                <asp:Label ID="lblValidation" runat="server" ForeColor="Red"></asp:Label>
 
                                             <div class="form-group mb-3">
                                                 <label for="emailaddress" class="font-weight-medium">Username</label>
@@ -62,7 +55,7 @@
                                             </div>
 
                                             <div class="form-group mb-3">
-                                                <a href="forgotpassword.html" class="text-muted float-right"><small>Forgot your password?</small></a>
+                                                <a href="/.." class="text-muted float-right"><small>Forgot your password?</small></a>
                                                 <label for="password" class="font-weight-medium">Password</label>
                                                 <asp:TextBox class="form-control" ID="txtPassword" runat="server" placeholder="Enter your password" TextMode="Password"></asp:TextBox>
 
