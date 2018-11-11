@@ -39,7 +39,7 @@
                                     <!-- Logo box-->
                                     <div class="account-logo-box">
                                         <h2 class="text-uppercase text-center">
-                                            <a href="index.html" class="text-success">
+                                            <a href="Home.aspx" class="text-success">
                                                 <span><img src="assets/images/logo.png" alt="" height="40"/></span>
                                             </a>
                                         </h2>
@@ -55,7 +55,7 @@
                                             </div>
 
                                             <div class="form-group mb-3">
-                                                <a href="/.." class="text-muted float-right"><small>Forgot your password?</small></a>
+                                                <a href="ForgetPassword.aspx" class="text-muted float-right"><small>Forgot your password?</small></a>
                                                 <label for="password" class="font-weight-medium">Password</label>
                                                 <asp:TextBox class="form-control" ID="txtPassword" runat="server" placeholder="Enter your password" TextMode="Password"></asp:TextBox>
 

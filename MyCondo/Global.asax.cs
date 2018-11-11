@@ -12,7 +12,7 @@ namespace MyCondo
 
         protected void Application_Start(object sender, EventArgs e)
         {
-            
+
         }
 
         protected void Session_Start(object sender, EventArgs e)
@@ -42,7 +42,7 @@ namespace MyCondo
 
         protected void Application_End(object sender, EventArgs e)
         {
-
+            Session["Login"] = true;
         }
     }
 }

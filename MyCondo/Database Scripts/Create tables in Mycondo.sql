@@ -515,6 +515,8 @@ ADD CONSTRAINT [FK_UserDetails] FOREIGN KEY ([DetailsId])  REFERENCES [dbo].[Use
 ALTER TABLE [dbo].[Users]
 ADD CONSTRAINT [FK_UserGroup] FOREIGN KEY ([Group])  REFERENCES [dbo].[Usergroup]([GroupName]);
 ALTER TABLE [dbo].[Users]
+ADD UNIQUE NONCLUSTERED ([Email] ASC);
+ALTER TABLE [dbo].[Users]
 ADD CONSTRAINT [FK_UserOffsiteAdress] FOREIGN KEY ([OffSiteAdressId])  REFERENCES [dbo].[Adress]([AdressId]);
 
 -- ************************************** [dbo].[Units]
