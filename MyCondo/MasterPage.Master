@@ -166,21 +166,21 @@
                             <li class="menu-title">Navigation</li>
 
                             <li>
-                                <a href="index.aspx">
+                                <a href="Home.aspx">
                                     <i class="mdi mdi-view-dashboard"></i><span>Home </span>
                                 </a>
                             </li>
                             <li>
                                 <a href="javascript: void(0);"><i class="mdi mdi-filter-variant"></i><span>Booking </span><span class="menu-arrow"></span></a>
                                 <ul class="nav-second-level" aria-expanded="false">
-                                    <li><a href="CreateBooking.aspx">Make a Booking</a></li>
+                                    <li><a href="#">Make a Booking</a></li>
                                     <li><a href="#">Modify Bookings</a></li>
                                     <li><a href="#">View Bookings</a></li>
                                 </ul>
                             </li>
 
                             <li>
-                                <a href="GuestRegistration.aspx"><i class="mdi mdi-filter-variant"></i><span>Guest Registration </span></a>
+                                <a href="#"><i class="mdi mdi-filter-variant"></i><span>Guest Registration </span></a>
                             </li>
 
                             <li>
@@ -192,14 +192,14 @@
                             </li>
 
                             <li>
-                                <a href="CreateComplaint.aspx">
+                                <a href="#">
                                     <i class="mdi mdi-calendar"></i><span>Complaints </span>
                                 </a>
                             </li>
 
 
                             <li>
-                                <a href="ServiceRequest.aspx"><i class="mdi mdi-file-document-box"></i><span>Service Request </span></a>
+                                <a href="#"><i class="mdi mdi-file-document-box"></i><span>Service Request </span></a>
 
                             </li>
                             <li>
@@ -217,7 +217,7 @@
                             <li>
                                 <a href="javascript: void(0);"><i class="mdi mdi-atom"></i><span>Users </span><span class="menu-arrow"></span></a>
                                 <ul class="nav-second-level" aria-expanded="false">
-                                    <li><a href="CreateUser.aspx">Create Users</a></li>
+                                    <li><a href="#">Create Users</a></li>
                                     <li><a href="#">Modify Users</a></li>
                                 </ul>
                             </li>
@@ -239,10 +239,10 @@
                                 </ul>
                             </li>
                             <li>
-                                <a href="CreateIncident.aspx"><i class="mdi mdi-filter-variant"></i><span>Create Incident </span></a>
+                                <a href="#"><i class="mdi mdi-filter-variant"></i><span>Create Incident </span></a>
                             </li>
                             <li>
-                                <a href="CreateNewsfeed.aspx"><i class="mdi mdi-filter-variant"></i><span>Newsfeed </span></a>
+                                <a href="#"><i class="mdi mdi-filter-variant"></i><span>Newsfeed </span></a>
                             </li>
 
 
