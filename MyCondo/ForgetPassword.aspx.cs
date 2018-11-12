@@ -53,8 +53,16 @@ namespace MyCondo
                 MailAddress toAddress = new MailAddress(ThisUser.Email, ThisUser.Fname);
                 message.From = fromAddress;
                 message.To.Add(toAddress);
-                message.Subject = "Login Information";
-                message.Body = "Your username is : " + Myinfo.Username + "\nYour password is : " + Myinfo.Password;
+                message.Subject = "Login Information for MyCondo";
+                message.IsBodyHtml = true;
+                message.Priority = MailPriority.High;
+                message.Body = "<p>Hello "+ThisUser.Fname+
+                    ",<br><br>It Seems like you may have forgot your login credentials;" +
+                    "<br>Here are the details of your login: " +
+                    "<br><br>Your username is : <b>" + Myinfo.Username + "</b><br>Your password is : <b>" + Myinfo.Password+
+                    "</b><br><br>If you didnt request this information, please login now and channge your password." +
+                    "<br><br>Thank you and for your cooperation," +
+                    "<br>MyCondo Team</p>";
                 smtpClient.Host = "smtp.gmail.com";
                 smtpClient.EnableSsl = true;
                 smtpClient.Port = 587;
