@@ -31,9 +31,24 @@ namespace MyCondo
 
         protected void Logout_Click(object sender, EventArgs e)
         {
-            Session["User"] = null;
-            Session["Login"] = null;
-            Session["Login"] = false;
+            Session.Abandon();
+            Session.Clear();
+            Response.Cache.SetExpires(DateTime.UtcNow.AddMinutes(-1));
+            Response.Cache.SetCacheability(HttpCacheability.NoCache);
+            Response.Cache.SetNoStore();
+            try
+            {
+                Session.Abandon();
+                Response.Cache.SetCacheability(HttpCacheability.NoCache);
+                Response.Buffer = true;
+                Response.ExpiresAbsolute = DateTime.Now.AddDays(-1d);
+                Response.Expires = -1000;
+                Response.CacheControl = "no-cache";
+            }
+            catch(Exception ex)
+            {
+                Response.Write(ex.Message);
+            }
             Response.Redirect("login.aspx");
         }
     }
