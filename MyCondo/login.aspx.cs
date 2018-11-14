@@ -12,12 +12,13 @@ namespace MyCondo
 {
     public partial class login : System.Web.UI.Page
     {
+        int myTime = 120;
         protected void Page_Load(object sender, EventArgs e)
         {
-            lblTime.Visible = false;
+            /*lblTime.Visible = false;
             lblverificationMessage.Visible = false;
             txtVerificationtext.Visible = false;
-            btnConfirm.Visible = false;
+            btnConfirm.Visible = false;*/
         }
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
@@ -89,7 +90,8 @@ namespace MyCondo
 
         protected void Timer1_Tick(object sender, EventArgs e)
         {
-            lblTime.Text = DateTime.Now.ToLongTimeString();
+            myTime--;
+            lblTime.Text = new DateTime().AddSeconds(myTime).ToString("mm:ss");
         }
 
         protected void btnConfirm_Click(object sender, EventArgs e)

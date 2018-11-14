@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="login.aspx.cs" Inherits="MyCondo.login" %>
+﻿<%@ Page Language="C#" Debug="true" AutoEventWireup="true" CodeBehind="login.aspx.cs" Inherits="MyCondo.login" %>
 
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
@@ -73,7 +73,6 @@
                                         <div class="form-group row text-center">
                                             <div class="col-12">
                                                 <asp:Button class="btn btn-block btn-success waves-effect waves-light" ID="btnSubmit" runat="server" Text="Sign In" OnClick="btnSubmit_Click" />
-                                                <%--                                                    <button class="btn btn-block btn-success waves-effect waves-light" type="submit">Sign In</asp:button>--%>
                                             </div>
                                         </div>
                                         <div class="form-group mb-3">
@@ -82,7 +81,7 @@
                                                     <asp:AsyncPostBackTrigger ControlID="codeTimingTime" EventName="Tick" />
                                                 </Triggers>
                                                 <ContentTemplate>
-                                                    <asp:Label ID="lblTime" class="text-muted float-right" runat="server" Text="Label" Visible="False"></asp:Label>
+                                                    <asp:Label ID="lblTime" class="text-muted float-right" runat="server" Text="2:00" Visible="False" ForeColor="Red"></asp:Label>
                                                 </ContentTemplate>
                                             </asp:UpdatePanel>
                                             <asp:Label ID="lblverificationMessage" class="font-weight-medium" runat="server" Text="Enter Verification Code" Visible="False"></asp:Label>
