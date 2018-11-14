@@ -50,7 +50,7 @@
                                     <form method="get" runat="server">
                                         <asp:ScriptManager ID="ScriptManager" runat="server" />
                                         <div>
-                                            <asp:Timer ID="codeTimingTime" runat="server" Enabled="false" Interval="1000" OnTick="Timer1_Tick">
+                                            <asp:Timer ID="codeTimingTime" runat="server" Enabled="False" Interval="1000" OnTick="Timer1_Tick">
                                             </asp:Timer>
                                         </div>
                                         <asp:Label ID="lblValidation" runat="server" ForeColor="Red"></asp:Label>
@@ -76,12 +76,12 @@
                                             </div>
                                         </div>
                                         <div class="form-group mb-3">
-                                            <asp:UpdatePanel ID="UpdatePanel" runat="server">
+                                            <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                                                 <Triggers>
                                                     <asp:AsyncPostBackTrigger ControlID="codeTimingTime" EventName="Tick" />
                                                 </Triggers>
                                                 <ContentTemplate>
-                                                    <asp:Label ID="lblTime" class="text-muted float-right" runat="server" Text="2:00" Visible="False" ForeColor="Red"></asp:Label>
+                                                    <asp:Label ID="lblTime" class="text-danger float-right" runat="server" Text="2:00" Visible="False"></asp:Label>
                                                 </ContentTemplate>
                                             </asp:UpdatePanel>
                                             <asp:Label ID="lblverificationMessage" class="font-weight-medium" runat="server" Text="Enter Verification Code" Visible="False"></asp:Label>

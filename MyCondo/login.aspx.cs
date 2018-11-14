@@ -12,7 +12,7 @@ namespace MyCondo
 {
     public partial class login : System.Web.UI.Page
     {
-        int myTime = 120;
+        int myTime;
         protected void Page_Load(object sender, EventArgs e)
         {
             /*lblTime.Visible = false;
@@ -29,12 +29,12 @@ namespace MyCondo
             myConnection.conn.Close();
             if (myTable.Rows.Count > 0)
             {
-                for(int i=0;i< myTable.Rows.Count;i++)
+                for (int i = 0; i < myTable.Rows.Count; i++)
                 {
                     if (myTable.Rows[i][0].ToString() == txtUsername.Text && myTable.Rows[i][1].ToString() == txtPassword.Text)
                     {
                         found = true;
-                        Login Myinfo= new Login();
+                        Login Myinfo = new Login();
                         Myinfo.AccountType = myTable.Rows[i][2].ToString();
                         Myinfo.Image = myTable.Rows[i][4].ToString();
                         Myinfo.Password = myTable.Rows[i][1].ToString();
@@ -56,12 +56,12 @@ namespace MyCondo
                         aUser.Group = myTable1.Rows[0][8].ToString();
                         Session["User"] = aUser;
                         break;
-                    }     
+                    }
                 }
                 if (found)
                 {
                     codeTimingTime.Enabled = true;
-
+                    myTime = 120;
                     lblForgotPwd.Visible = false;
                     lblPwd.Visible = false;
                     lblUsername.Visible = false;
@@ -79,7 +79,7 @@ namespace MyCondo
                 }
                 else
                 {
-                    lblValidation.Text="Incorrect Login Or Password, please try again";
+                    lblValidation.Text = "Incorrect Login Or Password, please try again";
                 }
             }
             else
