@@ -14,7 +14,10 @@ namespace MyCondo
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            lblTime.Visible = false;
+            lblverificationMessage.Visible = false;
+            txtVerificationtext.Visible = false;
+            btnConfirm.Visible = false;
         }
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
@@ -56,7 +59,22 @@ namespace MyCondo
                 }
                 if (found)
                 {
-                    Response.Redirect("Home.aspx");
+                    codeTimingTime.Enabled = true;
+
+                    lblForgotPwd.Visible = false;
+                    lblPwd.Visible = false;
+                    lblUsername.Visible = false;
+                    lblValidation.Visible = false;
+                    txtPassword.Visible = false;
+                    txtUsername.Visible = false;
+                    btnSubmit.Visible = false;
+
+                    lblTime.Visible = true;
+                    lblverificationMessage.Visible = true;
+                    txtVerificationtext.Visible = true;
+                    btnConfirm.Visible = true;
+
+                    //Response.Redirect("Home.aspx");
                 }
                 else
                 {
@@ -67,6 +85,16 @@ namespace MyCondo
             {
                 lblValidation.Text = "Incorrect Login Or Password, please try again";
             }
+        }
+
+        protected void Timer1_Tick(object sender, EventArgs e)
+        {
+            lblTime.Text = DateTime.Now.ToLongTimeString();
+        }
+
+        protected void btnConfirm_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Home.aspx");
         }
     }
 }
