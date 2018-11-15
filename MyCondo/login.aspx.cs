@@ -4,6 +4,7 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Net.Mail;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -12,14 +13,39 @@ namespace MyCondo
 {
     public partial class login : System.Web.UI.Page
     {
-        int myTime;
+        static int myTime;
+        static int Code;
         protected void Page_Load(object sender, EventArgs e)
         {
-            /*lblTime.Visible = false;
-            lblverificationMessage.Visible = false;
-            txtVerificationtext.Visible = false;
-            btnConfirm.Visible = false;*/
+            if(!IsPostBack)
+            {
+                
+            }
         }
+
+        private void Logout()
+        {
+            Session.Abandon();
+            Session.Clear();
+            Response.Cache.SetExpires(DateTime.UtcNow.AddMinutes(-1));
+            Response.Cache.SetCacheability(HttpCacheability.NoCache);
+            Response.Cache.SetNoStore();
+            try
+            {
+                Session.Abandon();
+                Response.Cache.SetCacheability(HttpCacheability.NoCache);
+                Response.Buffer = true;
+                Response.ExpiresAbsolute = DateTime.Now.AddDays(-1d);
+                Response.Expires = -1000;
+                Response.CacheControl = "no-cache";
+            }
+            catch (Exception ex)
+            {
+                Response.Write(ex.Message);
+            }
+            Response.Redirect("login.aspx");
+        }
+
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
             bool found = false;
@@ -60,8 +86,6 @@ namespace MyCondo
                 }
                 if (found)
                 {
-                    codeTimingTime.Enabled = true;
-                    myTime = 120;
                     lblForgotPwd.Visible = false;
                     lblPwd.Visible = false;
                     lblUsername.Visible = false;
@@ -75,6 +99,12 @@ namespace MyCondo
                     txtVerificationtext.Visible = true;
                     btnConfirm.Visible = true;
 
+                    myTime = 15;
+                    codeTimingTime.Enabled = true;
+                    Code = generateNewCode();
+                    User Myinfo = new User();
+                    Myinfo = (User)(Session["User"]);
+                    SendEmail(Myinfo);
                     //Response.Redirect("Home.aspx");
                 }
                 else
@@ -90,13 +120,104 @@ namespace MyCondo
 
         protected void Timer1_Tick(object sender, EventArgs e)
         {
-            myTime--;
-            lblTime.Text = new DateTime().AddSeconds(myTime).ToString("mm:ss");
+            if (myTime>=0)
+            {
+                lblTime.Text = new DateTime().AddSeconds(myTime).ToString("mm:ss");
+                myTime--; 
+            }else
+            {
+                Code = generateNewCode();
+                btnConfirm.Visible = false;
+                btnSendCode.Visible = true;
+                lblValidation.Text = "Time expired, please request a new code";
+                lblValidation.Visible = true;
+                codeTimingTime.Enabled = false;
+            }
+        }
+
+        private int generateNewCode()
+        {
+            Random random = new Random();
+            return random.Next(10000, 999999);
         }
 
         protected void btnConfirm_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Home.aspx");
+            if (btnConfirm.Text != "Logout")
+            {
+                if (myTime > 0)
+                {
+                    if (txtVerificationtext.Text == Convert.ToString(Code))
+                    {
+                        lblValidation.Visible = true;
+                        lblValidation.Text = "You currently login";
+
+                        lblTime.Visible = false;
+                        lblverificationMessage.Visible = false;
+                        txtVerificationtext.Visible = false;
+                        btnConfirm.Visible = true;
+                        btnConfirm.Text = "Logout";
+
+                        codeTimingTime.Enabled = false;
+
+                        //Response.Redirect("Home.aspx");
+                    }
+                    else
+                    {
+                        lblValidation.Text = "Wrong Code, Please Try again";
+                        lblValidation.Visible = true;
+                    }
+                }
+            }
+            else Logout();
+        }
+
+        protected void btnSendCode_Click(object sender, EventArgs e)
+        {
+            User Myinfo = new User();
+            Myinfo = (User)(Session["User"]);
+            myTime = 15;
+            btnConfirm.Visible = true;
+            btnSendCode.Visible = false;
+            lblValidation.Text = "";
+            lblValidation.Visible = false;
+            codeTimingTime.Enabled = true;
+            SendEmail(Myinfo);
+        }
+
+        private void SendEmail(User ThisUser)
+        {
+            SmtpClient smtpClient = new SmtpClient();
+            MailMessage message = new MailMessage();
+            try
+            {
+                MailAddress fromAddress = new MailAddress("mycondowebapp@gmail.com", "MyCondo");
+                MailAddress toAddress = new MailAddress(ThisUser.Email, ThisUser.Fname);
+                message.From = fromAddress;
+                message.To.Add(toAddress);
+                message.Subject = "Verification Code";
+                message.IsBodyHtml = true;
+                message.Priority = MailPriority.High;
+                message.Body = "<p>Hello " + ThisUser.Fname +
+                    ",<br><br>Enter this code to verify your login;" +
+                    "<br><br>Your Code is : <h3><b>" + Code+
+                    "</h3></b><br><br>If you didnt request this information, please login now and channge your password or contact the Admin Team" +
+                    "<br><br>Thank you and for your cooperation," +
+                    "<br>MyCondo Team</p>";
+                smtpClient.Host = "smtp.gmail.com";
+                smtpClient.EnableSsl = true;
+                smtpClient.Port = 587;
+
+                smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
+                smtpClient.UseDefaultCredentials = false;
+
+                smtpClient.Credentials = new System.Net.NetworkCredential("mycondowebapp@gmail.com", "Qwerty@123");
+                smtpClient.Send(message);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
     }
 }

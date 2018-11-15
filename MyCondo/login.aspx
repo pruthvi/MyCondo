@@ -50,11 +50,17 @@
                                     <form method="get" runat="server">
                                         <asp:ScriptManager ID="ScriptManager" runat="server" />
                                         <div>
-                                            <asp:Timer ID="codeTimingTime" runat="server" Enabled="False" Interval="1000" OnTick="Timer1_Tick">
+                                            <asp:Timer ID="codeTimingTime" runat="server" Enabled="false" Interval="1000" OnTick="Timer1_Tick">
                                             </asp:Timer>
                                         </div>
-                                        <asp:Label ID="lblValidation" runat="server" ForeColor="Red"></asp:Label>
-
+                                        <asp:UpdatePanel ID="UpdatePanel2" runat="server">
+                                            <Triggers>
+                                                <asp:AsyncPostBackTrigger ControlID="codeTimingTime" EventName="Tick" />
+                                            </Triggers>
+                                            <ContentTemplate>
+                                                <asp:Label ID="lblValidation" runat="server" ForeColor="Red"></asp:Label>
+                                            </ContentTemplate>
+                                        </asp:UpdatePanel>
                                         <div class="form-group mb-3">
                                             <asp:Label ID="lblUsername" class="font-weight-medium" runat="server" Text="Username"></asp:Label>
                                             <asp:TextBox class="form-control" ID="txtUsername" runat="server" placeholder="Enter your username"></asp:TextBox>
@@ -75,23 +81,31 @@
                                                 <asp:Button class="btn btn-block btn-success waves-effect waves-light" ID="btnSubmit" runat="server" Text="Sign In" OnClick="btnSubmit_Click" />
                                             </div>
                                         </div>
+                                        <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                                            <Triggers>
+                                                <asp:AsyncPostBackTrigger ControlID="codeTimingTime" EventName="Tick" />
+                                            </Triggers>
+                                            <ContentTemplate>
+                                                <asp:Label ID="lblTime" class="text-danger float-right" runat="server" Visible="False"></asp:Label>
+                                            </ContentTemplate>
+                                        </asp:UpdatePanel>
                                         <div class="form-group mb-3">
-                                            <asp:UpdatePanel ID="UpdatePanel1" runat="server">
-                                                <Triggers>
-                                                    <asp:AsyncPostBackTrigger ControlID="codeTimingTime" EventName="Tick" />
-                                                </Triggers>
-                                                <ContentTemplate>
-                                                    <asp:Label ID="lblTime" class="text-danger float-right" runat="server" Text="2:00" Visible="False"></asp:Label>
-                                                </ContentTemplate>
-                                            </asp:UpdatePanel>
                                             <asp:Label ID="lblverificationMessage" class="font-weight-medium" runat="server" Text="Enter Verification Code" Visible="False"></asp:Label>
                                             <asp:TextBox class="form-control" ID="txtVerificationtext" runat="server" placeholder="Enter your Confirmation Code" Visible="False"></asp:TextBox>
                                         </div>
-                                        <div class="form-group row text-center">
-                                            <div class="col-12">
-                                                <asp:Button class="btn btn-block btn-success waves-effect waves-light" ID="btnConfirm" runat="server" Text="Confirm" Visible="False" OnClick="btnConfirm_Click" />
-                                            </div>
-                                        </div>
+                                        <asp:UpdatePanel ID="UpdatePanel3" runat="server">
+                                            <Triggers>
+                                                <asp:AsyncPostBackTrigger ControlID="codeTimingTime" EventName="Tick" />
+                                            </Triggers>
+                                            <ContentTemplate>
+                                                <div class="form-group row text-center">
+                                                    <div class="col-12">
+                                                        <asp:Button class="btn btn-block btn-success waves-effect waves-light" ID="btnConfirm" runat="server" Text="Confirm" Visible="False" OnClick="btnConfirm_Click" />
+                                                        <asp:Button class="btn btn-block btn-success waves-effect waves-light" ID="btnSendCode" runat="server" Text="Send New Code" Visible="False" OnClick="btnSendCode_Click" />
+                                                    </div>
+                                                </div>
+                                            </ContentTemplate>
+                                        </asp:UpdatePanel>
                                     </form>
                                     <!-- end form -->
 

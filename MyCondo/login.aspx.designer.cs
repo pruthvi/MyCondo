@@ -31,6 +31,15 @@ namespace MyCondo {
         protected global::System.Web.UI.Timer codeTimingTime;
         
         /// <summary>
+        /// UpdatePanel2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpdatePanel2;
+        
+        /// <summary>
         /// lblValidation control.
         /// </summary>
         /// <remarks>
@@ -130,6 +139,15 @@ namespace MyCondo {
         protected global::System.Web.UI.WebControls.TextBox txtVerificationtext;
         
         /// <summary>
+        /// UpdatePanel3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpdatePanel3;
+        
+        /// <summary>
         /// btnConfirm control.
         /// </summary>
         /// <remarks>
@@ -137,5 +155,14 @@ namespace MyCondo {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnConfirm;
+        
+        /// <summary>
+        /// btnSendCode control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnSendCode;
     }
 }
