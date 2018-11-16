@@ -285,8 +285,8 @@ CREATE TABLE [dbo].[Users]
  [LastName]        nvarchar(50) NOT NULL ,
  [Email]           nvarchar(50) NOT NULL ,
  [PhoneNumber]     nvarchar(50) NULL ,
- [OffSiteAdressId] int NULL ,
- [DetailsId]       int NULL ,
+ [OffSiteAdressId] int IDENTITY (1, 1) NOT NULL ,
+ [DetailsId]       int IDENTITY (1, 1) NOT NULL ,
  [CreationDate]    datetime NOT NULL DEFAULT GETDATE(),
  [Group]           nvarchar(50) NOT NULL DEFAULT 'Residents'  
 );
@@ -516,8 +516,6 @@ ALTER TABLE [dbo].[Users]
 ADD CONSTRAINT [FK_UserGroup] FOREIGN KEY ([Group])  REFERENCES [dbo].[Usergroup]([GroupName]);
 ALTER TABLE [dbo].[Users]
 ADD UNIQUE NONCLUSTERED ([Email] ASC);
-ALTER TABLE [dbo].[Users]
-ADD CONSTRAINT [FK_UserOffsiteAdress] FOREIGN KEY ([OffSiteAdressId])  REFERENCES [dbo].[Adress]([AdressId]);
 
 -- ************************************** [dbo].[Units]
 ALTER TABLE [dbo].[Units]

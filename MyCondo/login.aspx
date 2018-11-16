@@ -67,12 +67,17 @@
                                         </div>
 
                                         <div class="form-group mb-3">
-                                            <a href="ForgetPassword.aspx" class="text-muted float-right"><small>
-                                                <asp:Label ID="lblForgotPwd" runat="server" Text="Forgot your password?"></asp:Label>
-
-                                            </small></a>
+                                            <a href="ForgetPassword.aspx" class="text-muted float-right">
+                                                <small>
+                                                    <asp:Label ID="lblForgotPwd" runat="server" Text="Forgot your password?"></asp:Label>
+                                                </small></a>
                                             <asp:Label ID="lblPwd" class="font-weight-medium" runat="server" Text="Password"></asp:Label>
                                             <asp:TextBox class="form-control" ID="txtPassword" runat="server" placeholder="Enter your password" TextMode="Password"></asp:TextBox>
+                                            <a href="Register.aspx" class="text-muted float-right">
+                                                <small>
+                                                    <asp:Label ID="lblRegister" runat="server" Text="Don't have account? Create!"></asp:Label>
+                                                </small></a>
+                                            <br />
                                         </div>
 
 
