@@ -91,7 +91,7 @@
                                         </asp:UpdatePanel>
                                         <div class="form-group mb-3">
                                             <asp:Label ID="lblverificationMessage" class="font-weight-medium" runat="server" Text="Enter Verification Code" Visible="False"></asp:Label>
-                                            <asp:TextBox class="form-control" ID="txtVerificationtext" runat="server" placeholder="Enter your Confirmation Code" Visible="False"></asp:TextBox>
+                                            <asp:TextBox class="form-control" ID="txtVerificationtext" runat="server" placeholder="Enter your Confirmation Code" Visible="False" TextMode="Number"></asp:TextBox>
                                         </div>
                                         <asp:UpdatePanel ID="UpdatePanel3" runat="server">
                                             <Triggers>

@@ -15,16 +15,20 @@ namespace MyCondo
     {
         static int myTime;
         static int Code;
+        static int tryCodeNum = 0;
+        static int tryReceiveCode = 0;
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(!IsPostBack)
+            if (!IsPostBack)
             {
-                
+
             }
         }
 
         private void Logout()
         {
+            tryCodeNum = 0;
+            tryReceiveCode = 0;
             Session.Abandon();
             Session.Clear();
             Response.Cache.SetExpires(DateTime.UtcNow.AddMinutes(-1));
@@ -99,13 +103,12 @@ namespace MyCondo
                     txtVerificationtext.Visible = true;
                     btnConfirm.Visible = true;
 
-                    myTime = 15;
+                    myTime = 120;
                     codeTimingTime.Enabled = true;
                     Code = generateNewCode();
                     User Myinfo = new User();
                     Myinfo = (User)(Session["User"]);
                     SendEmail(Myinfo);
-                    //Response.Redirect("Home.aspx");
                 }
                 else
                 {
@@ -120,11 +123,12 @@ namespace MyCondo
 
         protected void Timer1_Tick(object sender, EventArgs e)
         {
-            if (myTime>=0)
+            if (myTime >= 0)
             {
                 lblTime.Text = new DateTime().AddSeconds(myTime).ToString("mm:ss");
-                myTime--; 
-            }else
+                myTime--;
+            }
+            else
             {
                 Code = generateNewCode();
                 btnConfirm.Visible = false;
@@ -138,51 +142,64 @@ namespace MyCondo
         private int generateNewCode()
         {
             Random random = new Random();
-            return random.Next(10000, 999999);
+            return random.Next(100000, 999999);
         }
 
         protected void btnConfirm_Click(object sender, EventArgs e)
         {
-            if (btnConfirm.Text != "Logout")
+            if (myTime > 0)
             {
-                if (myTime > 0)
+                if (txtVerificationtext.Text == Convert.ToString(Code))
                 {
-                    if (txtVerificationtext.Text == Convert.ToString(Code))
+                    lblValidation.Visible = true;
+                    lblValidation.Text = "You currently login";
+
+                    lblTime.Visible = false;
+                    lblverificationMessage.Visible = false;
+                    txtVerificationtext.Visible = false;
+                    btnConfirm.Text = "Logout";
+
+                    codeTimingTime.Enabled = false;
+                    tryCodeNum = 0;
+                    Response.Redirect("Home.aspx");
+                }
+                else
+                {
+                    if (tryReceiveCode < 5)
                     {
-                        lblValidation.Visible = true;
-                        lblValidation.Text = "You currently login";
-
-                        lblTime.Visible = false;
-                        lblverificationMessage.Visible = false;
-                        txtVerificationtext.Visible = false;
-                        btnConfirm.Visible = true;
-                        btnConfirm.Text = "Logout";
-
-                        codeTimingTime.Enabled = false;
-
-                        //Response.Redirect("Home.aspx");
-                    }
-                    else
-                    {
+                        tryReceiveCode++;
                         lblValidation.Text = "Wrong Code, Please Try again";
                         lblValidation.Visible = true;
                     }
+                    else
+                    {
+                        Logout();
+                        Response.Redirect("Home.aspx");
+                    }
                 }
             }
-            else Logout();
         }
 
         protected void btnSendCode_Click(object sender, EventArgs e)
         {
-            User Myinfo = new User();
-            Myinfo = (User)(Session["User"]);
-            myTime = 15;
-            btnConfirm.Visible = true;
-            btnSendCode.Visible = false;
-            lblValidation.Text = "";
-            lblValidation.Visible = false;
-            codeTimingTime.Enabled = true;
-            SendEmail(Myinfo);
+            if (tryCodeNum < 5)
+            {
+                User Myinfo = new User();
+                Myinfo = (User)(Session["User"]);
+                myTime = 120;
+                btnConfirm.Visible = true;
+                btnSendCode.Visible = false;
+                lblValidation.Text = "";
+                lblValidation.Visible = false;
+                codeTimingTime.Enabled = true;
+                tryCodeNum++;
+                SendEmail(Myinfo);
+            }
+            else
+            {
+                Logout();
+                Response.Redirect("Home.aspx");
+            }
         }
 
         private void SendEmail(User ThisUser)
@@ -200,8 +217,8 @@ namespace MyCondo
                 message.Priority = MailPriority.High;
                 message.Body = "<p>Hello " + ThisUser.Fname +
                     ",<br><br>Enter this code to verify your login;" +
-                    "<br><br>Your Code is : <h3><b>" + Code+
-                    "</h3></b><br><br>If you didnt request this information, please login now and channge your password or contact the Admin Team" +
+                    "<br><br>Your Code is : <h3><b>" + Code +
+                    "</h3></b><br><br>If you didnt request this information, please login now and change your password or contact the Admin Team" +
                     "<br><br>Thank you and for your cooperation," +
                     "<br>MyCondo Team</p>";
                 smtpClient.Host = "smtp.gmail.com";
