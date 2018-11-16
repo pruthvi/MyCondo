@@ -60,7 +60,7 @@ namespace MyCondo
                     ",<br><br>It Seems like you may have forgot your login credentials;" +
                     "<br>Here are the details of your login: " +
                     "<br><br>Your username is : <b>" + Myinfo.Username + "</b><br>Your password is : <b>" + Myinfo.Password+
-                    "</b><br><br>If you didnt request this information, please login now and channge your password." +
+                    "</b><br><br>If you didnt request this information, please login now and change your password." +
                     "<br><br>Thank you and for your cooperation," +
                     "<br>MyCondo Team</p>";
                 smtpClient.Host = "smtp.gmail.com";

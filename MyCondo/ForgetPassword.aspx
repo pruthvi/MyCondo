@@ -53,7 +53,7 @@
                                         </div>
                                         <div class="form-group mb-3">
                                             <label for="emailaddress" class="font-weight-medium">Email</label>
-                                            <asp:TextBox class="form-control" ID="txtEmail" runat="server" placeholder="Enter your Email"></asp:TextBox>
+                                            <asp:TextBox class="form-control" ID="txtEmail" runat="server" placeholder="Enter your Email" TextMode="Email"></asp:TextBox>
                                         </div>
                                         <div class="form-group row text-center">
                                             <div class="col-12">

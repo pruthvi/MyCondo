@@ -106,5 +106,10 @@ namespace MyCondo
             else
                 return null;
         }
+
+        protected void btnSendPassword_Click1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
