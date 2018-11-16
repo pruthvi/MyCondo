@@ -49,6 +49,8 @@
                                         <div class="form-group mb-3">
                                             <asp:Table ID="AccountcreationTable" runat="server">
                                                 <asp:TableHeaderRow>
+                                                    <asp:TableHeaderCell>                                                      
+                                                    </asp:TableHeaderCell>
                                                     <asp:TableHeaderCell>
                                                         Personal Info
                                                     </asp:TableHeaderCell>
@@ -96,6 +98,7 @@
                                         <div class="form-group mb-3">
                                             <asp:Table ID="AdressTable" runat="server">
                                                 <asp:TableHeaderRow>
+                                                    <asp:TableHeaderCell></asp:TableHeaderCell>
                                                     <asp:TableHeaderCell>
                                                         Adress Info
                                                     </asp:TableHeaderCell>
@@ -107,7 +110,7 @@
                                                 </asp:TableRow>
                                                 <asp:TableRow>
                                                     <asp:TableCell HorizontalAlign="Right">
-                                                        <asp:Label ID="lblAdressLine1" runat="server" CssClass="font-weight-medium" Text="Line 1"></asp:Label>
+                                                        <asp:Label ID="lblAdressLine1" runat="server" CssClass="font-weight-medium" Text="Address Line 1"></asp:Label>
                                                     </asp:TableCell>
                                                     <asp:TableCell>
                                                         <asp:TextBox class="form-control" ID="txtLine1" runat="server" placeholder="Enter Adress Line 1"></asp:TextBox>
@@ -115,36 +118,53 @@
                                                 </asp:TableRow>
                                                 <asp:TableRow>
                                                     <asp:TableCell HorizontalAlign="Right">
-                                                        <asp:Label ID="lblAdressLine2" runat="server" CssClass="font-weight-medium" Text="Line 2"></asp:Label>
+                                                        <asp:Label ID="lblAdressLine2" runat="server" CssClass="font-weight-medium" Text="Address Line 2"></asp:Label>
                                                     </asp:TableCell>
                                                     <asp:TableCell>
-                                                        <asp:TextBox class="form-control" ID="txt" runat="server" placeholder="Enter your Last Name"></asp:TextBox>
+                                                        <asp:TextBox class="form-control" ID="txtLine2" runat="server" placeholder="Enter Adress Line 2"></asp:TextBox>
                                                     </asp:TableCell>
                                                 </asp:TableRow>
                                                 <asp:TableRow>
                                                     <asp:TableCell HorizontalAlign="Right">
-                                                        <asp:Label ID="Label3" runat="server" CssClass="font-weight-medium" Text="Email"></asp:Label>
+                                                        <asp:Label ID="lblCity" runat="server" CssClass="font-weight-medium" Text="City"></asp:Label>
                                                     </asp:TableCell>
                                                     <asp:TableCell HorizontalAlign="Right">
-                                                        <asp:TextBox class="form-control" ID="TextBox4" runat="server" placeholder="Enter your Email" TextMode="Email"></asp:TextBox>
+                                                        <asp:TextBox class="form-control" ID="txtCity" runat="server" placeholder="Enter your City"></asp:TextBox>
                                                     </asp:TableCell>
                                                 </asp:TableRow>
                                                 <asp:TableRow>
                                                     <asp:TableCell HorizontalAlign="Right">
-                                                        <asp:Label ID="Label4" runat="server" CssClass="font-weight-medium" Text="Phone Number"></asp:Label>
+                                                        <asp:Label ID="Label4" runat="server" CssClass="font-weight-medium" Text="Province"></asp:Label>
                                                     </asp:TableCell>
                                                     <asp:TableCell>
-                                                        <asp:TextBox class="form-control" ID="TextBox5" runat="server" placeholder="Enter your Email" TextMode="Phone"></asp:TextBox>
+                                                        <asp:TextBox class="form-control" ID="txtprovince" runat="server" placeholder="ON"></asp:TextBox>
+                                                    </asp:TableCell>
+                                                </asp:TableRow>
+                                                <asp:TableRow>
+                                                    <asp:TableCell HorizontalAlign="Right">
+                                                        <asp:Label ID="lblZip" runat="server" CssClass="font-weight-medium" Text="Postal Code"></asp:Label>
+                                                    </asp:TableCell>
+                                                    <asp:TableCell>
+                                                        <asp:TextBox class="form-control" ID="txtZip" runat="server" placeholder="Enter your Zip Code"></asp:TextBox>
+                                                    </asp:TableCell>
+                                                </asp:TableRow>
+                                                <asp:TableRow>
+                                                    <asp:TableCell HorizontalAlign="Right">
+                                                        <asp:Label ID="Label2" runat="server" CssClass="font-weight-medium" Text="Country"></asp:Label>
+                                                    </asp:TableCell>
+                                                    <asp:TableCell>
+                                                        <asp:TextBox class="form-control" ID="txtCountry" runat="server" placeholder="Country"></asp:TextBox>
                                                     </asp:TableCell>
                                                 </asp:TableRow>
                                             </asp:Table>
                                         </div>
-                                                                                <!--Adress -->
+                                        <!--Login Information -->
                                         <div class="form-group mb-3">
                                             <asp:Table ID="Table1" runat="server">
                                                 <asp:TableHeaderRow>
+                                                    <asp:TableHeaderCell></asp:TableHeaderCell>
                                                     <asp:TableHeaderCell>
-                                                        Personal Info
+                                                        Login Info
                                                     </asp:TableHeaderCell>
                                                 </asp:TableHeaderRow>
                                                 <asp:TableRow>
@@ -187,7 +207,7 @@
                                             </asp:Table>
                                         </div>
 
-                                                                                <!--Adress -->
+                                        <!--Adress -->
                                         <div class="form-group mb-3">
                                             <asp:Table ID="Table2" runat="server">
                                                 <asp:TableHeaderRow>

@@ -149,7 +149,8 @@ INSERT INTO Usergroup
 VALUES ('Staff','Staff of the building');
 INSERT INTO Usergroup
 VALUES ('Security','Security team of the building');
-
+INSERT INTO Usergroup
+VALUES ('Admin','Admin group');
 -- **************************************AccountType
 INSERT INTO AccountType
 VALUES ('ADM','Admin','Someone who has all privileges');
@@ -161,3 +162,6 @@ INSERT INTO AccountType
 VALUES ('SUP','Superintendent','Superintendent of the building');
 INSERT INTO AccountType
 VALUES ('NC','Not Confirmed User','New user not approved yet');
+-- **************************************User
+INSERT INTO Users (FirtName,LastName,Email,UserGroup)
+VALUES ('Admin','Admin','123@uremail.com','Admin');

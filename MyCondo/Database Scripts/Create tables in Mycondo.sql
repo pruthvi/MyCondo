@@ -285,10 +285,10 @@ CREATE TABLE [dbo].[Users]
  [LastName]        nvarchar(50) NOT NULL ,
  [Email]           nvarchar(50) NOT NULL ,
  [PhoneNumber]     nvarchar(50) NULL ,
- [OffSiteAdressId] int IDENTITY (1, 1) NOT NULL ,
- [DetailsId]       int IDENTITY (1, 1) NOT NULL ,
+ [OffSiteAdressId] int NULL ,
+ [DetailsId]       int NULL ,
  [CreationDate]    datetime NOT NULL DEFAULT GETDATE(),
- [Group]           nvarchar(50) NOT NULL DEFAULT 'Residents'  
+ [UserGroup]           nvarchar(50) NOT NULL DEFAULT 'Residents'  
 );
 GO
 
@@ -513,7 +513,7 @@ ADD CONSTRAINT [PK_Users] PRIMARY KEY CLUSTERED ([UserId] ASC);
 ALTER TABLE [dbo].[Users]
 ADD CONSTRAINT [FK_UserDetails] FOREIGN KEY ([DetailsId])  REFERENCES [dbo].[UserDetails]([DetailsId]);
 ALTER TABLE [dbo].[Users]
-ADD CONSTRAINT [FK_UserGroup] FOREIGN KEY ([Group])  REFERENCES [dbo].[Usergroup]([GroupName]);
+ADD CONSTRAINT [FK_UserGroup] FOREIGN KEY ([UserGroup])  REFERENCES [dbo].[Usergroup]([GroupName]);
 ALTER TABLE [dbo].[Users]
 ADD UNIQUE NONCLUSTERED ([Email] ASC);
 
