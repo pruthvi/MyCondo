@@ -288,7 +288,8 @@ CREATE TABLE [dbo].[Users]
  [OffSiteAdressId] int NULL ,
  [DetailsId]       int NULL ,
  [CreationDate]    datetime NOT NULL DEFAULT GETDATE(),
- [UserGroup]           nvarchar(50) NOT NULL DEFAULT 'Residents'  
+ [UserGroup]           nvarchar(50) NOT NULL DEFAULT 'Residents',
+ [Address] NVARCHAR(MAX) NULL
 );
 GO
 
