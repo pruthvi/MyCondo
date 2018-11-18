@@ -21,6 +21,7 @@
     <!-- App css -->
     <!-- build:css -->
     <link href="assets/css/app.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/Site.css" rel="stylesheet" type="text/css" />
     <!-- endbuild -->
 
 </head>
@@ -49,47 +50,67 @@
                                         <div class="form-group mb-3">
                                             <asp:Table ID="AccountcreationTable" runat="server">
                                                 <asp:TableHeaderRow>
-                                                    <asp:TableHeaderCell>                                                      
+                                                    <asp:TableHeaderCell Width="125px"></asp:TableHeaderCell>
+                                                    <asp:TableHeaderCell Width="250px">
+                                                        <asp:CustomValidator ID="CustomValidator1" Display="Dynamic" SetFocusOnError="true" ForeColor="Red" Font-Bold="true" runat="server" ErrorMessage="CustomValidator"></asp:CustomValidator>
+                                                    </asp:TableHeaderCell>
+                                                </asp:TableHeaderRow>
+                                                <asp:TableHeaderRow>
+                                                    <asp:TableHeaderCell Width="125px"></asp:TableHeaderCell>
+                                                    <asp:TableHeaderCell Width="250px">
+                                                        <asp:ValidationSummary ID="ValidationSummary1" ForeColor="Red" Font-Bold="true" DisplayMode="BulletList" HeaderText="Please fill the required field" runat="server" ValidationGroup="CreateAccount" />
+                                                    </asp:TableHeaderCell>
+                                                </asp:TableHeaderRow>
+                                                <asp:TableHeaderRow>
+                                                    <asp:TableHeaderCell Width="125px">
                                                     </asp:TableHeaderCell>
                                                     <asp:TableHeaderCell>
                                                         Personal Info
                                                     </asp:TableHeaderCell>
                                                 </asp:TableHeaderRow>
                                                 <asp:TableRow>
-                                                    <asp:TableCell>
-
+                                                    <asp:TableCell Width="125px">
                                                     </asp:TableCell>
                                                 </asp:TableRow>
                                                 <asp:TableRow>
-                                                    <asp:TableCell HorizontalAlign="Right">
-                                                        <asp:Label ID="lblFname" runat="server" CssClass="font-weight-medium" Text="First Name"></asp:Label>
+                                                    <asp:TableCell HorizontalAlign="Right" Width="125px">
+                                                        <asp:RequiredFieldValidator ID="RequiredFname" ForeColor="Red" Display="Dynamic" SetFocusOnError="true" ControlToValidate="txtFName" runat="server" ErrorMessage="Please enter a First Name" ValidationGroup="CreateAccount">
+                        *
+                                                        </asp:RequiredFieldValidator>
+                                                        <asp:Label ID="lblFname" runat="server" CssClass="font-weight-medium required" Text="First Name :"></asp:Label>
                                                     </asp:TableCell>
                                                     <asp:TableCell>
                                                         <asp:TextBox class="form-control" ID="txtFName" runat="server" placeholder="Enter your First Name"></asp:TextBox>
                                                     </asp:TableCell>
                                                 </asp:TableRow>
                                                 <asp:TableRow>
-                                                    <asp:TableCell HorizontalAlign="Right">
-                                                        <asp:Label ID="lblLName" runat="server" CssClass="font-weight-medium" Text="Last Name"></asp:Label>
+                                                    <asp:TableCell HorizontalAlign="Right" Width="125px">
+                                                        <asp:RequiredFieldValidator ID="RequiredLname" ForeColor="Red" Display="Dynamic" SetFocusOnError="true" ControlToValidate="txtLName" runat="server" ErrorMessage="Please enter a Last Name" ValidationGroup="CreateAccount">
+                        *
+                                                        </asp:RequiredFieldValidator>
+                                                        <asp:Label ID="lblLName" runat="server" CssClass="font-weight-medium required" Text="Last Name :"></asp:Label>
                                                     </asp:TableCell>
                                                     <asp:TableCell>
                                                         <asp:TextBox class="form-control" ID="txtLName" runat="server" placeholder="Enter your Last Name"></asp:TextBox>
                                                     </asp:TableCell>
                                                 </asp:TableRow>
                                                 <asp:TableRow>
-                                                    <asp:TableCell HorizontalAlign="Right">
-                                                        <asp:Label ID="lblEmail" runat="server" CssClass="font-weight-medium" Text="Email"></asp:Label>
+                                                    <asp:TableCell HorizontalAlign="Right" Width="125px">
+                                                        <asp:RequiredFieldValidator ID="RequiredEmail" ForeColor="Red" Display="Dynamic" SetFocusOnError="true" ControlToValidate="txtEmail" runat="server" ErrorMessage="Please enter a valid email" ValidationGroup="CreateAccount">
+                        *
+                                                        </asp:RequiredFieldValidator>
+                                                        <asp:Label ID="lblEmail" runat="server" CssClass="font-weight-medium required" Text="Email :"></asp:Label>
                                                     </asp:TableCell>
-                                                    <asp:TableCell HorizontalAlign="Right">
+                                                    <asp:TableCell HorizontalAlign="Right" Width="125px">
                                                         <asp:TextBox class="form-control" ID="txtEmail" runat="server" placeholder="Enter your Email" TextMode="Email"></asp:TextBox>
                                                     </asp:TableCell>
                                                 </asp:TableRow>
                                                 <asp:TableRow>
-                                                    <asp:TableCell HorizontalAlign="Right">
-                                                        <asp:Label ID="lblPhone" runat="server" CssClass="font-weight-medium" Text="Phone Number"></asp:Label>
+                                                    <asp:TableCell HorizontalAlign="Right" Width="125px">
+                                                        <asp:Label ID="lblPhone" runat="server" CssClass="font-weight-medium" Text="Phone Number :"></asp:Label>
                                                     </asp:TableCell>
                                                     <asp:TableCell>
-                                                        <asp:TextBox class="form-control" ID="TextBox2" runat="server" placeholder="Enter your Email" TextMode="Phone"></asp:TextBox>
+                                                        <asp:TextBox class="form-control" ID="txtPNumber" runat="server" placeholder="Enter your PhoneNumber" TextMode="Phone"></asp:TextBox>
                                                     </asp:TableCell>
                                                 </asp:TableRow>
                                             </asp:Table>
@@ -98,59 +119,58 @@
                                         <div class="form-group mb-3">
                                             <asp:Table ID="AdressTable" runat="server">
                                                 <asp:TableHeaderRow>
-                                                    <asp:TableHeaderCell></asp:TableHeaderCell>
-                                                    <asp:TableHeaderCell>
+                                                    <asp:TableHeaderCell Width="125px"></asp:TableHeaderCell>
+                                                    <asp:TableHeaderCell Width="250px">
                                                         Adress Info
                                                     </asp:TableHeaderCell>
                                                 </asp:TableHeaderRow>
                                                 <asp:TableRow>
-                                                    <asp:TableCell>
-
+                                                    <asp:TableCell Width="125px">
                                                     </asp:TableCell>
                                                 </asp:TableRow>
                                                 <asp:TableRow>
-                                                    <asp:TableCell HorizontalAlign="Right">
-                                                        <asp:Label ID="lblAdressLine1" runat="server" CssClass="font-weight-medium" Text="Address Line 1"></asp:Label>
+                                                    <asp:TableCell HorizontalAlign="Right" Width="125px">
+                                                        <asp:Label ID="lblAdressLine1" runat="server" CssClass="font-weight-medium" Text="Address Line 1 :"></asp:Label>
                                                     </asp:TableCell>
                                                     <asp:TableCell>
                                                         <asp:TextBox class="form-control" ID="txtLine1" runat="server" placeholder="Enter Adress Line 1"></asp:TextBox>
                                                     </asp:TableCell>
                                                 </asp:TableRow>
                                                 <asp:TableRow>
-                                                    <asp:TableCell HorizontalAlign="Right">
-                                                        <asp:Label ID="lblAdressLine2" runat="server" CssClass="font-weight-medium" Text="Address Line 2"></asp:Label>
+                                                    <asp:TableCell HorizontalAlign="Right" Width="125px">
+                                                        <asp:Label ID="lblAdressLine2" runat="server" CssClass="font-weight-medium" Text="Address Line 2 :"></asp:Label>
                                                     </asp:TableCell>
                                                     <asp:TableCell>
                                                         <asp:TextBox class="form-control" ID="txtLine2" runat="server" placeholder="Enter Adress Line 2"></asp:TextBox>
                                                     </asp:TableCell>
                                                 </asp:TableRow>
                                                 <asp:TableRow>
-                                                    <asp:TableCell HorizontalAlign="Right">
-                                                        <asp:Label ID="lblCity" runat="server" CssClass="font-weight-medium" Text="City"></asp:Label>
+                                                    <asp:TableCell HorizontalAlign="Right" Width="125px">
+                                                        <asp:Label ID="lblCity" runat="server" CssClass="font-weight-medium" Text="City :"></asp:Label>
                                                     </asp:TableCell>
-                                                    <asp:TableCell HorizontalAlign="Right">
+                                                    <asp:TableCell>
                                                         <asp:TextBox class="form-control" ID="txtCity" runat="server" placeholder="Enter your City"></asp:TextBox>
                                                     </asp:TableCell>
                                                 </asp:TableRow>
                                                 <asp:TableRow>
-                                                    <asp:TableCell HorizontalAlign="Right">
-                                                        <asp:Label ID="Label4" runat="server" CssClass="font-weight-medium" Text="Province"></asp:Label>
+                                                    <asp:TableCell HorizontalAlign="Right" Width="125px">
+                                                        <asp:Label ID="Label4" runat="server" CssClass="font-weight-medium" Text="Province :"></asp:Label>
                                                     </asp:TableCell>
                                                     <asp:TableCell>
-                                                        <asp:TextBox class="form-control" ID="txtprovince" runat="server" placeholder="ON"></asp:TextBox>
+                                                        <asp:TextBox class="form-control" ID="txtprovince" runat="server" placeholder="Enter Your Province"></asp:TextBox>
                                                     </asp:TableCell>
                                                 </asp:TableRow>
                                                 <asp:TableRow>
-                                                    <asp:TableCell HorizontalAlign="Right">
-                                                        <asp:Label ID="lblZip" runat="server" CssClass="font-weight-medium" Text="Postal Code"></asp:Label>
+                                                    <asp:TableCell HorizontalAlign="Right" Width="125px">
+                                                        <asp:Label ID="lblZip" runat="server" CssClass="font-weight-medium" Text="Postal Code :"></asp:Label>
                                                     </asp:TableCell>
                                                     <asp:TableCell>
                                                         <asp:TextBox class="form-control" ID="txtZip" runat="server" placeholder="Enter your Zip Code"></asp:TextBox>
                                                     </asp:TableCell>
                                                 </asp:TableRow>
                                                 <asp:TableRow>
-                                                    <asp:TableCell HorizontalAlign="Right">
-                                                        <asp:Label ID="Label2" runat="server" CssClass="font-weight-medium" Text="Country"></asp:Label>
+                                                    <asp:TableCell HorizontalAlign="Right" Width="125px">
+                                                        <asp:Label ID="Label2" runat="server" CssClass="font-weight-medium" Text="Country :"></asp:Label>
                                                     </asp:TableCell>
                                                     <asp:TableCell>
                                                         <asp:TextBox class="form-control" ID="txtCountry" runat="server" placeholder="Country"></asp:TextBox>
@@ -162,104 +182,65 @@
                                         <div class="form-group mb-3">
                                             <asp:Table ID="Table1" runat="server">
                                                 <asp:TableHeaderRow>
-                                                    <asp:TableHeaderCell></asp:TableHeaderCell>
-                                                    <asp:TableHeaderCell>
+                                                    <asp:TableHeaderCell Width="125px"></asp:TableHeaderCell>
+                                                    <asp:TableHeaderCell Width="250px">
                                                         Login Info
                                                     </asp:TableHeaderCell>
                                                 </asp:TableHeaderRow>
                                                 <asp:TableRow>
                                                     <asp:TableCell>
-
                                                     </asp:TableCell>
                                                 </asp:TableRow>
                                                 <asp:TableRow>
-                                                    <asp:TableCell HorizontalAlign="Right">
-                                                        <asp:Label ID="Label5" runat="server" CssClass="font-weight-medium" Text="First Name"></asp:Label>
+                                                    <asp:TableCell HorizontalAlign="Right" Width="125px">
+                                                        <asp:RequiredFieldValidator ID="RequiredUsername" ForeColor="Red" Display="Dynamic" SetFocusOnError="true" ControlToValidate="txtUsername" runat="server" ErrorMessage="Please enter a Username" ValidationGroup="CreateAccount">
+                        *
+                                                        </asp:RequiredFieldValidator>
+                                                        <asp:Label ID="lblUsername" runat="server" CssClass="font-weight-medium required" Text="Username :"></asp:Label>
                                                     </asp:TableCell>
                                                     <asp:TableCell>
-                                                        <asp:TextBox class="form-control" ID="TextBox6" runat="server" placeholder="Enter your First Name"></asp:TextBox>
+                                                        <asp:TextBox class="form-control" ID="txtUsername" runat="server" placeholder="Enter a Username"></asp:TextBox>
                                                     </asp:TableCell>
                                                 </asp:TableRow>
                                                 <asp:TableRow>
-                                                    <asp:TableCell HorizontalAlign="Right">
-                                                        <asp:Label ID="Label6" runat="server" CssClass="font-weight-medium" Text="Last Name"></asp:Label>
+                                                    <asp:TableCell HorizontalAlign="Right" Width="125px">
+                                                        <asp:RequiredFieldValidator ID="RequiredPwd" ForeColor="Red" Display="Dynamic" SetFocusOnError="true" ControlToValidate="txtPwd" runat="server" ErrorMessage="Please enter a Password" ValidationGroup="CreateAccount">
+                        *
+                                                        </asp:RequiredFieldValidator>
+                                                        <asp:Label ID="lblPwd" runat="server" CssClass="font-weight-medium required" Text="Password :"></asp:Label>
                                                     </asp:TableCell>
                                                     <asp:TableCell>
-                                                        <asp:TextBox class="form-control" ID="TextBox7" runat="server" placeholder="Enter your Last Name"></asp:TextBox>
+                                                        <asp:TextBox class="form-control" ID="txtPwd" runat="server" placeholder="Enter a password" TextMode="Password"></asp:TextBox>
                                                     </asp:TableCell>
                                                 </asp:TableRow>
                                                 <asp:TableRow>
-                                                    <asp:TableCell HorizontalAlign="Right">
-                                                        <asp:Label ID="Label7" runat="server" CssClass="font-weight-medium" Text="Email"></asp:Label>
-                                                    </asp:TableCell>
-                                                    <asp:TableCell HorizontalAlign="Right">
-                                                        <asp:TextBox class="form-control" ID="TextBox8" runat="server" placeholder="Enter your Email" TextMode="Email"></asp:TextBox>
-                                                    </asp:TableCell>
-                                                </asp:TableRow>
-                                                <asp:TableRow>
-                                                    <asp:TableCell HorizontalAlign="Right">
-                                                        <asp:Label ID="Label8" runat="server" CssClass="font-weight-medium" Text="Phone Number"></asp:Label>
+                                                    <asp:TableCell HorizontalAlign="Right" Width="125px">
+                                                        <asp:RequiredFieldValidator ID="RequiredCPwd" ForeColor="Red" Display="Dynamic" SetFocusOnError="true" ControlToValidate="txtCPwd" runat="server" ErrorMessage="Please Confirm password" ValidationGroup="CreateAccount">
+                        *
+                                                        </asp:RequiredFieldValidator>
+                                                        <asp:Label ID="lblConfirmPwd" runat="server" CssClass="font-weight-medium required" Text="Confirm PWD :"></asp:Label>
                                                     </asp:TableCell>
                                                     <asp:TableCell>
-                                                        <asp:TextBox class="form-control" ID="TextBox9" runat="server" placeholder="Enter your Email" TextMode="Phone"></asp:TextBox>
+                                                        <asp:TextBox class="form-control" ID="txtCPwd" runat="server" placeholder="Confirm your password" TextMode="Password"></asp:TextBox>
                                                     </asp:TableCell>
+                                                </asp:TableRow>
+                                                <asp:TableRow>
+                                                    <asp:TableCell></asp:TableCell>
+                                                    <asp:TableCell>
+                                                        <asp:CompareValidator ID="ComparePwd" ForeColor="Red" Display="Dynamic" SetFocusOnError="true" ControlToValidate="txtCPwd" ControlToCompare="txtPwd" Operator="Equal" Type="String" runat="server" ValidationGroup="CreateAccount" ErrorMessage="The Password Doesn't Match">
+                                                            Doesn't Match
+                                                        </asp:CompareValidator>
+                                                    </asp:TableCell>
+                                                </asp:TableRow>
+                                                <asp:TableRow>
+                                                    <asp:TableCell></asp:TableCell>
                                                 </asp:TableRow>
                                             </asp:Table>
                                         </div>
-
-                                        <!--Adress -->
-                                        <div class="form-group mb-3">
-                                            <asp:Table ID="Table2" runat="server">
-                                                <asp:TableHeaderRow>
-                                                    <asp:TableHeaderCell>
-                                                        Personal Info
-                                                    </asp:TableHeaderCell>
-                                                </asp:TableHeaderRow>
-                                                <asp:TableRow>
-                                                    <asp:TableCell>
-
-                                                    </asp:TableCell>
-                                                </asp:TableRow>
-                                                <asp:TableRow>
-                                                    <asp:TableCell HorizontalAlign="Right">
-                                                        <asp:Label ID="Label9" runat="server" CssClass="font-weight-medium" Text="First Name"></asp:Label>
-                                                    </asp:TableCell>
-                                                    <asp:TableCell>
-                                                        <asp:TextBox class="form-control" ID="TextBox10" runat="server" placeholder="Enter your First Name"></asp:TextBox>
-                                                    </asp:TableCell>
-                                                </asp:TableRow>
-                                                <asp:TableRow>
-                                                    <asp:TableCell HorizontalAlign="Right">
-                                                        <asp:Label ID="Label10" runat="server" CssClass="font-weight-medium" Text="Last Name"></asp:Label>
-                                                    </asp:TableCell>
-                                                    <asp:TableCell>
-                                                        <asp:TextBox class="form-control" ID="TextBox11" runat="server" placeholder="Enter your Last Name"></asp:TextBox>
-                                                    </asp:TableCell>
-                                                </asp:TableRow>
-                                                <asp:TableRow>
-                                                    <asp:TableCell HorizontalAlign="Right">
-                                                        <asp:Label ID="Label11" runat="server" CssClass="font-weight-medium" Text="Email"></asp:Label>
-                                                    </asp:TableCell>
-                                                    <asp:TableCell HorizontalAlign="Right">
-                                                        <asp:TextBox class="form-control" ID="TextBox12" runat="server" placeholder="Enter your Email" TextMode="Email"></asp:TextBox>
-                                                    </asp:TableCell>
-                                                </asp:TableRow>
-                                                <asp:TableRow>
-                                                    <asp:TableCell HorizontalAlign="Right">
-                                                        <asp:Label ID="Label12" runat="server" CssClass="font-weight-medium" Text="Phone Number"></asp:Label>
-                                                    </asp:TableCell>
-                                                    <asp:TableCell>
-                                                        <asp:TextBox class="form-control" ID="TextBox13" runat="server" placeholder="Enter your Email" TextMode="Phone"></asp:TextBox>
-                                                    </asp:TableCell>
-                                                </asp:TableRow>
-                                            </asp:Table>
-                                        </div>
-
-
                                         <!--Submit button-->
                                         <div class="form-group row text-center">
                                             <div class="col-12">
-                                                <asp:Button class="btn btn-block btn-success waves-effect waves-light" ID="btnCreateAccount" runat="server" Text="Create Account" />
+                                                <asp:Button class="btn btn-block btn-success waves-effect waves-light" ID="btnCreateAccount" runat="server" Text="Create Account" OnClick="btnCreateAccount_Click" ValidationGroup="CreateAccount" />
                                             </div>
                                         </div>
 

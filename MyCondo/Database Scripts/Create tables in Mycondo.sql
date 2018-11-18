@@ -285,10 +285,10 @@ CREATE TABLE [dbo].[Users]
  [LastName]        nvarchar(50) NOT NULL ,
  [Email]           nvarchar(50) NOT NULL ,
  [PhoneNumber]     nvarchar(50) NULL ,
- [OffSiteAdressId] int NULL ,
  [DetailsId]       int NULL ,
  [CreationDate]    datetime NOT NULL DEFAULT GETDATE(),
- [UserGroup]           nvarchar(50) NOT NULL DEFAULT 'Residents'  
+ [UserGroup]           nvarchar(50) NOT NULL DEFAULT 'Residents',
+ [Address] NVARCHAR(MAX) NULL
 );
 GO
 

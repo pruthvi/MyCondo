@@ -65,7 +65,6 @@
                                             <asp:Label ID="lblUsername" class="font-weight-medium" runat="server" Text="Username"></asp:Label>
                                             <asp:TextBox class="form-control" ID="txtUsername" runat="server" placeholder="Enter your username"></asp:TextBox>
                                         </div>
-
                                         <div class="form-group mb-3">
                                             <a href="ForgetPassword.aspx" class="text-muted float-right">
                                                 <small>
@@ -79,8 +78,6 @@
                                                 </small></a>
                                             <br />
                                         </div>
-
-
                                         <div class="form-group row text-center">
                                             <div class="col-12">
                                                 <asp:Button class="btn btn-block btn-success waves-effect waves-light" ID="btnSubmit" runat="server" Text="Sign In" OnClick="btnSubmit_Click" />

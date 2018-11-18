@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Net.Mail;
 using System.Web;
@@ -16,100 +17,116 @@ namespace MyCondo
 
         }
 
-        protected void btnSendPassword_Click(object sender, EventArgs e)
+        protected void btnCreateAccount_Click(object sender, EventArgs e)
         {
-            User ThisUser = CheckEmail(txtEmail.Text);
-            if (ThisUser.Fname!= null && txtEmail.Text != "")
+            if (!checkEmail())
             {
-                SendEmail(ThisUser);
-                Response.Redirect("login.aspx");
-            }
-            else
-            {
-                Response.Redirect("login.aspx");
-            }
+                if (!checkUsername())
+                {
+                    User myUser = new User();
+                    Login myLogin = new Login();
+                    Adress myAdress = new Adress(txtLine1.Text, txtLine2.Text, txtCity.Text, txtprovince.Text, txtZip.Text, txtCountry.Text);
 
+                    myUser.Fname = txtFName.Text;
+                    myUser.Lname = txtLName.Text;
+                    myUser.Adress = myAdress.ToString();
+                    myUser.PNumber = txtPNumber.Text;
+                    myUser.Email = txtEmail.Text;
+                    myUser.Group = "Residents";
+
+                    myLogin.Username = txtUsername.Text;
+                    myLogin.Password = txtPwd.Text;
+                    myLogin.AccountType = "NC";
+                    try
+                    {
+                        SqlCommand command = new SqlCommand();
+                        command.CommandText = "InsertUser";
+                        command.CommandType = CommandType.StoredProcedure;
+
+                        command.Parameters.Add("FirstName", SqlDbType.NVarChar);
+                        command.Parameters["FirstName"].Value = myUser.Fname;
+                        command.Parameters.Add("LastName", SqlDbType.NVarChar);
+                        command.Parameters["LastName"].Value = myUser.Lname;
+                        command.Parameters.Add("Email", SqlDbType.NVarChar);
+                        command.Parameters["Email"].Value = myUser.Email;
+                        command.Parameters.Add("PhoneNumber", SqlDbType.NVarChar);
+                        command.Parameters["PhoneNumber"].Value = myUser.PNumber;
+                        command.Parameters.Add("UserGroup", SqlDbType.NVarChar);
+                        command.Parameters["UserGroup"].Value = myUser.Group;
+                        command.Parameters.Add("Address", SqlDbType.NVarChar);
+                        command.Parameters["Address"].Value = myUser.Adress;
+
+                        DataConnection myConnection = new DataConnection();
+                        myConnection.ExecuteNonQuery(command);
+
+                        DataConnection myConnection1 = new DataConnection();
+                        String script = "SELECT UserId FROM Users WHERE Email='" + myUser.Email + "'";
+                        DataTable myTable = myConnection1.ExecuteScript(script);
+                        myLogin.UserId = Convert.ToInt32(myTable.Rows[0][0].ToString());
+                        myConnection1.conn.Close();
+
+                        SqlCommand command1 = new SqlCommand();
+                        command1.CommandText = "InsertLogin";
+                        command1.CommandType = CommandType.StoredProcedure;
+
+                        command1.Parameters.Add("Username", SqlDbType.NVarChar);
+                        command1.Parameters["Username"].Value = myLogin.Username;
+                        command1.Parameters.Add("Password", SqlDbType.NVarChar);
+                        command1.Parameters["Password"].Value = myLogin.Password;
+                        command1.Parameters.Add("AccountType", SqlDbType.NVarChar);
+                        command1.Parameters["AccountType"].Value = myLogin.AccountType;
+                        command1.Parameters.Add("UserId", SqlDbType.NVarChar);
+                        command1.Parameters["UserId"].Value = myLogin.UserId;
+
+                        DataConnection myConnection2 = new DataConnection();
+                        myConnection2.ExecuteNonQuery(command1);
+
+                        Response.Redirect("Home.aspx");
+                    }
+                    catch (Exception ex)
+                    {
+                        Response.Write(ex.Message);
+                    }
+                }else
+                {
+                    CustomValidator1.IsValid = false;
+                    CustomValidator1.ErrorMessage = "Username already taken";
+                }
+            } else
+            {
+                CustomValidator1.IsValid = false;
+                CustomValidator1.ErrorMessage = "Email already Used";
+            }
         }
 
-        private void SendEmail(User ThisUser)
+        private bool checkEmail()
         {
+            bool found=false;
             DataConnection myConnection = new DataConnection();
-            String script = "Select * from Login where UserId=" + ThisUser.UserId;
-            DataTable myTable = myConnection.ExecuteScript(script);
-            myConnection.conn.Close();
-
-            Login Myinfo = new Login();
-            Myinfo.AccountType = myTable.Rows[0][2].ToString();
-            Myinfo.Image = myTable.Rows[0][4].ToString();
-            Myinfo.Password = myTable.Rows[0][1].ToString();
-            Myinfo.UserId = int.Parse(myTable.Rows[0][3].ToString());
-            Myinfo.Username = myTable.Rows[0][0].ToString();
-
-            SmtpClient smtpClient = new SmtpClient();
-            MailMessage message = new MailMessage();
-            try
-            {
-                MailAddress fromAddress = new MailAddress("mycondowebapp@gmail.com", "MyCondo");
-                MailAddress toAddress = new MailAddress(ThisUser.Email, ThisUser.Fname);
-                message.From = fromAddress;
-                message.To.Add(toAddress);
-                message.Subject = "Login Information for MyCondo";
-                message.IsBodyHtml = true;
-                message.Priority = MailPriority.High;
-                message.Body = "<p>Hello "+ThisUser.Fname+
-                    ",<br><br>It Seems like you may have forgot your login credentials;" +
-                    "<br>Here are the details of your login: " +
-                    "<br><br>Your username is : <b>" + Myinfo.Username + "</b><br>Your password is : <b>" + Myinfo.Password+
-                    "</b><br><br>If you didnt request this information, please login now and channge your password." +
-                    "<br><br>Thank you and for your cooperation," +
-                    "<br>MyCondo Team</p>";
-                smtpClient.Host = "smtp.gmail.com";
-                smtpClient.EnableSsl = true;
-                smtpClient.Port = 587;
-
-                smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
-                smtpClient.UseDefaultCredentials = false;
-
-                smtpClient.Credentials = new System.Net.NetworkCredential("mycondowebapp@gmail.com", "Qwerty@123");
-                smtpClient.Send(message);
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
-
-        private User CheckEmail(String email)
-        {
-            User aUser = new User();
-            DataConnection myConnection = new DataConnection();
-            String script = "Select * from Users";
+            String script = "Select Email from Users where Email like '%" + txtEmail.Text + "%'";
             DataTable myTable = myConnection.ExecuteScript(script);
             myConnection.conn.Close();
             if (myTable.Rows.Count > 0)
             {
-                for (int i = 0; i < myTable.Rows.Count; i++)
-                {
-                    if (myTable.Rows[i][3].ToString() == txtEmail.Text)
-                    {
-                        aUser.UserId = int.Parse(myTable.Rows[0][0].ToString());
-                        aUser.Fname = myTable.Rows[0][1].ToString();
-                        aUser.Lname = myTable.Rows[0][2].ToString();
-                        aUser.Email = myTable.Rows[0][3].ToString();
-                        aUser.CreationDate = myTable.Rows[0][7].ToString();
-                        aUser.Group = myTable.Rows[0][8].ToString();
-                        break;
-                    }
-                }
-                return aUser;
+                found = true;
+                return found;
             }
-            else
-                return null;
+            else return found;
         }
 
-        protected void btnSendPassword_Click1(object sender, EventArgs e)
+        private bool checkUsername()
         {
-
+            bool found = false;
+            DataConnection myConnection = new DataConnection();
+            String script = "Select Username from Login where Username like '%"+txtUsername.Text+"%'";
+            DataTable myTable = myConnection.ExecuteScript(script);
+            myConnection.conn.Close();
+            if (myTable.Rows.Count > 0)
+            {
+                found = true;
+                return found;
+            }
+            else return found;
         }
     }
 }

@@ -164,4 +164,7 @@ INSERT INTO AccountType
 VALUES ('NC','Not Confirmed User','New user not approved yet');
 -- **************************************User
 INSERT INTO Users (FirtName,LastName,Email,UserGroup)
-VALUES ('Admin','Admin','123@uremail.com','Admin');
+VALUES ('Admin','Admin','hkoflax@yahoo.com','Admin');
+-- **************************************User
+INSERT INTO Login (Username,Password,AccountType,UserID)
+VALUES ('Admin','Qwerty','ADM',1);
