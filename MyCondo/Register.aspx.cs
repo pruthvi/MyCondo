@@ -19,70 +19,94 @@ namespace MyCondo
 
         protected void btnCreateAccount_Click(object sender, EventArgs e)
         {
-            User myUser = new User();
-            Login myLogin = new Login();
-            Adress myAdress = new Adress(txtLine1.Text, txtLine2.Text, txtCity.Text, txtprovince.Text, txtZip.Text, txtCountry.Text);
-
-            myUser.Fname = txtFName.Text;
-            myUser.Lname = txtLName.Text;
-            myUser.Adress = myAdress.ToString();
-            myUser.PNumber = txtPNumber.Text;
-            myUser.Email = txtEmail.Text;
-            myUser.Group = "Residents";
-
-            myLogin.Username = txtUsername.Text;
-            myLogin.Password = txtPwd.Text;
-            myLogin.AccountType = "NC";
-            try
+            if (!checkEmail())
             {
-                SqlCommand command = new SqlCommand();
-                command.CommandText = "InsertUser";
-                command.CommandType = CommandType.StoredProcedure;
+                if (!checkUsername())
+                {
+                    User myUser = new User();
+                    Login myLogin = new Login();
+                    Adress myAdress = new Adress(txtLine1.Text, txtLine2.Text, txtCity.Text, txtprovince.Text, txtZip.Text, txtCountry.Text);
 
-                command.Parameters.Add("FirstName", SqlDbType.NVarChar);
-                command.Parameters["FirstName"].Value = myUser.Fname;
-                command.Parameters.Add("LastName", SqlDbType.NVarChar);
-                command.Parameters["LastName"].Value = myUser.Lname;
-                command.Parameters.Add("Email", SqlDbType.NVarChar);
-                command.Parameters["Email"].Value = myUser.Email;
-                command.Parameters.Add("PhoneNumber", SqlDbType.NVarChar);
-                command.Parameters["PhoneNumber"].Value = myUser.PNumber;
-                command.Parameters.Add("UserGroup", SqlDbType.NVarChar);
-                command.Parameters["UserGroup"].Value = myUser.Group;
-                command.Parameters.Add("Address", SqlDbType.NVarChar);
-                command.Parameters["Address"].Value = myUser.Adress;
+                    myUser.Fname = txtFName.Text;
+                    myUser.Lname = txtLName.Text;
+                    myUser.Adress = myAdress.ToString();
+                    myUser.PNumber = txtPNumber.Text;
+                    myUser.Email = txtEmail.Text;
+                    myUser.Group = "Residents";
 
-                DataConnection myConnection = new DataConnection();
-                myConnection.ExecuteNonQuery(command);
+                    myLogin.Username = txtUsername.Text;
+                    myLogin.Password = txtPwd.Text;
+                    myLogin.AccountType = "NC";
+                    try
+                    {
+                        SqlCommand command = new SqlCommand();
+                        command.CommandText = "InsertUser";
+                        command.CommandType = CommandType.StoredProcedure;
 
-                DataConnection myConnection1 = new DataConnection();
-                String script = "SELECT UserId FROM Users WHERE Email='" + myUser.Email + "'";
-                DataTable myTable = myConnection1.ExecuteScript(script);
-                myLogin.UserId = Convert.ToInt32(myTable.Rows[0][0].ToString());
-                myConnection1.conn.Close();
+                        command.Parameters.Add("FirstName", SqlDbType.NVarChar);
+                        command.Parameters["FirstName"].Value = myUser.Fname;
+                        command.Parameters.Add("LastName", SqlDbType.NVarChar);
+                        command.Parameters["LastName"].Value = myUser.Lname;
+                        command.Parameters.Add("Email", SqlDbType.NVarChar);
+                        command.Parameters["Email"].Value = myUser.Email;
+                        command.Parameters.Add("PhoneNumber", SqlDbType.NVarChar);
+                        command.Parameters["PhoneNumber"].Value = myUser.PNumber;
+                        command.Parameters.Add("UserGroup", SqlDbType.NVarChar);
+                        command.Parameters["UserGroup"].Value = myUser.Group;
+                        command.Parameters.Add("Address", SqlDbType.NVarChar);
+                        command.Parameters["Address"].Value = myUser.Adress;
 
-                SqlCommand command1 = new SqlCommand();
-                command1.CommandText = "InsertLogin";
-                command1.CommandType = CommandType.StoredProcedure;
+                        DataConnection myConnection = new DataConnection();
+                        myConnection.ExecuteNonQuery(command);
 
-                command1.Parameters.Add("Username", SqlDbType.NVarChar);
-                command1.Parameters["Username"].Value = myLogin.Username;
-                command1.Parameters.Add("Password", SqlDbType.NVarChar);
-                command1.Parameters["Password"].Value = myLogin.Password;
-                command1.Parameters.Add("AccountType", SqlDbType.NVarChar);
-                command1.Parameters["AccountType"].Value = myLogin.AccountType;
-                command1.Parameters.Add("UserId", SqlDbType.NVarChar);
-                command1.Parameters["UserId"].Value = myLogin.UserId;
+                        DataConnection myConnection1 = new DataConnection();
+                        String script = "SELECT UserId FROM Users WHERE Email='" + myUser.Email + "'";
+                        DataTable myTable = myConnection1.ExecuteScript(script);
+                        myLogin.UserId = Convert.ToInt32(myTable.Rows[0][0].ToString());
+                        myConnection1.conn.Close();
 
-                DataConnection myConnection2 = new DataConnection();
-                myConnection2.ExecuteNonQuery(command1);
+                        SqlCommand command1 = new SqlCommand();
+                        command1.CommandText = "InsertLogin";
+                        command1.CommandType = CommandType.StoredProcedure;
 
-                Response.Redirect("Home.aspx");
-            }
-            catch (Exception ex)
+                        command1.Parameters.Add("Username", SqlDbType.NVarChar);
+                        command1.Parameters["Username"].Value = myLogin.Username;
+                        command1.Parameters.Add("Password", SqlDbType.NVarChar);
+                        command1.Parameters["Password"].Value = myLogin.Password;
+                        command1.Parameters.Add("AccountType", SqlDbType.NVarChar);
+                        command1.Parameters["AccountType"].Value = myLogin.AccountType;
+                        command1.Parameters.Add("UserId", SqlDbType.NVarChar);
+                        command1.Parameters["UserId"].Value = myLogin.UserId;
+
+                        DataConnection myConnection2 = new DataConnection();
+                        myConnection2.ExecuteNonQuery(command1);
+
+                        Response.Redirect("Home.aspx");
+                    }
+                    catch (Exception ex)
+                    {
+                        Response.Write(ex.Message);
+                    }
+                }else
+                {
+                    CustomValidator1.IsValid = false;
+                    CustomValidator1.ErrorMessage = "Username already taken";
+                }
+            } else
             {
-                Response.Write(ex.Message);
+                CustomValidator1.IsValid = false;
+                CustomValidator1.ErrorMessage = "Email already Used";
             }
+        }
+
+        private bool checkEmail()
+        {
+            return false;
+        }
+
+        private bool checkUsername()
+        {
+            return true;
         }
     }
 }

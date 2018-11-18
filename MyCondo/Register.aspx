@@ -52,11 +52,17 @@
                                                 <asp:TableHeaderRow>
                                                     <asp:TableHeaderCell Width="125px"></asp:TableHeaderCell>
                                                     <asp:TableHeaderCell Width="250px">
+                                                        <asp:CustomValidator ID="CustomValidator1" Display="Dynamic" SetFocusOnError="true" ForeColor="Red" Font-Bold="true" runat="server" ErrorMessage="CustomValidator"></asp:CustomValidator>
+                                                    </asp:TableHeaderCell>
+                                                </asp:TableHeaderRow>
+                                                <asp:TableHeaderRow>
+                                                    <asp:TableHeaderCell Width="125px"></asp:TableHeaderCell>
+                                                    <asp:TableHeaderCell Width="250px">
                                                         <asp:ValidationSummary ID="ValidationSummary1" ForeColor="Red" Font-Bold="true" DisplayMode="BulletList" HeaderText="Please fill the required field" runat="server" ValidationGroup="CreateAccount" />
                                                     </asp:TableHeaderCell>
                                                 </asp:TableHeaderRow>
                                                 <asp:TableHeaderRow>
-                                                    <asp:TableHeaderCell Width="125px">                                                      
+                                                    <asp:TableHeaderCell Width="125px">
                                                     </asp:TableHeaderCell>
                                                     <asp:TableHeaderCell>
                                                         Personal Info
