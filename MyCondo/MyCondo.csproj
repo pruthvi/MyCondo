@@ -1697,6 +1697,7 @@
     <Content Include="Database Scripts\Create Mycondo database.sql" />
     <Content Include="Database Scripts\Create tables in Mycondo.sql" />
     <Content Include="Database Scripts\Populate Tables.sql" />
+    <Content Include="Database Scripts\Stored Procedures.sql" />
     <Content Include="Register.aspx" />
     <Content Include="ForgetPassword.aspx" />
     <Content Include="Global.asax" />
