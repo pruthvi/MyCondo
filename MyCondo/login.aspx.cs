@@ -47,7 +47,6 @@ namespace MyCondo
             {
                 Response.Write(ex.Message);
             }
-            Response.Redirect("login.aspx");
         }
 
         protected void btnSubmit_Click(object sender, EventArgs e)
@@ -94,6 +93,7 @@ namespace MyCondo
                     lblPwd.Visible = false;
                     lblUsername.Visible = false;
                     lblValidation.Visible = false;
+                    lblRegister.Visible = false;
                     txtPassword.Visible = false;
                     txtUsername.Visible = false;
                     btnSubmit.Visible = false;
@@ -151,17 +151,34 @@ namespace MyCondo
             {
                 if (txtVerificationtext.Text == Convert.ToString(Code))
                 {
-                    lblValidation.Visible = true;
-                    lblValidation.Text = "You currently login";
-
-                    lblTime.Visible = false;
-                    lblverificationMessage.Visible = false;
-                    txtVerificationtext.Visible = false;
-                    btnConfirm.Text = "Logout";
-
                     codeTimingTime.Enabled = false;
                     tryCodeNum = 0;
-                    Response.Redirect("Home.aspx");
+                    Login Myinfo = new Login();
+                    Myinfo = (Login)(Session["Login"]);
+                    if (Myinfo.AccountType == "ADM  ")
+                    {
+                        Response.Redirect("Home.aspx");
+                    }
+                    else
+                    if (Myinfo.AccountType == "NC   ")
+                    {
+                        Response.Redirect("NC/Home.aspx");
+                    }
+                    else
+                    if (Myinfo.AccountType == "RES  ")
+                    {
+                        Response.Redirect("#");
+                    }
+                    else
+                    if (Myinfo.AccountType == "SEC  ")
+                    {
+                        Response.Redirect("#");
+                    }
+                    else
+                    if (Myinfo.AccountType == "SUP  ")
+                    {
+                        Response.Redirect("#");
+                    }
                 }
                 else
                 {

@@ -7,31 +7,26 @@ using System.Web.UI.WebControls;
 
 namespace MyCondo
 {
-    public partial class MasterPage : System.Web.UI.MasterPage
+    public partial class NotConfirmed : System.Web.UI.MasterPage
     {
         public string UserName { get { return LblName.Text; } set { LblName.Text = value; } }
         protected void Page_Load(object sender, EventArgs e)
         {
-            Login MyLogin = new Login();
-            MyLogin= (Login)(Session["Login"]);
             if (!IsPostBack)
             {
 
             }
-            if (MyLogin.AccountType== "ADM  ")
+            if (Session["User"] != null)
             {
-                if (Session["User"] != null)
-                {
-                    User Myinfo = new User();
-                    Myinfo = (User)(Session["User"]);
-                    LblName.Text = Myinfo.Fname;
-                    DropdwonName.Text = Myinfo.Fname;
-                }
-                else
-                {
-                    Response.Redirect("login.aspx");
-                } 
-            }else Response.Redirect("NoRightAccess.aspx");
+                User Myinfo = new User();
+                Myinfo = (User)(Session["User"]);
+                LblName.Text = Myinfo.Fname;
+                DropdwonName.Text = Myinfo.Fname;
+            }
+            else
+            {
+                Response.Redirect("../login.aspx");
+            }
         }
 
         protected void Logout_Click(object sender, EventArgs e)
@@ -50,11 +45,11 @@ namespace MyCondo
                 Response.Expires = -1000;
                 Response.CacheControl = "no-cache";
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Response.Write(ex.Message);
             }
-            Response.Redirect("login.aspx");
+            Response.Redirect("../login.aspx");
         }
     }
 }

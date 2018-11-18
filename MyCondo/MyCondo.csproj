@@ -1698,6 +1698,8 @@
     <Content Include="Database Scripts\Create tables in Mycondo.sql" />
     <Content Include="Database Scripts\Populate Tables.sql" />
     <Content Include="Database Scripts\Stored Procedures.sql" />
+    <Content Include="NC\Home.aspx" />
+    <Content Include="NoRightAccess.aspx" />
     <Content Include="Register.aspx" />
     <Content Include="ForgetPassword.aspx" />
     <Content Include="Global.asax" />
@@ -1736,6 +1738,7 @@
     <Content Include="assets\libs\summernote\font\summernote.ttf" />
     <Content Include="assets\libs\summernote\font\summernote.woff" />
     <Content Include="assets\libs\summernote\summernote-0.8.10-dist.zip" />
+    <Content Include="NotConfirmed.Master" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -1752,6 +1755,27 @@
     <Compile Include="App_Code\Adress.cs" />
     <Compile Include="App_Code\DataConnection.cs" />
     <Compile Include="App_Code\Contact.cs" />
+    <Compile Include="NC\Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NC\Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NoRightAccess.aspx.cs">
+      <DependentUpon>NoRightAccess.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NoRightAccess.aspx.designer.cs">
+      <DependentUpon>NoRightAccess.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NotConfirmed.Master.cs">
+      <DependentUpon>NotConfirmed.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NotConfirmed.Master.designer.cs">
+      <DependentUpon>NotConfirmed.Master</DependentUpon>
+    </Compile>
     <Compile Include="Register.aspx.cs">
       <DependentUpon>Register.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

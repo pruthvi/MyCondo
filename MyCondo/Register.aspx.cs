@@ -101,12 +101,32 @@ namespace MyCondo
 
         private bool checkEmail()
         {
-            return false;
+            bool found=false;
+            DataConnection myConnection = new DataConnection();
+            String script = "Select Email from Users where Email like '%" + txtEmail.Text + "%'";
+            DataTable myTable = myConnection.ExecuteScript(script);
+            myConnection.conn.Close();
+            if (myTable.Rows.Count > 0)
+            {
+                found = true;
+                return found;
+            }
+            else return found;
         }
 
         private bool checkUsername()
         {
-            return true;
+            bool found = false;
+            DataConnection myConnection = new DataConnection();
+            String script = "Select Username from Login where Username like '%"+txtUsername.Text+"%'";
+            DataTable myTable = myConnection.ExecuteScript(script);
+            myConnection.conn.Close();
+            if (myTable.Rows.Count > 0)
+            {
+                found = true;
+                return found;
+            }
+            else return found;
         }
     }
 }
