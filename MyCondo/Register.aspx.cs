@@ -119,6 +119,7 @@ namespace MyCondo
             bool found = false;
             DataConnection myConnection = new DataConnection();
             String script = "Select Username from Login where Username like '%"+txtUsername.Text+"%'";
+
             DataTable myTable = myConnection.ExecuteScript(script);
             myConnection.conn.Close();
             if (myTable.Rows.Count > 0)

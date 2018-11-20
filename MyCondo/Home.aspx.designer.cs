@@ -13,12 +13,21 @@ namespace MyCondo {
     public partial class Home {
         
         /// <summary>
-        /// NewsFeedTable control.
+        /// Table1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView NewsFeedTable;
+        protected global::System.Web.UI.WebControls.Table Table1;
+        
+        /// <summary>
+        /// NewsFeedView control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView NewsFeedView;
     }
 }

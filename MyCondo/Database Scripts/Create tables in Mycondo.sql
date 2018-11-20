@@ -269,7 +269,7 @@ CREATE TABLE [dbo].[Newsfeed]
  [FeedId]        int IDENTITY (1, 1) NOT NULL ,
  [Title]         nvarchar(50) NOT NULL ,
  [Description]   nvarchar(MAX) NOT NULL ,
- [Creationdatte] datetime NOT NULL DEFAULT GETDATE(),
+ [Creationdate] datetime NOT NULL DEFAULT GETDATE(),
  [ExpiryDate]    datetime NOT NULL ,
  [Priority]      nvarchar(50) NOT NULL ,
  [GroupName]     nvarchar(50) NOT NULL 

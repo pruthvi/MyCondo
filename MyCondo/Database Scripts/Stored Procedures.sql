@@ -31,4 +31,4 @@ AS
 INSERT INTO Login(Username,Password,AccountType,UserId)
 			VALUES(@Username,@Password,@AccountType,@UserId);
 GO
---*******************************************
+--*******************************************select all news and display based on priority

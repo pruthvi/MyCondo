@@ -168,3 +168,16 @@ VALUES ('Admin','Admin','hkoflax@yahoo.com','Admin');
 -- **************************************User
 INSERT INTO Login (Username,Password,AccountType,UserID)
 VALUES ('Admin','Qwerty','ADM',1);
+-- **************************************News feed
+INSERT INTO Newsfeed (Title,Description,ExpiryDate,Priority,GroupName)
+VALUES ('Water Shutown','on monday from 5am to 5pm, the building hot water will be shutdown for maintenance,Sorry for the inconvenience','2018-11-30','High','Residents');
+INSERT INTO Newsfeed (Title,Description,ExpiryDate,Priority,GroupName)
+VALUES ('Elevator breakdown','Elevator 1 is currently out of service, Sorry for the inconvenience','2018-11-30','Medium','Residents');
+INSERT INTO Newsfeed (Title,Description,ExpiryDate,Priority,GroupName)
+VALUES ('Staff meeting','Staff meeting At 2pm on Tuesday at 941 progress ave Fireside gallery','2018-11-30','High','Staff');
+INSERT INTO Newsfeed (Title,Description,ExpiryDate,Priority,GroupName)
+VALUES ('End of year Maintenance','Before get into a new years, we alwasy do a maintenance to keep everything fresh for the new year. Its scheduled for the 22th to the 29th of november. The management','2018-11-30','Low','Residents');
+INSERT INTO Newsfeed (Title,Description,ExpiryDate,Priority,GroupName)
+VALUES ('Suspect','Please do not let the individual name Alpha to the building. He is dangerous and can be armed. Please call police when he comes on the premises of the building','2018-11-30','High','Security');
+INSERT INTO Newsfeed (Title,Description,ExpiryDate,Priority,GroupName)
+VALUES ('New board menmber election','A new board member election will happen at the beginning of the month ','2018-11-30','High','Residents');
