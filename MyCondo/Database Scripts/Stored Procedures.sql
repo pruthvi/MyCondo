@@ -5,6 +5,8 @@ DROP PROCEDURE InsertUser;
 GO
 DROP PROCEDURE InsertLogin;  
 GO
+DROP PROCEDURE InsertNews;
+GO
 --******************************************insert User
 CREATE PROCEDURE InsertUser
 (
@@ -19,7 +21,7 @@ AS
 INSERT INTO Users(FirstName,LastName,Email,PhoneNumber,UserGroup,Address)
 			VALUES(@FirstName,@LastName,@Email,@PhoneNumber,@UserGroup,@Address);
 GO
---*******************************************select id with email
+--*******************************************Insert Login
 CREATE PROCEDURE InsertLogin
 (
   @Username    NVARCHAR (50),
@@ -31,4 +33,17 @@ AS
 INSERT INTO Login(Username,Password,AccountType,UserId)
 			VALUES(@Username,@Password,@AccountType,@UserId);
 GO
---*******************************************select all news and display based on priority
+--*******************************************insert news feed
+CREATE PROCEDURE InsertNews
+(
+  @Title   NVARCHAR (50),
+  @Description NVARCHAR (MAX),
+  @ExpiryDate   DATETIME,
+  @Priority    NVARCHAR (50),
+  @GroupName    NVARCHAR (50) 
+)
+AS
+INSERT INTO Newsfeed(Title,Description,ExpiryDate,Priority,GroupName)
+			VALUES(@Title,@Description,@ExpiryDate,@Priority,@GroupName);
+GO
+--*******************************************

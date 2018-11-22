@@ -12,7 +12,7 @@
             <asp:TableCell>
                 <asp:GridView ID="NewsFeedView" Width="500px" runat="server" AutoGenerateColumns="False" OnRowDataBound="NewsFeedView_RowDataBound" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal">
                     <EmptyDataTemplate>
-                        <h3>There is no news at this moment.<a href="#">Create One?</a></h3>
+                        <h3>There is no news at this moment.<a href="CreateNews.aspx">Create One?</a></h3>
                     </EmptyDataTemplate>
                     <Columns>
                         <asp:TemplateField HeaderText="News">
@@ -37,8 +37,21 @@
                 </asp:GridView>
             </asp:TableCell>
             <asp:TableCell>
-                text
+
             </asp:TableCell>
         </asp:TableRow>
     </asp:Table>
+                   <asp:GridView ID="BookingsView" runat="server" AutoGenerateColumns="False" DataKeyNames="BookingId" DataSourceID="SqlDataSource">
+                       <Columns>
+                           <asp:BoundField DataField="BookingId" HeaderText="BookingId" InsertVisible="False" ReadOnly="True" SortExpression="BookingId" />
+                           <asp:BoundField DataField="BookingType" HeaderText="BookingType" SortExpression="BookingType" />
+                           <asp:BoundField DataField="StartDate" HeaderText="StartDate" SortExpression="StartDate" />
+                           <asp:BoundField DataField="EndDate" HeaderText="EndDate" SortExpression="EndDate" />
+                           <asp:BoundField DataField="BookingDescription" HeaderText="BookingDescription" SortExpression="BookingDescription" />
+                           <asp:BoundField DataField="UserId" HeaderText="UserId" SortExpression="UserId" />
+                           <asp:BoundField DataField="BookingStatus" HeaderText="BookingStatus" SortExpression="BookingStatus" />
+                       </Columns>
+
+               </asp:GridView>
+    <asp:SqlDataSource ID="SqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:MyCondo %>" SelectCommand="SELECT * FROM [Booking]"></asp:SqlDataSource>
 </asp:Content>

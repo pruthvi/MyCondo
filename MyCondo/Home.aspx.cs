@@ -11,16 +11,20 @@ namespace MyCondo
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //Login MyLogin = new Login();
-            //MyLogin = (Login)(Session["Login"]);
-            //if (MyLogin.AccountType == "ADM  ")
-            //{
-                if (!IsPostBack)
-                {
-                    BindNewsFeed();
-                }
-            //}
-            //else Response.Redirect("NoRightAccess.aspx");
+            if (!IsPostBack)
+            {
+                BindNewsFeed();
+                BindBooking();
+            }
+        }
+
+        private void BindBooking()
+        {
+            DataConnection myConnection = new DataConnection();
+            String script = "select * from Newsfeed order by Creationdate DESC;";
+            NewsFeedView.DataSource = myConnection.ExecuteScript(script);
+            NewsFeedView.DataKeyNames = new string[] { "Priority" };
+            NewsFeedView.DataBind();
         }
 
         private void BindNewsFeed()
