@@ -563,7 +563,6 @@ ALTER TABLE [dbo].[Login]
 ADD CONSTRAINT [FK_LoginAccType] FOREIGN KEY ([AccountType])  REFERENCES [dbo].[AccountType]([AccountType]);
 ALTER TABLE [dbo].[Login]
 ADD CONSTRAINT [FK_UserLogin] FOREIGN KEY ([UserId])  REFERENCES [dbo].[Users]([UserId]);
-
 ALTER TABLE [dbo].[Login]
 ADD UNIQUE NONCLUSTERED ([UserId] ASC);
 
@@ -613,6 +612,5 @@ ADD CONSTRAINT [PK_Status] PRIMARY KEY CLUSTERED ([ComplaintId] ASC);
 ALTER TABLE [dbo].[Complaint]
 ADD CONSTRAINT [FK_ComplaintRelatedUnit] FOREIGN KEY ([RelatedUnit])  REFERENCES [dbo].[Units]([unitNumber]);
 ALTER TABLE [dbo].[Complaint]
-
 ADD CONSTRAINT [FK_ComplaintRelatedUser] FOREIGN KEY ([RelatedUser])  REFERENCES [dbo].[Users]([UserId]);
 
