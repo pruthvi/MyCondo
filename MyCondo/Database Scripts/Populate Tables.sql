@@ -151,6 +151,7 @@ INSERT INTO Usergroup
 VALUES ('Security','Security team of the building');
 INSERT INTO Usergroup
 VALUES ('Admin','Admin group');
+
 -- **************************************AccountType
 INSERT INTO AccountType
 VALUES ('ADM','Admin','Someone who has all privileges');
@@ -181,3 +182,4 @@ INSERT INTO Newsfeed (Title,Description,ExpiryDate,Priority,GroupName)
 VALUES ('Suspect','Please do not let the individual name Alpha to the building. He is dangerous and can be armed. Please call police when he comes on the premises of the building','2018-11-30','High','Security');
 INSERT INTO Newsfeed (Title,Description,ExpiryDate,Priority,GroupName)
 VALUES ('New board menmber election','A new board member election will happen at the beginning of the month ','2018-11-30','High','Residents');
+
