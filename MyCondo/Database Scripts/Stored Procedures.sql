@@ -9,6 +9,10 @@ DROP PROCEDURE InsertNews;
 GO
 DROP PROCEDURE DisplayResidents;
 GO
+DROP PROCEDURE InsertBooking;
+GO
+DROP PROCEDURE SelectBookingstatus;
+GO 
 --******************************************insert User
 CREATE PROCEDURE InsertUser
 (
@@ -55,3 +59,27 @@ As
 SELECT  UserId , CONCAT(FirstName, ',', LastName,' - ',UnitNumber) AS Residents
 FROM Users;
 Go
+--*******************************************insert new booking
+CREATE PROCEDURE InsertBooking
+(         
+@BookingType        NVARCHAR (50), 
+@StartDate         DATETIME,      
+@EndDate           DATETIME ,     
+@BookingDescription NVARCHAR (MAX),
+@UserId             INT           
+)
+AS
+INSERT INTO Booking (BookingType,StartDate,EndDate,BookingDescription,UserId)
+			VALUES(@BookingType,@StartDate,@EndDate,@BookingDescription,@UserId);
+GO
+--*******************************************select booking status
+CREATE PROCEDURE SelectBookingstatus
+As
+select Status from BookingsStatus;
+Go
+             
+
+
+
+
+

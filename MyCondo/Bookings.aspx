@@ -10,6 +10,12 @@
     <div class="account-box mb-3">
         <asp:Table ID="Createnewstable" runat="server">
             <asp:TableHeaderRow>
+                <asp:TableHeaderCell></asp:TableHeaderCell>
+                <asp:TableHeaderCell>
+                    <asp:Label ID="lblDatealreadyBooked" runat="server" Text="The period you have choosen is already booked" ForeColor="Red" Visible="False"></asp:Label>
+                </asp:TableHeaderCell>
+            </asp:TableHeaderRow>
+            <asp:TableHeaderRow>
                 <asp:TableHeaderCell Width="150px"></asp:TableHeaderCell>
                 <asp:TableHeaderCell>
                     <asp:ValidationSummary ID="ValidationSummary1" ForeColor="Red" Font-Bold="true" DisplayMode="BulletList" HeaderText="Please fill the required field" runat="server" ValidationGroup="CreateBookings" />
@@ -74,7 +80,7 @@
                 <asp:Label runat="server" class="font-weight-medium" Text="Booking for:"></asp:Label>
                 </asp:TableCell>
                 <asp:TableCell>
-                    <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource2" DataTextField="Residents" DataValueField="UserId"></asp:DropDownList>
+                    <asp:DropDownList ID="ResidentDropDown" runat="server" DataSourceID="SqlDataSource2" DataTextField="Residents" DataValueField="UserId"></asp:DropDownList>
                     <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:MyCondo %>" SelectCommand="DisplayResidents" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
                 </asp:TableCell>
             </asp:TableRow>

@@ -4,7 +4,7 @@ namespace MyCondo
 {
     internal class Booking
     {
-        private String bookingType;
+        private string bookingType;
         private DateTime startDate;
         private DateTime endDate;
         private String description;

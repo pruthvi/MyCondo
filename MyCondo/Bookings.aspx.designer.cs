@@ -22,6 +22,15 @@ namespace MyCondo {
         protected global::System.Web.UI.WebControls.Table Createnewstable;
         
         /// <summary>
+        /// lblDatealreadyBooked control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblDatealreadyBooked;
+        
+        /// <summary>
         /// ValidationSummary1 control.
         /// </summary>
         /// <remarks>
@@ -112,13 +121,13 @@ namespace MyCondo {
         protected global::System.Web.UI.WebControls.TextBox txtDescription;
         
         /// <summary>
-        /// DropDownList1 control.
+        /// ResidentDropDown control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
+        protected global::System.Web.UI.WebControls.DropDownList ResidentDropDown;
         
         /// <summary>
         /// SqlDataSource2 control.
