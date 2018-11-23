@@ -285,7 +285,7 @@ CREATE TABLE [dbo].[Users]
  [LastName]        nvarchar(50) NOT NULL ,
  [Email]           nvarchar(50) NOT NULL ,
  [PhoneNumber]     nvarchar(50) NULL ,
- [DetailsId]       int NULL ,
+ [UnitNumber]       INT            NULL,
  [CreationDate]    datetime NOT NULL DEFAULT GETDATE(),
  [UserGroup]           nvarchar(50) NOT NULL DEFAULT 'Residents',
  [Address] NVARCHAR(MAX) NULL
@@ -511,7 +511,7 @@ ADD CONSTRAINT [FK_FeedPriority] FOREIGN KEY ([Priority])  REFERENCES [dbo].[Pri
 ALTER TABLE [dbo].[Users]
 ADD CONSTRAINT [PK_Users] PRIMARY KEY CLUSTERED ([UserId] ASC);
 ALTER TABLE [dbo].[Users]
-ADD CONSTRAINT [FK_UserDetails] FOREIGN KEY ([DetailsId])  REFERENCES [dbo].[UserDetails]([DetailsId]);
+ADD CONSTRAINT [FK_UserUnit] FOREIGN KEY ([UnitNumber])  REFERENCES [dbo].[Units]([unitNumber]);
 ALTER TABLE [dbo].[Users]
 ADD CONSTRAINT [FK_UserGroup] FOREIGN KEY ([UserGroup])  REFERENCES [dbo].[Usergroup]([GroupName]);
 ALTER TABLE [dbo].[Users]

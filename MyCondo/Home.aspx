@@ -10,10 +10,12 @@
     <asp:Table ID="Table1" runat="server">
         <asp:TableRow>
             <asp:TableCell>
-                <asp:GridView ID="NewsFeedView" Width="500px" runat="server" AutoGenerateColumns="False" OnRowDataBound="NewsFeedView_RowDataBound" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal">
+                <asp:Button ID="btncreateNews" class="btn btn-block btn-success waves-effect waves-light float-right" OnClick="btncreateNews_Click" runat="server" Text="Create News" />
+                <asp:GridView ID="NewsFeedView" Width="700px" runat="server" AutoGenerateColumns="False" OnRowDataBound="NewsFeedView_RowDataBound" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal">
                     <EmptyDataTemplate>
                         <h3>There is no news at this moment.<a href="CreateNews.aspx">Create One?</a></h3>
                     </EmptyDataTemplate>
+                    
                     <Columns>
                         <asp:TemplateField HeaderText="News">
                             <ItemTemplate>
@@ -36,22 +38,25 @@
                     <SortedDescendingHeaderStyle BackColor="#242121" />
                 </asp:GridView>
             </asp:TableCell>
+            <asp:TableCell Width="250px"></asp:TableCell>
             <asp:TableCell>
-
+                <asp:Button ID="btnCreateBooking" class="btn btn-block btn-success waves-effect waves-light float-right" OnClick="btnCreateBooking_Click" runat="server" Text="Create Bookings" />
+                <asp:GridView ID="BookingsView" runat="server" AutoGenerateColumns="False" DataKeyNames="BookingId" DataSourceID="SqlDataSource">
+                    <EmptyDataTemplate>
+                        <h3>There is no Booking at this moment.<a href="Bookings.aspx">Create One?</a></h3>
+                    </EmptyDataTemplate>
+                    <Columns>
+                        <asp:BoundField DataField="BookingId" HeaderText="BookingId" InsertVisible="False" ReadOnly="True" SortExpression="BookingId" />
+                        <asp:BoundField DataField="BookingType" HeaderText="BookingType" SortExpression="BookingType" />
+                        <asp:BoundField DataField="StartDate" HeaderText="StartDate" SortExpression="StartDate" />
+                        <asp:BoundField DataField="EndDate" HeaderText="EndDate" SortExpression="EndDate" />
+                        <asp:BoundField DataField="BookingDescription" HeaderText="BookingDescription" SortExpression="BookingDescription" />
+                        <asp:BoundField DataField="UserId" HeaderText="UserId" SortExpression="UserId" />
+                        <asp:BoundField DataField="BookingStatus" HeaderText="BookingStatus" SortExpression="BookingStatus" />
+                    </Columns>
+                </asp:GridView>
+                <asp:SqlDataSource ID="SqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:MyCondo %>" SelectCommand="SELECT * FROM [Booking]"></asp:SqlDataSource>
             </asp:TableCell>
         </asp:TableRow>
     </asp:Table>
-                   <asp:GridView ID="BookingsView" runat="server" AutoGenerateColumns="False" DataKeyNames="BookingId" DataSourceID="SqlDataSource">
-                       <Columns>
-                           <asp:BoundField DataField="BookingId" HeaderText="BookingId" InsertVisible="False" ReadOnly="True" SortExpression="BookingId" />
-                           <asp:BoundField DataField="BookingType" HeaderText="BookingType" SortExpression="BookingType" />
-                           <asp:BoundField DataField="StartDate" HeaderText="StartDate" SortExpression="StartDate" />
-                           <asp:BoundField DataField="EndDate" HeaderText="EndDate" SortExpression="EndDate" />
-                           <asp:BoundField DataField="BookingDescription" HeaderText="BookingDescription" SortExpression="BookingDescription" />
-                           <asp:BoundField DataField="UserId" HeaderText="UserId" SortExpression="UserId" />
-                           <asp:BoundField DataField="BookingStatus" HeaderText="BookingStatus" SortExpression="BookingStatus" />
-                       </Columns>
-
-               </asp:GridView>
-    <asp:SqlDataSource ID="SqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:MyCondo %>" SelectCommand="SELECT * FROM [Booking]"></asp:SqlDataSource>
 </asp:Content>

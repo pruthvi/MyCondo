@@ -63,5 +63,15 @@ namespace MyCondo
                 Response.Write(ex.Message);
             }
         }
+
+        protected void btncreateNews_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("CreateNews.aspx");
+        }
+
+        protected void btnCreateBooking_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Bookings.aspx");
+        }
     }
 }

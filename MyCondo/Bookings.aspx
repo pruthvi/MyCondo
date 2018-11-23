@@ -7,16 +7,93 @@
     Bookings
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="PageContent" runat="server">
-    <asp:scriptmanager runat="server">
-    </asp:scriptmanager>
-    <asp:calendar runat="server" BackColor="White" BorderColor="Black" DayNameFormat="Shortest" Font-Names="Times New Roman" Font-Size="10pt" ForeColor="Black" Height="220px" NextPrevFormat="FullMonth" TitleFormat="Month" Width="400px">
-        <DayHeaderStyle BackColor="#CCCCCC" Font-Bold="True" Font-Size="7pt" ForeColor="#333333" Height="10pt" />
-        <DayStyle Width="14%" />
-        <NextPrevStyle Font-Size="8pt" ForeColor="White" />
-        <OtherMonthDayStyle ForeColor="#999999" />
-        <SelectedDayStyle BackColor="#CC3333" ForeColor="White" />
-        <SelectorStyle BackColor="#CCCCCC" Font-Bold="True" Font-Names="Verdana" Font-Size="8pt" ForeColor="#333333" Width="1%" />
-        <TitleStyle BackColor="Black" Font-Bold="True" Font-Size="13pt" ForeColor="White" Height="14pt" />
-        <TodayDayStyle BackColor="#CCCC99" />
-    </asp:calendar>
+    <div class="account-box mb-3">
+        <asp:Table ID="Createnewstable" runat="server">
+            <asp:TableHeaderRow>
+                <asp:TableHeaderCell Width="150px"></asp:TableHeaderCell>
+                <asp:TableHeaderCell>
+                    <asp:ValidationSummary ID="ValidationSummary1" ForeColor="Red" Font-Bold="true" DisplayMode="BulletList" HeaderText="Please fill the required field" runat="server" ValidationGroup="CreateBookings" />
+                </asp:TableHeaderCell>
+            </asp:TableHeaderRow>
+            <asp:TableHeaderRow>
+                <asp:TableCell></asp:TableCell>
+                <asp:TableCell CssClass="font-weight-bold">Create a new Booking</asp:TableCell>
+            </asp:TableHeaderRow>
+            <asp:TableRow>
+                <asp:TableCell>
+                    <br />
+                </asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow>
+                <asp:TableCell HorizontalAlign="Right">
+                <asp:Label runat="server" class="font-weight-medium" Text="Type: "></asp:Label>
+                </asp:TableCell>
+                <asp:TableCell>
+                    <asp:DropDownList ID="BookingTypeDropDown" class="form-control" runat="server" DataSourceID="SqlDataSource1" DataTextField="name" DataValueField="name"></asp:DropDownList>
+                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:MyCondo %>" SelectCommand="SELECT * FROM [BookingType]"></asp:SqlDataSource>
+                </asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow>
+                <asp:TableCell HorizontalAlign="Right">
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" ForeColor="Red" Display="Dynamic" SetFocusOnError="true" ControlToValidate="txtstartDate" runat="server" ErrorMessage="Please enter a valid date" ValidationGroup="CreateBookings">
+                        *
+                    </asp:RequiredFieldValidator>
+                    <asp:Label runat="server" class="font-weight-medium required" Text="Start Date: "></asp:Label>
+                </asp:TableCell>
+                <asp:TableCell>
+                    <asp:TextBox ID="txtStartDate" class="form-control" runat="server" TextMode="DateTimeLocal"></asp:TextBox>
+                </asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow>
+                <asp:TableCell HorizontalAlign="Right">
+                    <asp:CompareValidator ID="ComparePwd" ForeColor="Red" Display="Dynamic" SetFocusOnError="true" ControlToValidate="txtEndDate" ControlToCompare="txtStartDate" Operator="GreaterThan" Type="String" runat="server" ValidationGroup="CreateBookings" ErrorMessage="The end date must be bigger than the start date">
+                        Invalid date
+                    </asp:CompareValidator>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" ForeColor="Red" Display="Dynamic" SetFocusOnError="true" ControlToValidate="txtEndDate" runat="server" ErrorMessage="Please enter a valid date" ValidationGroup="CreateBookings">
+                        *
+                    </asp:RequiredFieldValidator>
+                    <asp:Label runat="server" class="font-weight-medium required" Text="End Date: "></asp:Label>
+                </asp:TableCell>
+                <asp:TableCell>
+                    <asp:TextBox ID="txtEndDate" class="form-control" runat="server" TextMode="DateTimeLocal"></asp:TextBox>
+                </asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow>
+                <asp:TableCell HorizontalAlign="Right">
+                    <asp:RequiredFieldValidator ID="RequiredDescription" ForeColor="Red" Display="Dynamic" SetFocusOnError="true" ControlToValidate="txtDescription" runat="server" ErrorMessage="Please enter a Description" ValidationGroup="CreateBookings">
+                        *
+                    </asp:RequiredFieldValidator>
+                    <asp:Label runat="server" class="font-weight-medium required" Text="Description: "></asp:Label>
+                </asp:TableCell>
+                <asp:TableCell>
+                    <asp:TextBox ID="txtDescription" class="form-control" runat="server" TextMode="MultiLine" CssClass="form-control rounded-0" Rows="5"></asp:TextBox>
+                </asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow>
+                <asp:TableCell HorizontalAlign="Right">
+                <asp:Label runat="server" class="font-weight-medium" Text="Booking for:"></asp:Label>
+                </asp:TableCell>
+                <asp:TableCell>
+                    <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource2" DataTextField="Residents" DataValueField="UserId"></asp:DropDownList>
+                    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:MyCondo %>" SelectCommand="DisplayResidents" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
+                </asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow>
+                <asp:TableCell>
+                    <br />
+                </asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow>
+                <asp:TableCell></asp:TableCell>
+                <asp:TableCell>
+                    <asp:Button ID="btnCreatebooking" class="btn btn-block btn-success waves-effect waves-light" OnClick="btnCreatebooking_Click" runat="server" Text="Create new Booking" ValidationGroup="CreateBookings" />
+                </asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow>
+                <asp:TableCell>
+                    <br />
+                </asp:TableCell>
+            </asp:TableRow>
+        </asp:Table>
+    </div>
 </asp:Content>

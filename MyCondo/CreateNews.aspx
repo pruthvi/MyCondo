@@ -17,7 +17,11 @@
             </asp:TableHeaderRow>
             <asp:TableHeaderRow>
                 <asp:TableCell></asp:TableCell>
-                <asp:TableCell>Create a new feed</asp:TableCell>
+                <asp:TableCell CssClass="font-weight-bold">Create a new feed</asp:TableCell>
+            </asp:TableHeaderRow>
+            <asp:TableHeaderRow>
+                <asp:TableCell></asp:TableCell>
+                <asp:TableCell><br /></asp:TableCell>
             </asp:TableHeaderRow>
             <asp:TableRow>
                 <asp:TableCell HorizontalAlign="Right">

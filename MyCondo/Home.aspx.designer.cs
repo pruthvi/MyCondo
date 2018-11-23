@@ -22,6 +22,15 @@ namespace MyCondo {
         protected global::System.Web.UI.WebControls.Table Table1;
         
         /// <summary>
+        /// btncreateNews control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btncreateNews;
+        
+        /// <summary>
         /// NewsFeedView control.
         /// </summary>
         /// <remarks>
@@ -29,6 +38,15 @@ namespace MyCondo {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView NewsFeedView;
+        
+        /// <summary>
+        /// btnCreateBooking control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnCreateBooking;
         
         /// <summary>
         /// BookingsView control.

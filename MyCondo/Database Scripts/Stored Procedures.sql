@@ -7,6 +7,8 @@ DROP PROCEDURE InsertLogin;
 GO
 DROP PROCEDURE InsertNews;
 GO
+DROP PROCEDURE DisplayResidents;
+GO
 --******************************************insert User
 CREATE PROCEDURE InsertUser
 (
@@ -46,4 +48,10 @@ AS
 INSERT INTO Newsfeed(Title,Description,ExpiryDate,Priority,GroupName)
 			VALUES(@Title,@Description,@ExpiryDate,@Priority,@GroupName);
 GO
---*******************************************
+--*******************************************Select list of users in textbox
+
+CREATE PROCEDURE DisplayResidents 
+As
+SELECT  UserId , CONCAT(FirstName, ',', LastName,' - ',UnitNumber) AS Residents
+FROM Users;
+Go
