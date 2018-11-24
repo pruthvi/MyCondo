@@ -81,6 +81,8 @@
     <Content Include="login.aspx" />
     <Content Include="MasterPage.Master" />
     <None Include="packages.config" />
+    <Content Include="superIntendent.aspx" />
+    <Content Include="superIntendent.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -186,6 +188,20 @@
     </Compile>
     <Compile Include="ServiceRequest.aspx.designer.cs">
       <DependentUpon>ServiceRequest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="superIntendent.aspx.cs">
+      <DependentUpon>superIntendent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="superIntendent.aspx.designer.cs">
+      <DependentUpon>superIntendent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="superIntendent.Master.cs">
+      <DependentUpon>superIntendent.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="superIntendent.Master.designer.cs">
+      <DependentUpon>superIntendent.Master</DependentUpon>
     </Compile>
     <Compile Include="Testing.aspx.cs">
       <DependentUpon>Testing.aspx</DependentUpon>
