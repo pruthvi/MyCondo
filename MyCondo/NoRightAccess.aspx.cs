@@ -7,29 +7,20 @@ using System.Web.UI.WebControls;
 
 namespace MyCondo
 {
-    public partial class MasterPage : System.Web.UI.MasterPage
+    public partial class NoRightAccess : System.Web.UI.Page
     {
-        public string UserName { get { return LblName.Text; } set { LblName.Text = value; } }
         protected void Page_Load(object sender, EventArgs e)
         {
-            /*if (!IsPostBack)
-            {
-
-            }
-            if (Session["User"] != null)
-            {
-                User Myinfo = new User();
-                Myinfo = (User)(Session["User"]);
-                LblName.Text = Myinfo.Fname;
-                DropdwonName.Text = Myinfo.Fname;
-            }
-            else
-            {
-                Response.Redirect("login.aspx");
-            }*/
+            Logout();
         }
 
-        protected void Logout_Click(object sender, EventArgs e)
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            Logout();
+            Response.Redirect("login.aspx");
+        }
+
+        private void Logout()
         {
             Session.Abandon();
             Session.Clear();
@@ -49,7 +40,6 @@ namespace MyCondo
             {
                 Response.Write(ex.Message);
             }
-            Response.Redirect("login.aspx");
         }
     }
 }

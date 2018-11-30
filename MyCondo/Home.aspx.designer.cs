@@ -10,69 +10,60 @@
 namespace MyCondo {
     
     
-    public partial class MasterPage {
+    public partial class Home {
         
         /// <summary>
-        /// Title control.
+        /// Table1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder Title;
+        protected global::System.Web.UI.WebControls.Table Table1;
         
         /// <summary>
-        /// form1 control.
+        /// btncreateNews control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.Button btncreateNews;
         
         /// <summary>
-        /// LblName control.
+        /// NewsFeedView control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblName;
+        protected global::System.Web.UI.WebControls.GridView NewsFeedView;
         
         /// <summary>
-        /// DropdwonName control.
+        /// btnCreateBooking control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label DropdwonName;
+        protected global::System.Web.UI.WebControls.Button btnCreateBooking;
         
         /// <summary>
-        /// Logout control.
+        /// BookingsView control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Logout;
+        protected global::System.Web.UI.WebControls.GridView BookingsView;
         
         /// <summary>
-        /// PageHeadLine control.
+        /// SqlDataSource control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder PageHeadLine;
-        
-        /// <summary>
-        /// PageContent control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder PageContent;
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource;
     }
 }

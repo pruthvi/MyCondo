@@ -7,10 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MyCondo {
+namespace MyCondo.SecurityView {
     
     
-    public partial class MasterPage {
+    public partial class Security {
         
         /// <summary>
         /// Title control.
@@ -47,15 +47,6 @@ namespace MyCondo {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label DropdwonName;
-        
-        /// <summary>
-        /// Logout control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Logout;
         
         /// <summary>
         /// PageHeadLine control.
