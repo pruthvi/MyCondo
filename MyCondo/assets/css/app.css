@@ -31,7 +31,17 @@ File: Main Css File
  * Copyright 2011-2018 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
+
 /*My codes*/
+.objectcenter{
+    margin:auto
+}
+.gridtd {
+    font-size: x-large;
+    text-align: center;
+    padding-left: 15px;
+    padding-right: 15px;
+}
 .required:before {
     content: "*";
     font-weight: bold;

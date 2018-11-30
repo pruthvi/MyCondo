@@ -1695,12 +1695,14 @@
     <Content Include="assets\libs\sweetalert2\sweetalert2.min.css" />
     <Content Include="assets\libs\sweetalert2\sweetalert2.min.js" />
     <Content Include="Bookings.aspx" />
+    <Content Include="BookingsView.aspx" />
     <Content Include="CreateNews.aspx" />
     <Content Include="Database Scripts\Create Mycondo database.sql" />
     <Content Include="Database Scripts\Create tables in Mycondo.sql" />
     <Content Include="Database Scripts\Populate Tables.sql" />
     <Content Include="Database Scripts\Stored Procedures.sql" />
     <Content Include="NC\Home.aspx" />
+    <Content Include="NewsView.aspx" />
     <Content Include="NoRightAccess.aspx" />
     <Content Include="Register.aspx" />
     <Content Include="ForgetPassword.aspx" />
@@ -1751,19 +1753,27 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="test.aspx" />
+    <Content Include="UsersView.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Code\Adress.cs" />
     <Compile Include="App_Code\DataConnection.cs" />
     <Compile Include="App_Code\Contact.cs" />
-    <Compile Include="Booking.cs" />
+    <Compile Include="App_Code\Booking.cs" />
     <Compile Include="Bookings.aspx.cs">
       <DependentUpon>Bookings.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Bookings.aspx.designer.cs">
       <DependentUpon>Bookings.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BookingsView.aspx.cs">
+      <DependentUpon>BookingsView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BookingsView.aspx.designer.cs">
+      <DependentUpon>BookingsView.aspx</DependentUpon>
     </Compile>
     <Compile Include="CreateNews.aspx.cs">
       <DependentUpon>CreateNews.aspx</DependentUpon>
@@ -1780,6 +1790,13 @@
       <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Code\Newsfeed.cs" />
+    <Compile Include="NewsView.aspx.cs">
+      <DependentUpon>NewsView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NewsView.aspx.designer.cs">
+      <DependentUpon>NewsView.aspx</DependentUpon>
+    </Compile>
     <Compile Include="NoRightAccess.aspx.cs">
       <DependentUpon>NoRightAccess.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1841,6 +1858,13 @@
     </Compile>
     <Compile Include="test.aspx.designer.cs">
       <DependentUpon>test.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UsersView.aspx.cs">
+      <DependentUpon>UsersView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UsersView.aspx.designer.cs">
+      <DependentUpon>UsersView.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

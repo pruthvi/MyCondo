@@ -13,6 +13,11 @@ DROP PROCEDURE InsertBooking;
 GO
 DROP PROCEDURE SelectBookingstatus;
 GO 
+DROP PROCEDURE SelectBookingsList;
+GO 
+DROP PROCEDURE SelectShortBookingsDisplay;
+GO 
+
 --******************************************insert User
 CREATE PROCEDURE InsertUser
 (
@@ -56,7 +61,7 @@ GO
 
 CREATE PROCEDURE DisplayResidents 
 As
-SELECT  UserId , CONCAT(FirstName, ',', LastName,' - ',UnitNumber) AS Residents
+SELECT  UserId , CONCAT(FirstName, ',', LastName,' ( ',UnitNumber, ' )') AS Residents
 FROM Users;
 Go
 --*******************************************insert new booking
@@ -77,7 +82,20 @@ CREATE PROCEDURE SelectBookingstatus
 As
 select Status from BookingsStatus;
 Go
-             
+--*******************************************select booking list
+CREATE PROCEDURE SelectBookingsList
+As
+SELECT  CONCAT(FirstName, ',', LastName,' ( ',UnitNumber, ' )') AS Name,BookingId,
+			BookingType, StartDate, EndDate, BookingDescription, BookingStatus
+			FROM Booking INNER JOIN Users ON Booking.UserId=Users.UserId;   
+Go
+--*******************************************Display short booking form
+CREATE PROCEDURE SelectShortBookingsDisplay
+As
+SELECT  CONCAT(FirstName, ',', LastName,' ( ',UnitNumber, ' )') AS Name,BookingId,
+			BookingType, Convert(varchar(20), StartDate, 106) As StartDate, BookingStatus
+			FROM Booking INNER JOIN Users ON Booking.UserId=Users.UserId;   
+Go
 
 
 
