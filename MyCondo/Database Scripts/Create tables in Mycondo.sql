@@ -315,7 +315,7 @@ CREATE TABLE [dbo].[ServiceRequest]
  [Description]       nvarchar(Max) NOT NULL ,
  [PermissionToEnter] bit NOT NULL DEFAULT 1,
  [Status]            nvarchar(50) NOT NULL 
-);
+);F
 GO
 
 -- ************************************** [dbo].[Payment]
