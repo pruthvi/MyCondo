@@ -37,8 +37,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <!-- Begin page -->
-        <div id="wrapper">
+        &nbsp;<!-- Begin page --><div id="wrapper">
 
             <!-- Navigation Bar-->
             <header id="topnav">

@@ -173,9 +173,9 @@
                             <li>
                                 <a href="javascript: void(0);"><i class="mdi mdi-calendar"></i><span>Booking </span><span class="menu-arrow"></span></a>
                                 <ul class="nav-second-level" aria-expanded="false">
-                                    <li><a href="#">Make a Booking</a></li>
-                                    <li><a href="#">Modify Bookings</a></li>
-                                    <li><a href="#">View Bookings</a></li>
+                                    <li><a href="Bookings.aspx">Make a Booking</a></li>
+                                    <li><a href="BookingsView.aspx">View Bookings</a></li>
+                                    <!-- <li><a href="#">Modify Bookings</a></li> -->
                                 </ul>
                             </li>
 

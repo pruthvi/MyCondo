@@ -10,34 +10,7 @@
 namespace MyCondo {
     
     
-    public partial class Home {
-        
-        /// <summary>
-        /// Table1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Table Table1;
-        
-        /// <summary>
-        /// btncreateNews control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btncreateNews;
-        
-        /// <summary>
-        /// NewsFeedView control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView NewsFeedView;
+    public partial class BookingsView {
         
         /// <summary>
         /// btnCreateBooking control.
@@ -49,13 +22,13 @@ namespace MyCondo {
         protected global::System.Web.UI.WebControls.Button btnCreateBooking;
         
         /// <summary>
-        /// BookingsView control.
+        /// BookingsDisplay control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView BookingsView;
+        protected global::System.Web.UI.WebControls.GridView BookingsDisplay;
         
         /// <summary>
         /// SqlDataSource control.
