@@ -1740,7 +1740,6 @@
     <Content Include="assets\libs\summernote\summernote-0.8.10-dist.zip" />
     <Content Include="NotConfirmed.Master" />
     <None Include="packages.config" />
-    <Content Include="SecurityView\Security.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -1749,7 +1748,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="SecurityView\test.aspx" />
     <Content Include="test.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -1819,20 +1817,6 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="App_Code\User.cs" />
-    <Compile Include="SecurityView\Security.Master.cs">
-      <DependentUpon>Security.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="SecurityView\Security.Master.designer.cs">
-      <DependentUpon>Security.Master</DependentUpon>
-    </Compile>
-    <Compile Include="SecurityView\test.aspx.cs">
-      <DependentUpon>test.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="SecurityView\test.aspx.designer.cs">
-      <DependentUpon>test.aspx</DependentUpon>
-    </Compile>
     <Compile Include="test.aspx.cs">
       <DependentUpon>test.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1843,6 +1827,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ResidentsView\" />
+    <Folder Include="SecurityView\" />
     <Folder Include="SuperIntendentView\" />
   </ItemGroup>
   <PropertyGroup>
