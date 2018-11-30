@@ -17,6 +17,8 @@ DROP PROCEDURE SelectBookingsList;
 GO 
 DROP PROCEDURE SelectShortBookingsDisplay;
 GO 
+DROP PROCEDURE InsertUnits;
+GO
 
 --******************************************insert User
 CREATE PROCEDURE InsertUser
@@ -100,4 +102,16 @@ Go
 
 
 
-
+CREATE PROCEDURE InsertUnits
+(
+@unitNumber	INT, 
+@Occupancy	NVARCHAR (5), 
+@OwnerUserId		INT, 
+@UnitAdressId	INT,
+@OwnerAdressId     INT, 
+@Occupancydate	DATE
+)
+AS
+INSERT INTO Units(unitNumber,Occupancy	,OwnerUserId,UnitAdressId,OwnerAdressId,Occupancydate)
+			VALUES(@unitNumber,@Occupancy,@OwnerUserId,@UnitAdressId,@OwnerAdressId,@Occupancydate);
+GO
