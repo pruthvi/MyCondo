@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="MyCondo.MasterPage" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="NotConfirmed.master.cs" Inherits="MyCondo.NotConfirmed" %>
 
 <!DOCTYPE html>
 
@@ -37,52 +37,12 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <!-- Begin page -->
-        <div id="wrapper">
+        &nbsp;<!-- Begin page --><div id="wrapper">
 
             <!-- Navigation Bar-->
             <header id="topnav">
                 <nav class="navbar-custom">
                     <ul class="list-unstyled topbar-right-menu float-right mb-0">
-                        <!-- Notification Bar Starts -->
-                        <%--                        <li class="dropdown notification-list">
-                            <a class="nav-link dropdown-toggle arrow-none" data-toggle="dropdown" href="#" role="button"
-                                aria-haspopup="false" aria-expanded="false">
-                                <i class="dripicons-bell noti-icon"></i>
-                                <span class="badge badge-info noti-icon-badge">21</span>
-                            </a>
-                           
-                            <div class="dropdown-menu dropdown-menu-right dropdown-menu-animated dropdown-lg">
-                                <!-- item-->
-                                <div class="dropdown-item noti-title">
-                                    <h5 class="m-0"><span class="float-right"><a href="" class="text-dark"><small>Clear All</small></a> </span>Notification</h5>
-                                </div>
-    
-                                <div class="slimscroll noti-scroll">
-                                    <!-- item-->
-                                    <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                        <div class="notify-icon bg-warning"><i class="mdi mdi-comment-account-outline"></i></div>
-                                        <p class="notify-details">Caleb Flakelar commented on Admin<small class="text-muted">1 min ago</small></p>
-                                    </a>
-   
-                                    <!-- item-->
-                                    <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                        <div class="notify-icon bg-primary"><i class="mdi mdi-heart"></i></div>
-                                        <p class="notify-details">Carlos Crouch liked <b>Admin</b><small class="text-muted">13 days ago</small></p>
-                                    </a>
-                                </div>
-    
-                                <!-- All-->
-                                <a href="javascript:void(0);" class="dropdown-item text-center text-primary notify-item notify-all">
-                                    View all <i class="fi-arrow-right"></i>
-                                </a>
-    
-                            </div>
-
-                        </li>--%>
-                        <!-- Notification Bar Ends -->
-
-
                         <li class="dropdown notification-list">
                             <a class="nav-link dropdown-toggle nav-user" data-toggle="dropdown" href="#" role="button"
                                 aria-haspopup="false" aria-expanded="false">
@@ -125,10 +85,10 @@
                         <li class="float-left">
                             <a href="Home.aspx" class="logo">
                                 <span class="logo-lg">
-                                    <img src="assets/images/logo.png" alt="" height="35">
+                                    <img src="../assets/images/logo.png" alt="" height="35">
                                 </span>
                                 <span class="logo-sm">
-                                    <img src="assets/images/logo_sm.png" alt="" height="28">
+                                    <img src="../assets/images/logo_sm.png" alt="" height="28">
                                 </span>
                             </a>
                         </li>
@@ -142,10 +102,8 @@
                             </a>
                         </li>
                         <li class="app-search">
-                            <form>
                                 <input type="text" placeholder="Search..." class="form-control">
                                 <button type="submit" class="sr-only"></button>
-                            </form>
                         </li>
                     </ul>
                 </nav>
@@ -170,95 +128,6 @@
                                     <i class="mdi mdi-view-dashboard"></i><span>Home </span>
                                 </a>
                             </li>
-                            <li>
-                                <a href="javascript: void(0);"><i class="mdi mdi-calendar"></i><span>Booking </span><span class="menu-arrow"></span></a>
-                                <ul class="nav-second-level" aria-expanded="false">
-                                    <li><a href="Bookings.aspx">Make a Booking</a></li>
-                                    <li><a href="BookingsView.aspx">View Bookings</a></li>
-                                    <!-- <li><a href="#">Modify Bookings</a></li> -->
-                                </ul>
-                            </li>
-
-                            <li>
-                                <a href="#"><i class="mdi mdi-filter-variant"></i><span>Guest Registration </span></a>
-                            </li>
-
-                            <li>
-                                <a href="javascript: void(0);"><i class="mdi mdi-email-outline"></i><span>Messages </span><span class="menu-arrow"></span></a>
-                                <ul class="nav-second-level" aria-expanded="false">
-                                    <li><a href="#">Inbox</a></li>
-                                    <li><a href="#">Sent Message</a></li>
-                                </ul>
-                            </li>
-
-                            <li>
-                                <a href="#">
-                                    <i class="mdi mdi-calendar"></i><span>Complaints </span>
-                                </a>
-                            </li>
-
-
-                            <li>
-                                <a href="#"><i class="mdi mdi-file-document-box"></i><span>Service Request </span></a>
-
-                            </li>
-                            <li>
-                                <a href="javascript: void(0);"><i class="mdi mdi-file-document-box"></i><span>Payment </span></a>
-                            </li>
-                            <li>
-                                <a href="Feedback.aspx"><i class="mdi mdi-file-document-box"></i><span>Feedback </span></a>
-                            </li>
-
-
-
-
-
-                            <li class="menu-title">Admin</li>
-                            <li>
-                                <a href="javascript: void(0);"><i class="mdi mdi-atom"></i><span>Users </span><span class="menu-arrow"></span></a>
-                                <ul class="nav-second-level" aria-expanded="false">
-                                    <li><a href="#">Create Users</a></li>
-                                    <li><a href="#">Modify Users</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="javascript: void(0);"><i class="mdi mdi-atom"></i><span>Units </span><span class="menu-arrow"></span></a>
-                                <ul class="nav-second-level" aria-expanded="false">
-                                    <li><a href="CreateUnit.aspx">Create Unit</a></li>
-                                    <li><a href="#">Modify Unit</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="javascript: void(0);"><i class="mdi mdi-buffer"></i><span>Reports </span><span class="menu-arrow"></span></a>
-                                <ul class="nav-second-level" aria-expanded="false">
-                                    <li><a href="#">Booking Reports</a></li>
-                                    <li><a href="#">Complaint Reports</a></li>
-                                    <li><a href="#">Service Request Reports</a></li>
-                                    <li><a href="#">Incident Reports</a></li>
-
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#"><i class="mdi mdi-filter-variant"></i><span>Create Incident </span></a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="mdi mdi-filter-variant"></i><span>Newsfeed </span></a>
-                            </li>
-
-
-
-                            <!-- <li>
-                                <a href="javascript: void(0);"><i class="mdi mdi-multiplication"></i> <span> Multi Level </span> <span class="menu-arrow"></span></a>
-                                <ul class="nav-second-level nav" aria-expanded="false">
-                                    <li><a href="javascript: void(0);">Level 1.1</a></li>
-                                    <li><a href="javascript: void(0);" aria-expanded="false">Level 1.2 <span class="menu-arrow"></span></a>
-                                        <ul class="nav-third-level nav" aria-expanded="false">
-                                            <li><a href="javascript: void(0);">Level 2.1</a></li>
-                                            <li><a href="javascript: void(0);">Level 2.2</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li> -->
 
                         </ul>
 
@@ -450,20 +319,19 @@
         <!-- End #wrapper -->
 
         <!-- jQuery  -->
-        <script src="assets/libs/jquery/jquery.min.js"></script>
-        <script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
-        <script src="assets/libs/jquery-slimscroll/jquery.slimscroll.min.js"></script>
-        <script src="assets/libs/metismenu/metisMenu.min.js"></script>
-
+        <script src="../assets/libs/jquery/jquery.min.js"></script>
+        <script src="../assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="../assets/libs/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+        <script src="../assets/libs/metismenu/metisMenu.min.js"></script>
         <!--Form Uploads-->
-        <script src="assets/libs/dropzone/min/dropzone.min.js"></script>
+        <script src="../assets/libs/dropzone/min/dropzone.min.js"></script>
 
         <!--Summernote js-->
         <script src="assets/libs/summernote/summernote-bs4.min.js"></script>
 
         <!-- App js -->
-        <script src="assets/js/jquery.core.js"></script>
-        <script src="assets/js/jquery.app.js"></script>
+        <script src="../assets/js/jquery.core.js"></script>
+        <script src="../assets/js/jquery.app.js"></script>
 
         <script>
             jQuery(document).ready(function () {
