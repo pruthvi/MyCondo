@@ -1745,6 +1745,7 @@
     <Content Include="NotConfirmed.Master" />
     <None Include="packages.config" />
     <Content Include="SecurityView\Security.Master" />
+    <Content Include="ServiceRequest.aspx" />
     <Content Include="superIntendent.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -1869,8 +1870,16 @@
     <Compile Include="SecurityView\test.aspx.designer.cs">
       <DependentUpon>test.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ServiceRequest.aspx.cs">
+      <DependentUpon>ServiceRequest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ServiceRequest.aspx.designer.cs">
+      <DependentUpon>ServiceRequest.aspx</DependentUpon>
+    </Compile>
     <Compile Include="superIntendent.Master.cs">
       <DependentUpon>superIntendent.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="superIntendent.Master.designer.cs">
       <DependentUpon>superIntendent.Master</DependentUpon>
