@@ -7,7 +7,7 @@
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="PageContent" runat="server">
     <div class="account-box mb-3">
-        <asp:Table ID="Createnewstable" runat="server">
+        <asp:Table ID="CreateUnitsTable" runat="server">
             <asp:TableHeaderRow>
                 <asp:TableHeaderCell></asp:TableHeaderCell>
                 <asp:TableHeaderCell>

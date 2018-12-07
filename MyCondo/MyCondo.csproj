@@ -1694,8 +1694,10 @@
     <Content Include="assets\libs\sweetalert2\sweetalert2.all.min.js" />
     <Content Include="assets\libs\sweetalert2\sweetalert2.min.css" />
     <Content Include="assets\libs\sweetalert2\sweetalert2.min.js" />
+    <Content Include="BookingReport.aspx" />
     <Content Include="Bookings.aspx" />
     <Content Include="BookingsView.aspx" />
+    <Content Include="Complaint.aspx" />
     <Content Include="CreateNews.aspx" />
     <Content Include="Database Scripts\Create Mycondo database.sql" />
     <Content Include="Database Scripts\Create tables in Mycondo.sql" />
@@ -1765,6 +1767,13 @@
     <Compile Include="App_Code\DataConnection.cs" />
     <Compile Include="App_Code\Contact.cs" />
     <Compile Include="App_Code\Booking.cs" />
+    <Compile Include="BookingReport.aspx.cs">
+      <DependentUpon>BookingReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BookingReport.aspx.designer.cs">
+      <DependentUpon>BookingReport.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Bookings.aspx.cs">
       <DependentUpon>Bookings.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1778,6 +1787,13 @@
     </Compile>
     <Compile Include="BookingsView.aspx.designer.cs">
       <DependentUpon>BookingsView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Complaint.aspx.cs">
+      <DependentUpon>Complaint.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Complaint.aspx.designer.cs">
+      <DependentUpon>Complaint.aspx</DependentUpon>
     </Compile>
     <Compile Include="CreateNews.aspx.cs">
       <DependentUpon>CreateNews.aspx</DependentUpon>

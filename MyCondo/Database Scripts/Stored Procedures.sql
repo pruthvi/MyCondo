@@ -97,9 +97,14 @@ As
 SELECT  CONCAT(FirstName, ',', LastName,' ( ',UnitNumber, ' )') AS Name,BookingId,
 			BookingType, Convert(varchar(20), StartDate, 106) As StartDate, BookingStatus
 			FROM Booking INNER JOIN Users ON Booking.UserId=Users.UserId;   
-Go
+GO
 
---******************************************Units
+--*******************************************Display Booking Report
+CREATE PROCEDURE SelectBookingReport
+AS
+SELECT * FROM Booking;
+
+--******************************************Create new Unit
 CREATE PROCEDURE InsertUnits
 (
 @unitNumber		INT, 

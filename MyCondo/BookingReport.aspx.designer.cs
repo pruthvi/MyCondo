@@ -10,34 +10,16 @@
 namespace MyCondo {
     
     
-    public partial class Unit {
+    public partial class BookingReport {
         
         /// <summary>
-        /// CreateUnitsTable control.
+        /// Createnewstable control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Table CreateUnitsTable;
-        
-        /// <summary>
-        /// lblUnitAlreadyBooked control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblUnitAlreadyBooked;
-        
-        /// <summary>
-        /// ValidationSummary1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ValidationSummary ValidationSummary1;
+        protected global::System.Web.UI.WebControls.Table Createnewstable;
         
         /// <summary>
         /// RequiredFieldValidator1 control.
@@ -49,13 +31,13 @@ namespace MyCondo {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
         
         /// <summary>
-        /// txtUnitNumber control.
+        /// txtStartDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtUnitNumber;
+        protected global::System.Web.UI.WebControls.TextBox txtStartDate;
         
         /// <summary>
         /// RequiredFieldValidator2 control.
@@ -67,57 +49,39 @@ namespace MyCondo {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator2;
         
         /// <summary>
-        /// txtOccupancy control.
+        /// txtEndDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtOccupancy;
+        protected global::System.Web.UI.WebControls.TextBox txtEndDate;
         
         /// <summary>
-        /// txtOwnerUserID control.
+        /// btnSearchBooking control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtOwnerUserID;
+        protected global::System.Web.UI.WebControls.Button btnSearchBooking;
         
         /// <summary>
-        /// txtUnitAddressID control.
+        /// BookingsDisplay control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtUnitAddressID;
+        protected global::System.Web.UI.WebControls.GridView BookingsDisplay;
         
         /// <summary>
-        /// txtOwnerAddressID control.
+        /// SqlDataSource control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtOwnerAddressID;
-        
-        /// <summary>
-        /// txtOccupancyDate control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtOccupancyDate;
-        
-        /// <summary>
-        /// btnCreateUser control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCreateUser;
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource;
     }
 }
