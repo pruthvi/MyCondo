@@ -1701,6 +1701,7 @@
     <Content Include="Database Scripts\Create tables in Mycondo.sql" />
     <Content Include="Database Scripts\Populate Tables.sql" />
     <Content Include="Database Scripts\Stored Procedures.sql" />
+    <Content Include="Feedback.aspx" />
     <Content Include="NC\Home.aspx" />
     <Content Include="NewsView.aspx" />
     <Content Include="NoRightAccess.aspx" />
@@ -1783,6 +1784,13 @@
     </Compile>
     <Compile Include="CreateNews.aspx.designer.cs">
       <DependentUpon>CreateNews.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Feedback.aspx.cs">
+      <DependentUpon>Feedback.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Feedback.aspx.designer.cs">
+      <DependentUpon>Feedback.aspx</DependentUpon>
     </Compile>
     <Compile Include="NC\Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>
