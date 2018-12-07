@@ -45,7 +45,7 @@
             <asp:TableRow>
                 <asp:TableCell></asp:TableCell>
                 <asp:TableCell>
-                    <asp:Button ID="btnSubmitFeedback" class="btn btn-block btn-success waves-effect waves-light" runat="server" Text="Send Feedback" ValidationGroup="CreateFeedback" />
+                    <asp:Button ID="btnSubmitFeedback" class="btn btn-block btn-success waves-effect waves-light" OnClick="btnSubmitFeedback_Click" runat="server" Text="Send Feedback" ValidationGroup="CreateFeedback" />
                 </asp:TableCell>
             </asp:TableRow>
             <asp:TableRow>
