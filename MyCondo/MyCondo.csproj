@@ -1702,6 +1702,7 @@
     <Content Include="Database Scripts\Populate Tables.sql" />
     <Content Include="Database Scripts\Stored Procedures.sql" />
     <Content Include="Feedback.aspx" />
+    <Content Include="GuestRegistration.aspx" />
     <Content Include="NC\Home.aspx" />
     <Content Include="NewsView.aspx" />
     <Content Include="NoRightAccess.aspx" />
@@ -1764,6 +1765,7 @@
     <Compile Include="App_Code\DataConnection.cs" />
     <Compile Include="App_Code\Contact.cs" />
     <Compile Include="App_Code\Booking.cs" />
+    <Content Include="App_Code\GuestRegistration.cs" />
     <Compile Include="Bookings.aspx.cs">
       <DependentUpon>Bookings.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1791,6 +1793,13 @@
     </Compile>
     <Compile Include="Feedback.aspx.designer.cs">
       <DependentUpon>Feedback.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GuestRegistration.aspx.cs">
+      <DependentUpon>GuestRegistration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GuestRegistration.aspx.designer.cs">
+      <DependentUpon>GuestRegistration.aspx</DependentUpon>
     </Compile>
     <Compile Include="NC\Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>
