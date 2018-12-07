@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -16,45 +18,43 @@ namespace MyCondo
 
         protected void btnCreateGuest_Click(object sender, EventArgs e)
         {
-        //    GuestRegistration newGuest = new GuestRegistration();
-        ////            private string guestName;
-        ////private int hostId;
-        ////private string visitorType;
-        ////private bool parking;
+            GuestRegistration newGuest = new GuestRegistration();
 
-        //newGuest.GUes = txtName.Text;
-
-        //    myBooking.UserId = Convert.ToInt32(ResidentDropDown.SelectedValue);
+            newGuest.GuestName = txtName.Text;
+            //   newGuest.HostId = 
+            //    myBooking.UserId = Convert.ToInt32(ResidentDropDown.SelectedValue);
+            newGuest.VisitorType = VisitorTypeDropDown.SelectedValue;
+            newGuest.Parking = chkParking.Checked;
 
 
-        //        try
-        //        {
-        //            SqlCommand command = new SqlCommand();
-        //            command.CommandText = "InsertBooking";
-        //            command.CommandType = CommandType.StoredProcedure;
+            
+            try
+            {
+                SqlCommand command = new SqlCommand();
+                command.CommandText = "InsertBooking";
+                command.CommandType = CommandType.StoredProcedure;
 
-        //            command.Parameters.Add("BookingType", SqlDbType.NVarChar);
-        //            command.Parameters["BookingType"].Value = myBooking.BookingType;
-        //            command.Parameters.Add("StartDate", SqlDbType.DateTime);
-        //            command.Parameters["StartDate"].Value = myBooking.StartDate;
-        //            command.Parameters.Add("EndDate", SqlDbType.DateTime);
-        //            command.Parameters["EndDate"].Value = myBooking.EndDate;
-        //            command.Parameters.Add("BookingDescription", SqlDbType.NVarChar);
-        //            command.Parameters["BookingDescription"].Value = myBooking.Description;
-        //            command.Parameters.Add("UserId", SqlDbType.Int);
-        //            command.Parameters["UserId"].Value = myBooking.UserId;
+                command.Parameters.Add("Name", SqlDbType.NVarChar);
+                command.Parameters["Name"].Value = newGuest.GuestName;
 
-        //            DataConnection myConnection = new DataConnection();
-        //            myConnection.ExecuteNonQuery(command);
-        //            Response.Redirect("Home.aspx");
-        //            lblDatealreadyBooked.Visible = false;
-        //        }
-        //        catch (Exception ex)
-        //        {
-        //            Response.Write(ex.Message);
-        //            {
-        //            }
-        //        }
+                command.Parameters.Add("VisitorType", SqlDbType.NVarChar);
+                command.Parameters["VisitorType"].Value = newGuest.VisitorType;
+
+                command.Parameters.Add("Parking", SqlDbType.Bit);
+                command.Parameters["Parking"].Value = newGuest.Parking;
+                //command.Parameters.Add("HostId", SqlDbType.Int);
+                //command.Parameters["HostId"].Value = newGuest.HostId;
+
+                DataConnection myConnection = new DataConnection();
+                myConnection.ExecuteNonQuery(command);
+                Response.Redirect("Home.aspx");
+            }
+            catch (Exception ex)
+            {
+                Response.Write(ex.Message);
+                {
+                }
+            }
 
         }
     }

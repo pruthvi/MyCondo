@@ -18,11 +18,11 @@ namespace MyCondo
 
         protected void btnSubmitFeedback_Click(object sender, EventArgs e)
         {
-            /*
-            Feedback newFeedback = new Feedback();
 
-             // Where are we getting User ID from??
-            //newFeedback.UserId = Convert.ToInt32(ResidentDropDown.SelectedValue);
+            Feedback newFeedback = new Feedback();
+           // newFeedback.UserId = Convert.ToInt32(ResidentDropDown.SelectedValue);
+            newFeedback.Message = txtMessage.Text;
+
 
             try
             {
@@ -42,7 +42,7 @@ namespace MyCondo
                     {
                     }
                 }
-            */
+            
 
         }
 

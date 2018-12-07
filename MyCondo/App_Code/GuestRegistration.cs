@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace MyCondo.App_Code
+namespace MyCondo
 {
     internal class GuestRegistration
     {
@@ -23,5 +23,4 @@ namespace MyCondo.App_Code
         public string VisitorType { get => visitorType; set => visitorType = value; }
         public bool Parking { get => parking; set => parking = value; }
     }
-}
 }

@@ -1765,7 +1765,8 @@
     <Compile Include="App_Code\DataConnection.cs" />
     <Compile Include="App_Code\Contact.cs" />
     <Compile Include="App_Code\Booking.cs" />
-    <Content Include="App_Code\GuestRegistration.cs" />
+    <Compile Include="App_Code\GuestRegistration.cs" />
+    <Compile Include="App_Code\Feedback.cs" />
     <Compile Include="Bookings.aspx.cs">
       <DependentUpon>Bookings.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
