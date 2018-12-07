@@ -20,6 +20,7 @@ namespace MyCondo
         {
             Booking myBooking = new Booking();
 
+            
             myBooking.BookingType = BookingTypeDropDown.SelectedValue;
             myBooking.StartDate = Convert.ToDateTime(txtStartDate.Text);
             myBooking.EndDate = Convert.ToDateTime(txtEndDate.Text);

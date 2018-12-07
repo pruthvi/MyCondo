@@ -164,8 +164,8 @@ VALUES ('SUP','Superintendent','Superintendent of the building');
 INSERT INTO AccountType
 VALUES ('NC','Not Confirmed User','New user not approved yet');
 -- **************************************User
-INSERT INTO Users (FirtName,LastName,Email,UserGroup)
-VALUES ('Admin','Admin','hkoflax@yahoo.com','Admin');
+INSERT INTO Users (FirstName,LastName,Email,UserGroup)
+VALUES ('Admin','Admin','djalpen24@gmail.com','Admin');
 -- **************************************User
 INSERT INTO Login (Username,Password,AccountType,UserID)
 VALUES ('Admin','Qwerty','ADM',1);

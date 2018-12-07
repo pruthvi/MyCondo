@@ -17,6 +17,8 @@ DROP PROCEDURE SelectBookingsList;
 GO 
 DROP PROCEDURE SelectShortBookingsDisplay;
 GO 
+DROP PROCEDURE InsertUnits;
+GO
 
 --******************************************insert User
 CREATE PROCEDURE InsertUser
@@ -97,7 +99,20 @@ SELECT  CONCAT(FirstName, ',', LastName,' ( ',UnitNumber, ' )') AS Name,BookingI
 			FROM Booking INNER JOIN Users ON Booking.UserId=Users.UserId;   
 Go
 
-
+--******************************************Units
+CREATE PROCEDURE InsertUnits
+(
+@unitNumber		INT, 
+@Occupancy		NVARCHAR (10), 
+@OwnerUserId	INT, 
+@UnitAdressId	INT,
+@OwnerAdressId  INT, 
+@Occupancydate	DATE
+)
+AS
+INSERT INTO Units(unitNumber,Occupancy	,OwnerUserId, UnitAdressId,OwnerAdressId,Occupancydate)
+			VALUES(@unitNumber,@Occupancy,@OwnerUserId, @UnitAdressId,@OwnerAdressId,@Occupancydate);
+GO
 
 
 

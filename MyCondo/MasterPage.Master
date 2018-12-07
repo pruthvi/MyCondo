@@ -224,8 +224,8 @@
                             <li>
                                 <a href="javascript: void(0);"><i class="mdi mdi-atom"></i><span>Units </span><span class="menu-arrow"></span></a>
                                 <ul class="nav-second-level" aria-expanded="false">
-                                    <li><a href="CreateUnit.aspx">Create Unit</a></li>
-                                    <li><a href="#">Modify Unit</a></li>
+                                    <li><a href="Unit.aspx">Create Unit</a></li>
+                                    <li><a href="UnitView.aspx">Modify Unit</a></li>
                                 </ul>
                             </li>
                             <li>
