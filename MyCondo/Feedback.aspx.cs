@@ -19,33 +19,33 @@ namespace MyCondo
         protected void btnSubmitFeedback_Click(object sender, EventArgs e)
         {
 
-            //    Feedback newFeedback = new Feedback();
-            //   // newFeedback.UserId = Convert.ToInt32(ResidentDropDown.SelectedValue);
-            //    newFeedback.Message = txtMessage.Text;
+            //Feedback feedback = new Feedback();
+
+            //feedback.Message = txtMessage.Text;
+            //feedback.requestId = 
 
 
-            //    try
-            //    {
+            //try
+            //{
 
 
-            //            DataConnection myConnection = new DataConnection();
-            //             SqlCommand command = new SqlCommand();
+            //    DataConnection myConnection = new DataConnection();
+            //    SqlCommand command = new SqlCommand();
 
-            //            String script = "Insert Message INTO Feedback";
-            //            DataTable myTable = myConnection.ExecuteScript(script);
-            //            myConnection.conn.Close();
-
-            //        }
-            //        catch (Exception ex)
-            //        {
-            //            Response.Write(ex.Message);
-            //            {
-            //            }
-            //    }
-
+            //    String script = "Insert Message INTO Feedback";
+            //    DataTable myTable = myConnection.ExecuteScript(script);
+            //    myConnection.conn.Close();
 
             //}
+            //catch (Exception ex)
+            //{
+            //    Response.Write(ex.Message);
+            //    {
+            //    }
+            //}
+
 
         }
+
     }
-}
+    }

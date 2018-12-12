@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="Unit.aspx.cs" Inherits="MyCondo.Unit" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="Units.aspx.cs" Inherits="MyCondo.Unit" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="Title" runat="server">
     Create Unit
 </asp:Content>

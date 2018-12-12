@@ -1756,6 +1756,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="SecurityView\test.aspx" />
+    <Content Include="ServiceRequest.aspx" />
     <Content Include="test.aspx" />
     <Content Include="Units.aspx" />
     <Content Include="UnitsView.aspx" />
@@ -1769,6 +1770,7 @@
     <Compile Include="App_Code\Booking.cs" />
     <Compile Include="App_Code\GuestRegistration.cs" />
     <Compile Include="App_Code\Feedback.cs" />
+    <Compile Include="App_Code\ServiceRequests.cs" />
     <Compile Include="App_Code\Units.cs" />
     <Compile Include="Bookings.aspx.cs">
       <DependentUpon>Bookings.aspx</DependentUpon>
@@ -1888,6 +1890,13 @@
     </Compile>
     <Compile Include="SecurityView\test.aspx.designer.cs">
       <DependentUpon>test.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ServiceRequest.aspx.cs">
+      <DependentUpon>ServiceRequest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ServiceRequest.aspx.designer.cs">
+      <DependentUpon>ServiceRequest.aspx</DependentUpon>
     </Compile>
     <Compile Include="test.aspx.cs">
       <DependentUpon>test.aspx</DependentUpon>
