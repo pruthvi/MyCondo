@@ -1,20 +1,20 @@
-﻿using System;
+﻿//using System;
 
-namespace MyCondo
-{
-    internal class Feedback
-    {
-        private string message;
-        private int userId;
+//namespace MyCondo
+//{
+//    internal class Feedback
+//    {
+//        private string message;
+//        private int userId;
 
-        public Feedback()
-        {
+//        public Feedback()
+//        {
 
-        }
+//        }
 
-        public string Message { get => message; set => message = value; }
+//        public string Message { get => message; set => message = value; }
 
-        public int UserId { get => userId; set => userId = value; }
+//        public int UserId { get => userId; set => userId = value; }
 
-    }
-}
+//    }
+//}

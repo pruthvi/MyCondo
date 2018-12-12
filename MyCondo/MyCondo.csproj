@@ -1757,6 +1757,8 @@
   <ItemGroup>
     <Content Include="SecurityView\test.aspx" />
     <Content Include="test.aspx" />
+    <Content Include="Units.aspx" />
+    <Content Include="UnitsView.aspx" />
     <Content Include="UsersView.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -1767,6 +1769,7 @@
     <Compile Include="App_Code\Booking.cs" />
     <Compile Include="App_Code\GuestRegistration.cs" />
     <Compile Include="App_Code\Feedback.cs" />
+    <Compile Include="App_Code\Units.cs" />
     <Compile Include="Bookings.aspx.cs">
       <DependentUpon>Bookings.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1892,6 +1895,20 @@
     </Compile>
     <Compile Include="test.aspx.designer.cs">
       <DependentUpon>test.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Units.aspx.cs">
+      <DependentUpon>Units.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Units.aspx.designer.cs">
+      <DependentUpon>Units.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UnitsView.aspx.cs">
+      <DependentUpon>UnitsView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UnitsView.aspx.designer.cs">
+      <DependentUpon>UnitsView.aspx</DependentUpon>
     </Compile>
     <Compile Include="UsersView.aspx.cs">
       <DependentUpon>UsersView.aspx</DependentUpon>
