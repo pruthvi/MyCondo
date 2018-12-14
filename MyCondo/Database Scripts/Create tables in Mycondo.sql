@@ -417,7 +417,7 @@ CREATE TABLE [dbo].[Complaint]
  [ComplaintId]       int IDENTITY (1, 1) NOT NULL ,
  [ReporterName]      nvarchar(50) NOT NULL ,
  [Title]             nvarchar(50) NOT NULL ,
- [Complaint Message] nvarchar(MAX) NOT NULL ,
+ [ComplaintMessage] nvarchar(MAX) NOT NULL ,
  [Date]              datetime NOT NULL DEFAULT GETDATE(),
  [RelatedUser]       int NULL ,
  [RelatedUnit]       int NULL 

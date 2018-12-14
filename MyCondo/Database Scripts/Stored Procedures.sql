@@ -17,6 +17,11 @@ DROP PROCEDURE SelectBookingsList;
 GO 
 DROP PROCEDURE SelectShortBookingsDisplay;
 GO 
+DROP PROCEDURE InsertUserUnit;
+GO
+DROP PROCEDURE InsertComplaint;
+GO
+
 
 --******************************************insert User
 CREATE PROCEDURE InsertUser
@@ -106,7 +111,33 @@ SELECT  CONCAT(FirstName, ',', LastName,' ( ',UnitNumber, ' )') AS Name,BookingI
 			FROM Booking INNER JOIN Users ON Booking.UserId=Users.UserId;   
 Go
 
+--*******************************************Insert Complaint form
+
+CREATE PROCEDURE InsertComplaint
+(         
+@ReporterName        NVARCHAR (50), 
+@Title				NVARCHAR (50),      
+@ComplaintMessage      NVARCHAR (MAX),     
+@Date				DATETIME          
+)
+AS
+INSERT INTO Complaint (ReporterName,Title,ComplaintMessage,Date)
+			VALUES(@ReporterName,@Title,@ComplaintMessage,@Date);
+Go
 
 
-
-
+--******************************************Insert User to Unit
+CREATE PROCEDURE InsertUserUnit
+(
+@FirstName	NVARCHAR (50), 
+@LastName	NVARCHAR (50), 
+@Email		NVARCHAR (50), 
+@PhoneNumber	NVARCHAR (50),
+@UnitNumber		INT,
+@UserGroup      NVARCHAR (50), 
+@Address		NVARCHAR (MAX)
+)
+AS
+INSERT INTO Users(FirstName,LastName,Email,PhoneNumber,UnitNumber,UserGroup,Address)
+			VALUES(@FirstName,@LastName,@Email,@PhoneNumber,@UnitNumber,@UserGroup,@Address);
+GO

@@ -27,7 +27,7 @@ namespace MyCondo
             //newGuest.Parking = chkParking.Checked;
 
 
-            
+
             //try
             //{
             //    SqlCommand command = new SqlCommand();

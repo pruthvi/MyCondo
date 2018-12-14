@@ -27,7 +27,7 @@
             </asp:TableRow>
                         <asp:TableRow>
                 <asp:TableCell HorizontalAlign="Right">
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" ForeColor="Red" Display="Dynamic" SetFocusOnError="true" ControlToValidate="txtstartDate" runat="server" ErrorMessage="Please enter a valid date" ValidationGroup="CreateGuest">
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" ForeColor="Red" Display="Dynamic" SetFocusOnError="true" ControlToValidate="txtName" runat="server" ErrorMessage="Please enter a valid date" ValidationGroup="CreateGuest">
                         *
                     </asp:RequiredFieldValidator>
                     <asp:Label runat="server" class="font-weight-medium required" Text="Name: "></asp:Label>

@@ -12,6 +12,7 @@ namespace MyCondo
         private String adress;
         private Contact contact;
         private int detailsId;
+        private int unitNumber;
         private String creationDate;
         private String group;
         public User()
@@ -29,5 +30,6 @@ namespace MyCondo
         public string Group { get => group; set => group = value; }
         internal String Adress { get => adress; set => adress = value; }
         internal Contact Contact { get => contact; set => contact = value; }
+        public int UnitNumber { get => unitNumber; set => unitNumber = value; }
     }
 }
