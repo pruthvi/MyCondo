@@ -63,7 +63,16 @@ CREATE PROCEDURE DisplayResidents
 As
 SELECT  UserId , CONCAT(FirstName, ',', LastName,' ( ',UnitNumber, ' )') AS Residents
 FROM Users;
-Go
+GO
+
+--*******************************************Select list of Service requested in textbox
+
+CREATE PROCEDURE DisplayServiceRequested 
+As
+SELECT  RequestId , CONCAT(Subject) AS Services
+FROM ServiceRequest;
+GO
+
 --*******************************************insert new booking
 CREATE PROCEDURE InsertBooking
 (         
