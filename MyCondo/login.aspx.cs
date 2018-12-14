@@ -167,7 +167,7 @@ namespace MyCondo
                     else
                     if (Myinfo.AccountType == "RES  ")
                     {
-                        Response.Redirect("#");
+                        Response.Redirect("ResidentsView/Home.aspx");
                     }
                     else
                     if (Myinfo.AccountType == "SEC  ")

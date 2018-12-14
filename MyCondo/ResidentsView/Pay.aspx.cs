@@ -17,8 +17,7 @@ namespace MyCondo.ResidentsView
         private void Bindpayment()
         {
             User Myinfo = new User();
-            //Myinfo = (User)(Session["User"]);
-            Myinfo.UserId = 1;
+            Myinfo = (User)(Session["User"]);
 
             DataConnection myConnection = new DataConnection();
             String script = "SELECT Amount, PayerId, ServiceName, PaymentStatus FROM Payment where Payment.PayerId =" + Myinfo.UserId;

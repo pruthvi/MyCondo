@@ -12,7 +12,7 @@ namespace MyCondo
         public string UserName { get { return LblName.Text; } set { LblName.Text = value; } }
         protected void Page_Load(object sender, EventArgs e)
         {
-            /*if (!IsPostBack)
+            if (!IsPostBack)
             {
 
             }
@@ -26,7 +26,7 @@ namespace MyCondo
             else
             {
                 Response.Redirect("../login.aspx");
-            }*/
+            }
         }
 
         protected void Logout_Click(object sender, EventArgs e)
