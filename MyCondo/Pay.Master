@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Resident.master.cs" Inherits="MyCondo.Resident" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Pay.master.cs" Inherits="MyCondo.Pay" %>
 
 <!DOCTYPE html>
 
@@ -36,7 +36,17 @@
 
 </head>
 <body>
-    <form id="form1" runat="server">
+    <form id="form1" runat="server" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+        <!-- Identify your business so that you can collect the payments. -->
+        <input type="hidden" name="business" value="barbara.hounkpe@yahoo.ca">
+
+        <!-- Specify a Buy Now button. -->
+        <input type="hidden" name="cmd" value="_xclick">
+
+        <!-- Specify details about the item that buyers will purchase. -->
+        <input type="hidden" name="item_name" value="Ameneties Booking">
+        <input type="hidden" name="amount" value="120.25">
+        <input type="hidden" name="currency_code" value="CAD">
         &nbsp;<!-- Begin page --><div id="wrapper">
 
             <!-- Navigation Bar-->
@@ -68,7 +78,7 @@
                                 <!-- item-->
                                 <div class="dropdown-item notify-item">
                                     <i class="dripicons-power"></i><span>
-                                        <asp:Button runat="server" ID="Logout" Text="Log Out" ForeColor="GrayText" BorderStyle="None" BackColor="Transparent" OnClick="Logout_Click"/>
+                                        <asp:Button runat="server" ID="Logout" Text="Log Out" ForeColor="GrayText" BorderStyle="None" BackColor="Transparent" OnClick="Logout_Click" />
                                     </span>
                                 </div>
 
@@ -102,8 +112,8 @@
                             </a>
                         </li>
                         <li class="app-search">
-                                <input type="text" placeholder="Search..." class="form-control">
-                                <button type="submit" class="sr-only"></button>
+                            <input type="text" placeholder="Search..." class="form-control">
+                            <button type="submit" class="sr-only"></button>
                         </li>
                     </ul>
                 </nav>

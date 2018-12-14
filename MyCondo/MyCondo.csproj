@@ -1751,10 +1751,11 @@
     <Content Include="ResidentsView\BookingsView.aspx" />
     <Content Include="ResidentsView\GuestRegistration.aspx" />
     <Content Include="ResidentsView\Home.aspx" />
-    <Content Include="ResidentsView\Payments.aspx" />
+    <Content Include="ResidentsView\Pay.aspx" />
     <Content Include="ResidentsView\ServiceRequest.aspx" />
     <Content Include="SecurityView\Security.Master" />
     <Content Include="Resident.Master" />
+    <Content Include="Pay.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -1844,6 +1845,13 @@
     <Compile Include="NotConfirmed.Master.designer.cs">
       <DependentUpon>NotConfirmed.Master</DependentUpon>
     </Compile>
+    <Compile Include="Pay.Master.cs">
+      <DependentUpon>Pay.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pay.Master.designer.cs">
+      <DependentUpon>Pay.Master</DependentUpon>
+    </Compile>
     <Compile Include="Payments.aspx.cs">
       <DependentUpon>Payments.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1928,12 +1936,12 @@
       <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Code\Payment.cs" />
-    <Compile Include="ResidentsView\Payments.aspx.cs">
-      <DependentUpon>Payments.aspx</DependentUpon>
+    <Compile Include="ResidentsView\Pay.aspx.cs">
+      <DependentUpon>Pay.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ResidentsView\Payments.aspx.designer.cs">
-      <DependentUpon>Payments.aspx</DependentUpon>
+    <Compile Include="ResidentsView\Pay.aspx.designer.cs">
+      <DependentUpon>Pay.aspx</DependentUpon>
     </Compile>
     <Compile Include="ResidentsView\ServiceRequest.aspx.cs">
       <DependentUpon>ServiceRequest.aspx</DependentUpon>

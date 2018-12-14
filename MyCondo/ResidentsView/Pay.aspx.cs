@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace MyCondo.ResidentsView
 {
-    public partial class Payments : System.Web.UI.Page
+    public partial class Pay : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

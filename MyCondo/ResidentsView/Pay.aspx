@@ -1,5 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Resident.Master" AutoEventWireup="true" CodeBehind="Payments.aspx.cs" Inherits="MyCondo.ResidentsView.Payments" %>
-
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Pay.Master" AutoEventWireup="true" CodeBehind="Pay.aspx.cs" Inherits="MyCondo.ResidentsView.Pay" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="Title" runat="server">
     Payments
 </asp:Content>
@@ -7,7 +6,6 @@
     Payments
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="PageContent" runat="server">
-    <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
         <div style="width: 700px" class="objectcenter">
             <asp:GridView ID="PaymentDisplay" Width="700px" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal">
                 <EmptyDataTemplate>
@@ -24,18 +22,6 @@
                                 <asp:Label ID="Label2" class="header-title font-weight-bold" runat="server" Text='<%# Bind("PaymentStatus") %>'></asp:Label>
                                 <asp:Label ID="Label3" class="header-title font-weight-light" runat="server" Text=' for '></asp:Label>
                                 <asp:Label ID="lblBookingType" class="header-title font-weight-bold" runat="server" Text='<%# Bind("ServiceName") %>'></asp:Label>
-
-
-                                <!-- Identify your business so that you can collect the payments. -->
-                                <input type="hidden" name="business" value="barbara.hounkpe@yahoo.ca">
-
-                                <!-- Specify a Buy Now button. -->
-                                <input type="hidden" name="cmd" value="_xclick">
-
-                                <!-- Specify details about the item that buyers will purchase. -->
-                                <input type="hidden" name="item_name" value="Hot Sauce-12oz. Bottle">
-                                <input type="hidden" name="amount" value="5.95">
-                                <input type="hidden" name="currency_code" value="USD">
 
                                 <!-- Display the payment button. -->
                                 <input class="float-right" type="image" name="submit"
@@ -58,5 +44,5 @@
             </asp:GridView>
 
         </div>
-    </form>
 </asp:Content>
+

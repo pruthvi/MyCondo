@@ -10,7 +10,7 @@
 namespace MyCondo.ResidentsView {
     
     
-    public partial class Payments {
+    public partial class Pay {
         
         /// <summary>
         /// PaymentDisplay control.
