@@ -17,20 +17,14 @@ namespace MyCondo.ResidentsView
         private void Bindpayment()
         {
             User Myinfo = new User();
-            Myinfo = (User)(Session["User"]);
+            //Myinfo = (User)(Session["User"]);
+            Myinfo.UserId = 1;
 
             DataConnection myConnection = new DataConnection();
-            String script = "SELECT  BookingId,BookingType, StartDate, EndDate, BookingDescription, BookingStatus FROM Booking where Booking.UserId =" + Myinfo.UserId;
-            BookingsDisplay.DataSource = myConnection.ExecuteScript(script);
-            BookingsDisplay.DataKeyNames = new string[] { "BookingId" };
-            BookingsDisplay.DataBind();
-        }
-
-        protected void btnpay_Click(object sender, EventArgs e)
-        {
-            Response.Write("<script>");
-            Response.Write("window.open('https://www.paypal.me/allatyourprice','_blank')");
-            Response.Write("</script>");
+            String script = "SELECT Amount, PayerId, ServiceName, PaymentStatus FROM Payment where Payment.PayerId =" + Myinfo.UserId;
+            PaymentDisplay.DataSource = myConnection.ExecuteScript(script);
+            PaymentDisplay.DataKeyNames = new string[] { "PayerId" };
+            PaymentDisplay.DataBind();
         }
     }
 }

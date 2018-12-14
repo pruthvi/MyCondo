@@ -8,7 +8,7 @@
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="PageContent" runat="server">
     <div style="width: 700px" class="objectcenter">
-        <asp:GridView ID="PaymentDisplay" Width="700px" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal" DataSourceID="SqlDataSource1">
+        <asp:GridView ID="PaymentDisplay" Width="700px" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal">
             <EmptyDataTemplate>
                 <h3>There is no Payment at this moment.<a href="Bookings.aspx">Create One?</a></h3>
             </EmptyDataTemplate>
@@ -23,7 +23,26 @@
                             <asp:Label ID="Label2" class="header-title font-weight-bold" runat="server" Text='<%# Bind("PaymentStatus") %>'></asp:Label>
                             <asp:Label ID="Label3" class="header-title font-weight-light" runat="server" Text=' for '></asp:Label>
                             <asp:Label ID="lblBookingType" class="header-title font-weight-bold" runat="server" Text='<%# Bind("ServiceName") %>'></asp:Label>
-                            <asp:Button ID="btnpay" class="btn btn-success waves-light float-right" OnClick="btnpay_Click" runat="server" Text="Make Payment" />
+                            <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+
+                                <!-- Identify your business so that you can collect the payments. -->
+                                <input type="hidden" name="business" value="barbara.hounkpe@yahoo.ca">
+
+                                <!-- Specify a Buy Now button. -->
+                                <input type="hidden" name="cmd" value="_xclick">
+
+                                <!-- Specify details about the item that buyers will purchase. -->
+                                <input type="hidden" name="item_name" value="Hot Sauce-12oz. Bottle">
+                                <input type="hidden" name="amount" value="5.95">
+                                <input type="hidden" name="currency_code" value="USD">
+
+                                <!-- Display the payment button. -->
+                                <input class="float-right" type="image" name="submit"
+                                    src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_LG.gif"
+                                    alt="Buy Now">
+                                <img alt="" border="0" width="1" height="1"
+                                    src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif">
+                            </form>
                         </div>
                     </ItemTemplate>
                 </asp:TemplateField>
@@ -37,6 +56,6 @@
             <SortedDescendingCellStyle BackColor="#E5E5E5" />
             <SortedDescendingHeaderStyle BackColor="#242121" />
         </asp:GridView>
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:MyCondo %>" SelectCommand="SELECT [Amount], [PayerId], [ServiceName], [PaymentStatus] FROM [Payment]"></asp:SqlDataSource>
+
     </div>
 </asp:Content>
