@@ -131,14 +131,14 @@
                             <li>
                                 <a href="javascript: void(0);"><i class="mdi mdi-calendar"></i><span>Booking </span><span class="menu-arrow"></span></a>
                                 <ul class="nav-second-level" aria-expanded="false">
-                                    <li><a href="ResidentView/Bookings.aspx">Make a Booking</a></li>
-                                    <li><a href="ResidentView/BookingsView.aspx">View Bookings</a></li>
+                                    <li><a href="Bookings.aspx">Make a Booking</a></li>
+                                    <li><a href="BookingsView.aspx">View Bookings</a></li>
                                     <!-- <li><a href="#">Modify Bookings</a></li> -->
                                 </ul>
                             </li>
 
                             <li>
-                                <a href="ResidentView/GuestRegistration.aspx"><i class="mdi mdi-filter-variant"></i><span>Guest Registration </span></a>
+                                <a href="GuestRegistration.aspx"><i class="mdi mdi-filter-variant"></i><span>Guest Registration </span></a>
                             </li>
 
                             <li>
@@ -149,11 +149,11 @@
 
 
                             <li>
-                                <a href="ResidentView/ServiceRequest.aspx"><i class="mdi mdi-file-document-box"></i><span>Service Request </span></a>
+                                <a href="ServiceRequest.aspx"><i class="mdi mdi-file-document-box"></i><span>Service Request </span></a>
 
                             </li>
                             <li>
-                                <a href="ResidentView/Pay.aspx"><i class="mdi mdi-file-document-box"></i><span>Payment </span></a>
+                                <a href="Pay.aspx"><i class="mdi mdi-file-document-box"></i><span>Payment </span></a>
                             </li>
                             <li>
                                 <a href="Feedback.aspx"><i class="mdi mdi-file-document-box"></i><span>Feedback </span></a>
