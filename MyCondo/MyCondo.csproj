@@ -1749,6 +1749,8 @@
     <None Include="packages.config" />
     <Content Include="ResidentsView\Bookings.aspx" />
     <Content Include="ResidentsView\BookingsView.aspx" />
+    <Content Include="ResidentsView\Complaint.aspx" />
+    <Content Include="ResidentsView\Feedback.aspx" />
     <Content Include="ResidentsView\GuestRegistration.aspx" />
     <Content Include="ResidentsView\Home.aspx" />
     <Content Include="ResidentsView\Pay.aspx" />
@@ -1920,6 +1922,21 @@
     </Compile>
     <Compile Include="ResidentsView\BookingsView.aspx.designer.cs">
       <DependentUpon>BookingsView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ResidentsView\Complaint.aspx.cs">
+      <DependentUpon>Complaint.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ResidentsView\Complaint.aspx.designer.cs">
+      <DependentUpon>Complaint.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\Complaints.cs" />
+    <Compile Include="ResidentsView\Feedback.aspx.cs">
+      <DependentUpon>Feedback.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ResidentsView\Feedback.aspx.designer.cs">
+      <DependentUpon>Feedback.aspx</DependentUpon>
     </Compile>
     <Compile Include="ResidentsView\GuestRegistration.aspx.cs">
       <DependentUpon>GuestRegistration.aspx</DependentUpon>

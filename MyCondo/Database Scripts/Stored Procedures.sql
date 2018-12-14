@@ -1,6 +1,12 @@
 ﻿USE [Mycondo]
 GO
 
+DROP PROCEDURE DisplayServiceRequested; 
+GO
+DROP PROCEDURE InsertComplaint;
+GO
+DROP PROCEDURE InsertUserUnit;
+GO
 DROP PROCEDURE InsertUser;  
 GO
 DROP PROCEDURE InsertLogin;  
@@ -128,6 +134,42 @@ SELECT  CONCAT(FirstName, ',', LastName,' ( ',UnitNumber, ' )') AS Name,BookingI
 			BookingType, Convert(varchar(20), StartDate, 106) As StartDate, BookingStatus
 			FROM Booking INNER JOIN Users ON Booking.UserId=Users.UserId;   
 Go
+--*************************************************
+CREATE PROCEDURE InsertComplaint
+(         
+@ReporterName        NVARCHAR (50), 
+@Title				NVARCHAR (50),      
+@ComplaintMessage      NVARCHAR (MAX),     
+@Date				DATETIME          
+)
+AS
+INSERT INTO Complaint (ReporterName,Title,ComplaintMessage,Date)
+			VALUES(@ReporterName,@Title,@ComplaintMessage,@Date);
+Go
+
+
+--******************************************Insert User to Unit
+CREATE PROCEDURE InsertUserUnit
+(
+@FirstName	NVARCHAR (50), 
+@LastName	NVARCHAR (50), 
+@Email		NVARCHAR (50), 
+@PhoneNumber	NVARCHAR (50),
+@UnitNumber		INT,
+@UserGroup      NVARCHAR (50), 
+@Address		NVARCHAR (MAX)
+)
+AS
+INSERT INTO Users(FirstName,LastName,Email,PhoneNumber,UnitNumber,UserGroup,Address)
+			VALUES(@FirstName,@LastName,@Email,@PhoneNumber,@UnitNumber,@UserGroup,@Address);
+GO
+--*******************************************Select list of Service requested in textbox
+CREATE PROCEDURE DisplayServiceRequested 
+As
+SELECT  RequestId , Subject AS Services
+FROM ServiceRequest;
+GO
+
 
 
 
