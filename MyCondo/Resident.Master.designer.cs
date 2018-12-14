@@ -10,69 +10,69 @@
 namespace MyCondo {
     
     
-    public partial class Feedback {
+    public partial class Resident {
         
         /// <summary>
-        /// feedbackForm control.
+        /// Title control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Table feedbackForm;
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder Title;
         
         /// <summary>
-        /// ValidationSummary1 control.
+        /// form1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ValidationSummary ValidationSummary1;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// RequiredMessage control.
+        /// LblName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredMessage;
+        protected global::System.Web.UI.WebControls.Label LblName;
         
         /// <summary>
-        /// txtMessage control.
+        /// DropdwonName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtMessage;
+        protected global::System.Web.UI.WebControls.Label DropdwonName;
         
         /// <summary>
-        /// ServicesDropDown control.
+        /// Logout control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ServicesDropDown;
+        protected global::System.Web.UI.WebControls.Button Logout;
         
         /// <summary>
-        /// btnSubmitFeedback control.
+        /// PageHeadLine control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSubmitFeedback;
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder PageHeadLine;
         
         /// <summary>
-        /// SqlDataSource1 control.
+        /// PageContent control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder PageContent;
     }
 }

@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace MyCondo
 {
-    public partial class NotConfirmed : System.Web.UI.MasterPage
+    public partial class Resident : System.Web.UI.MasterPage
     {
         public string UserName { get { return LblName.Text; } set { LblName.Text = value; } }
         protected void Page_Load(object sender, EventArgs e)
@@ -25,7 +25,7 @@ namespace MyCondo
             }
             else
             {
-                Response.Redirect("../login.aspx");
+                Response.Redirect("login.aspx");
             }*/
         }
 
@@ -49,7 +49,7 @@ namespace MyCondo
             {
                 Response.Write(ex.Message);
             }
-            Response.Redirect("../login.aspx");
+            Response.Redirect("login.aspx");
         }
     }
 }

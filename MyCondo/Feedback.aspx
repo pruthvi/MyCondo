@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="Feedback.aspx.cs" Inherits="MyCondo.Feedback" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="Title" runat="server">
     Feedback
 </asp:Content>
@@ -6,7 +7,7 @@
     Feedback
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="PageContent" runat="server">
-        <div class="account-box mb-3">
+    <div class="account-box mb-3">
         <asp:Table ID="feedbackForm" runat="server">
 
             <asp:TableHeaderRow>
@@ -24,7 +25,7 @@
                     <br />
                 </asp:TableCell>
             </asp:TableRow>
-           
+
             <asp:TableRow>
                 <asp:TableCell HorizontalAlign="Right">
                     <asp:RequiredFieldValidator ID="RequiredMessage" ForeColor="Red" Display="Dynamic" SetFocusOnError="true" ControlToValidate="txtMessage" runat="server" ErrorMessage="Please enter your Message. Message field can not be blank" ValidationGroup="CreateFeedback">
@@ -41,8 +42,7 @@
                 <asp:Label runat="server" class="font-weight-medium" Text="Service used:"></asp:Label>
                 </asp:TableCell>
                 <asp:TableCell>
-                    <asp:DropDownList ID="ServicesDropDown" runat="server" DataSourceID="SqlDataSource2" DataTextField="Services" DataValueField="RequestId"></asp:DropDownList>
-                    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:MyCondo %>" SelectCommand="DisplayServiceRequested" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
+                    <asp:DropDownList ID="ServicesDropDown" runat="server"></asp:DropDownList>
                 </asp:TableCell>
             </asp:TableRow>
             <asp:TableRow>
@@ -50,8 +50,6 @@
                 <asp:Label runat="server" class="font-weight-medium" Text="Feedback for:"></asp:Label>
                 </asp:TableCell>
                 <asp:TableCell>
-                    <asp:DropDownList ID="ResidentDropDown" runat="server" DataSourceID="SqlDataSource2" DataTextField="Residents" DataValueField="UserId"></asp:DropDownList>
-                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:MyCondo %>" SelectCommand="DisplayResidents" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
                 </asp:TableCell>
             </asp:TableRow>
             <asp:TableRow>
@@ -72,4 +70,5 @@
             </asp:TableRow>
         </asp:Table>
     </div>
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:MyCondo %>" SelectCommand="DisplayResidents" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
 </asp:Content>

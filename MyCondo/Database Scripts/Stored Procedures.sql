@@ -17,7 +17,10 @@ DROP PROCEDURE SelectBookingsList;
 GO 
 DROP PROCEDURE SelectShortBookingsDisplay;
 GO 
-
+DROP PROCEDURE InsertPayment;
+GO
+DROP PROCEDURE SelectResidentBookingsList;
+Go
 --******************************************insert User
 CREATE PROCEDURE InsertUser
 (
@@ -86,6 +89,17 @@ AS
 INSERT INTO Booking (BookingType,StartDate,EndDate,BookingDescription,UserId)
 			VALUES(@BookingType,@StartDate,@EndDate,@BookingDescription,@UserId);
 GO
+--*******************************************insert Payment
+CREATE PROCEDURE InsertPayment
+(
+@Amount        DECIMAL (18, 2),
+@PayerId       INT,
+@ServiceName   NVARCHAR (50)
+)
+AS
+INSERT INTO Payment (Amount,PayerId,ServiceName)
+			VALUES(@Amount,@PayerId,@ServiceName);
+GO
 --*******************************************select booking status
 CREATE PROCEDURE SelectBookingstatus
 As
@@ -97,6 +111,15 @@ As
 SELECT  CONCAT(FirstName, ',', LastName,' ( ',UnitNumber, ' )') AS Name,BookingId,
 			BookingType, StartDate, EndDate, BookingDescription, BookingStatus
 			FROM Booking INNER JOIN Users ON Booking.UserId=Users.UserId;   
+Go
+--*******************************************select specific booking
+CREATE PROCEDURE SelectResidentBookingsList
+(
+@UserId      INT
+)
+As
+SELECT  BookingId,BookingType, StartDate, EndDate, BookingDescription, BookingStatus
+			FROM Booking where Booking.UserId=UserId;   
 Go
 --*******************************************Display short booking form
 CREATE PROCEDURE SelectShortBookingsDisplay
