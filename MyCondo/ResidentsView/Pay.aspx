@@ -9,7 +9,7 @@
         <div style="width: 700px" class="objectcenter">
             <asp:GridView ID="PaymentDisplay" Width="700px" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal">
                 <EmptyDataTemplate>
-                    <h3>There is no Payment at this moment.<a href="Bookings.aspx">Create One?</a></h3>
+                    <h3>There is no Payment at this moment.<a href="#">Create One?</a></h3>
                 </EmptyDataTemplate>
                 <Columns>
                     <asp:TemplateField HeaderText="Payments">

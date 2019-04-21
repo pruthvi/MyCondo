@@ -245,7 +245,7 @@ namespace MyCondo
                 smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
                 smtpClient.UseDefaultCredentials = false;
 
-                smtpClient.Credentials = new System.Net.NetworkCredential("mycondowebapp@gmail.com", "Qwerty@123");
+                smtpClient.Credentials = new System.Net.NetworkCredential("mycondowebapp@gmail.com", "Chocob0y");
                 smtpClient.Send(message);
             }
             catch (Exception ex)
